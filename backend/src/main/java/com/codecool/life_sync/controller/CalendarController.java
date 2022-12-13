@@ -20,6 +20,7 @@ public class CalendarController {
 
     @GetMapping
     public Optional<Calendar> getMessage(Long id) {
+        System.out.println("request arrived");
         return calendarService.getMessage(id);
     }
 
