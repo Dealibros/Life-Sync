@@ -1,0 +1,7 @@
+{
+  "timestamp": "2022-12-13T11:37:48.103+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "The given id must not be null",
+  "path": "/calendar"
+}

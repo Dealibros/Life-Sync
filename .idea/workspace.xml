@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14fc9633-f681-4319-ada3-36987d5df175" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/InitializationService.java" afterDir="false" />
+    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b54e1833-43aa-4616-bd15-cc57d2dd9e5f.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Calendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/CalendarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/CalendarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/CalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/CalendarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,6 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "b737627fd6444c49e31b55102b0f390c"
   },
@@ -59,12 +63,14 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.LyfeSyncApplication">
+    <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="6" requestIdentifier="#6" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="LyfeSyncApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ACTIVE_PROFILES" />
       <envs>
-        <env name="PSQL_USER_NAME" value="doriana" />
-        <env name="PSQL_PASSWORD" value="postgresql" />
+        <env name="PSQL_USER_NAME" value="dea" />
+        <env name="PSQL_PASSWORD" value="Emmita789" />
         <env name="PSQL_HOST" value="localhost" />
         <env name="PSQL_DB_NAME" value="life_sync " />
       </envs>
@@ -74,6 +80,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="HTTP Request.generated-requests | #6" />
+      <item itemvalue="Spring Boot.LyfeSyncApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #6" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
