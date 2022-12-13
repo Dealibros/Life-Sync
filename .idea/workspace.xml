@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" afterDir="false" />
+    <list default="true" id="14fc9633-f681-4319-ada3-36987d5df175" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/InitializationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b54e1833-43aa-4616-bd15-cc57d2dd9e5f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Calendar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/CalendarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/CalendarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/CalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/CalendarService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,27 +24,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2IoqPyh3Y1KAf9Pes0EiLC6L1Ei" />
+  <component name="ProjectId" id="2Ip0bWtNgiSuN0rGtjea7aMxdQP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -56,19 +48,10 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.23523422",
-    "project.structure.side.proportion": "0.13572341",
-    "spring.configuration.checksum": "b737627fd6444c49e31b55102b0f390c",
-    "vue.rearranger.settings.migration": "true"
+    "spring.configuration.checksum": "b737627fd6444c49e31b55102b0f390c"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -76,23 +59,14 @@
     ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/frontend" />
-      <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="$PROJECT_DIR$/backend" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.LifeSyncApplication">
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
-      <method v="2" />
-    </configuration>
-    <configuration name="LifeSyncApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager">
+    <configuration name="LyfeSyncApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <envs>
-        <env name="PSQL_USER_NAME" value="dea" />
-        <env name="PSQL_PASSWORD" value="Emmita789" />
+        <env name="PSQL_USER_NAME" value="doriana" />
+        <env name="PSQL_PASSWORD" value="postgresql" />
         <env name="PSQL_HOST" value="localhost" />
-        <env name="PSQL_DB_NAME" value="life_sync" />
+        <env name="PSQL_DB_NAME" value="life_sync " />
       </envs>
       <module name="life_sync" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.life_sync.LifeSyncApplication" />
@@ -100,33 +74,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="Spring Boot.LifeSyncApplication" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="" />
-      <created>1670858264193</created>
+      <changelist id="14fc9633-f681-4319-ada3-36987d5df175" name="Changes" comment="" />
+      <created>1670863288769</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670858264193</updated>
-      <workItem from="1670858265500" duration="1698000" />
-      <workItem from="1670859976057" duration="320000" />
-      <workItem from="1670860305180" duration="427000" />
-      <workItem from="1670860928502" duration="678000" />
-      <workItem from="1670861619035" duration="1336000" />
+      <updated>1670863288769</updated>
+      <workItem from="1670863290072" duration="1857000" />
+      <workItem from="1670925239287" duration="3433000" />
     </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1670858365170</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1670858365170</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,9 +101,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
