@@ -26,14 +26,7 @@ function App() {
       })
   }, []);
 
-
-  //   console.log(data);
-  //   for(let info in data){
-  //     console.log(info.message)
-  //   }
-
-  //  console.log("dm" + data.message)
-    
+console.log(data);
 
   return (
     <div className="App">
