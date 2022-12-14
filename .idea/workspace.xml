@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="restructured frontend project">
+    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="restructured frontend folder and small cleanup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +108,7 @@
       <workItem from="1670863290072" duration="1857000" />
       <workItem from="1670925239287" duration="3433000" />
       <workItem from="1671007205390" duration="850000" />
-      <workItem from="1671016793496" duration="3454000" />
+      <workItem from="1671016793496" duration="4834000" />
     </task>
     <task id="LOCAL-00001" summary="first page design and pages routing implemented">
       <created>1671025841722</created>
@@ -121,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671032589425</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="restructured frontend folder and small cleanup">
+      <created>1671032765360</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671032765360</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +151,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first page design and pages routing implemented" />
     <MESSAGE value="restructured frontend project" />
-    <option name="LAST_COMMIT_MESSAGE" value="restructured frontend project" />
+    <MESSAGE value="restructured frontend folder and small cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="restructured frontend folder and small cleanup" />
   </component>
 </project>
