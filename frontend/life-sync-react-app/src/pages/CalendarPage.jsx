@@ -1,4 +1,3 @@
-import logo from '../media/life_sync_logo.png';
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
@@ -34,7 +33,7 @@ export default function CalendarPage() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="/media/life_sync_logo.png" className="App-logo" alt="logo" />
         <p className="welcome-message">
             This is the second Page! Changing
           </p> 
