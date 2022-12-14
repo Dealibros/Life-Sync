@@ -1,4 +1,3 @@
-import logo from '../media/life_sync_logo.png';
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
@@ -32,7 +31,7 @@ console.log(data);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="/media/life_sync_logo.png" className="App-logo" alt="logo" />
         <p className="welcome-message">
           Welcome to <span className="life-sync-title">Life Sync</span></p>
         <p>{data.message}</p>

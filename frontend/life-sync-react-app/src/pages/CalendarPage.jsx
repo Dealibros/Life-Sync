@@ -1,4 +1,3 @@
-import logo from '../media/life_sync_logo.png';
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
@@ -8,8 +7,8 @@ export default function CalendarPage() {
 
     const [dayEvents, setDayEvents] = useState([]);
    
-    // Getting events from events dat + date
-    //Create Endpoint
+    // Getting events from events + date
+    //We need to an Create Endpoint
 
     useEffect(() => {
       fetch(`/events/date/${format(today, "yyyy-MM-dd")}`)
@@ -20,6 +19,7 @@ export default function CalendarPage() {
         })
         .catch((error) => console.log("error!", error));
     }, []);
+    
     
   let greeting = "";
   if (today.getHours() < 12) {
@@ -44,9 +44,7 @@ export default function CalendarPage() {
      </div>
      <h2 className="section-title"> Planner</h2>
      <div className="action-area">
-      <div className="action-icon">
-        
-      </div>
+
      </div>
     </div>
   );

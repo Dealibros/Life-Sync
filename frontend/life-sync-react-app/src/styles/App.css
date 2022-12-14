@@ -47,12 +47,14 @@
 .wrapper {
   margin: 0;
   padding: 0;
-  width: 50vw;
+  width: 100vw;
   background-color:#ECF0F8;
+  text-align: center;
 }
 
 .top-banner {
   display: flex;
+  width: 100vw;
   flex-direction: row;
   background: linear-gradient(to left, #ffc3a0, #ffafbd);
   border-radius: 5px;
@@ -81,13 +83,29 @@
   padding-top: 0px;
 }
 
+.section-title {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0 10px 0;
+  padding-bottom: 6px;
+  font-weight: 600;
+  font-family: "Varela Round", sans-serif;
+}
+
+.action-area {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 10px;
+  justify-content: space-between;
+}
+
 
 
 
 
 @font-face {
   font-family: "Frederika";
-  src: url("/src/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
+  src: url("/public/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
 }
 
 
