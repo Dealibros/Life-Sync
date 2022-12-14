@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="first page design and pages routing implemented">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="restructured frontend project">
       <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/fonts/FrederickatheGreat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/fonts/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/life_sync_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/logo_without_shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/normal_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/normal_logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/svg_logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/media/title.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/CalendarPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/CalendarPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/index.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +105,7 @@
       <workItem from="1670863290072" duration="1857000" />
       <workItem from="1670925239287" duration="3433000" />
       <workItem from="1671007205390" duration="850000" />
-      <workItem from="1671016793496" duration="3176000" />
+      <workItem from="1671016793496" duration="3454000" />
     </task>
     <task id="LOCAL-00001" summary="first page design and pages routing implemented">
       <created>1671025841722</created>
@@ -131,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671025841722</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="restructured frontend project">
+      <created>1671032589425</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671032589425</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first page design and pages routing implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="first page design and pages routing implemented" />
+    <MESSAGE value="restructured frontend project" />
+    <option name="LAST_COMMIT_MESSAGE" value="restructured frontend project" />
   </component>
 </project>
