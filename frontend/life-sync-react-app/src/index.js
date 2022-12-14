@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import NewPage from './pages/NewPage';
+import CalendarPage from './pages/CalendarPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +14,7 @@ export default function App() {
       <Routes>
         <Route>
           <Route index element={<Home />} />
-           <Route path="newpage" element={<NewPage />} /> 
+           <Route path="CalendarPage" element={<CalendarPage />} /> 
         </Route>
       </Routes>
     </BrowserRouter>

@@ -37,7 +37,7 @@ console.log(data);
           Welcome to <span className="life-sync-title">Life Sync</span></p>
         <p>{data.message}</p>
         
-        <Link to="newpage"> Let's get started! </Link>
+        <Link to="calendarPage"> Let's get started! </Link>
 
       </header>
     </div>
