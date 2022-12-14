@@ -1,6 +1,13 @@
-
+  .wrapper {
+    display: flex;
+    text-align: center;
+    margin-right: auto 0!important;
+    margin-left: auto 0!important;
+  }
+    
+    
     .react-calendar {
-        max-width: 100%;
+        max-width: 60%;
         background: white;
         line-height: 2em;
         text-align: center;
