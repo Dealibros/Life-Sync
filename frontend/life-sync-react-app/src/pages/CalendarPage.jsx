@@ -1,7 +1,7 @@
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
-import calendar from "../components/calendar/Calendar" 
+import Calendar from "../components/calendar/Calendar" 
 
 
 export default function CalendarPage() {
@@ -45,7 +45,7 @@ export default function CalendarPage() {
      </div>
      <h2 className="section-title"> Planner</h2>
      <div className="action-area">
-      <calendar/>
+      <Calendar/>
     
      </div>
     </div>

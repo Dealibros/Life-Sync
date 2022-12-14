@@ -6,7 +6,6 @@ import { format } from "date-fns";
 const MyCalendar = ({ updateCurrentMonth }) => {
     /**Calendar state and functions */
     const [value, setValue] = useState(new Date());
-    console.log("Hello")
   
     function onChange(nextValue) {
       setValue(nextValue);
@@ -26,7 +25,6 @@ const MyCalendar = ({ updateCurrentMonth }) => {
 
       return (
         <div className="wrapper">
-            <h1>"Hello"</h1>
           <Calendar
             tileContent={tileContent}
             onChange={onChange}
