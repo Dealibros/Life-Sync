@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { format } from "date-fns";
 
 const MyCalendar = ({ updateCurrentMonth }) => {
     /**Calendar state and functions */
     const [value, setValue] = useState(new Date());
+    console.log("Hello")
   
     function onChange(nextValue) {
       setValue(nextValue);
     }
   
     /** OnClick function to go to daily view*/
-    let history = useHistory();
+    // let history = useHistory();
   
     const handleClickDate = (value) => {
       let formattedDate = format(value, "y-MM-dd");
-      history.push(`/date/${formattedDate}`);
+      // history.push(`/date/${formattedDate}`);
     };
   
     const tileContent = ({ date, view }) =>
@@ -25,6 +26,7 @@ const MyCalendar = ({ updateCurrentMonth }) => {
 
       return (
         <div className="wrapper">
+            <h1>"Hello"</h1>
           <Calendar
             tileContent={tileContent}
             onChange={onChange}
@@ -40,3 +42,5 @@ const MyCalendar = ({ updateCurrentMonth }) => {
       </div>
       );
     };
+
+export default MyCalendar

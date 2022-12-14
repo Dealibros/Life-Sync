@@ -86,3 +86,24 @@ export default App;
     if(response.ok){
       return await response.json();
     }
+
+
+
+      //   // const fetchData = () => {
+  //   //   return fetch( "calendar?id=1")
+  //   //       .then((response) => response.json())
+  //   //       .then((data) => setData(data));
+  
+  //   // }
+
+  //   useEffect(() => {
+      
+
+  //   fetch('http://localhost:8080/calendar?id=1', )
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setData(data);
+        
+
+  //     })
+  // }, []);

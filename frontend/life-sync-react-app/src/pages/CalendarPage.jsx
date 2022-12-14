@@ -1,10 +1,11 @@
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
+import calendar from "../components/calendar/Calendar" 
+
 
 export default function CalendarPage() {
     const today = new Date();
-
     const [dayEvents, setDayEvents] = useState([]);
    
     // Getting events from events + date
@@ -20,7 +21,7 @@ export default function CalendarPage() {
         .catch((error) => console.log("error!", error));
     }, []);
     
-    
+
   let greeting = "";
   if (today.getHours() < 12) {
     greeting = "Good morning!";
@@ -33,7 +34,7 @@ export default function CalendarPage() {
 
   return (
     <div className="App">
-     <div class="wrapper">
+     <div className="wrapper">
       <div className="top-banner">
         <div className="logo" src="/planner_logo.png" ></div>
          <div className="greeting">
@@ -44,7 +45,8 @@ export default function CalendarPage() {
      </div>
      <h2 className="section-title"> Planner</h2>
      <div className="action-area">
-
+      <calendar/>
+    
      </div>
     </div>
   );
