@@ -33,20 +33,21 @@ export default function CalendarPage() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="welcome-message">
-            This is the second Page! Changing
-          </p> 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Let's get started!
-        </a>
-      </header>
+     <div class="wrapper">
+      <div className="top-banner">
+        <div className="logo" src="/planner_logo.png" ></div>
+         <div className="greeting">
+          <h2 className="welcome">{greeting}</h2>
+            <h3 className="main-date">{format(today, "EEEE, LLLL do").toLowerCase()}.</h3>
+          </div>
+      </div>
+     </div>
+     <h2 className="section-title"> Planner</h2>
+     <div className="action-area">
+      <div className="action-icon">
+        
+      </div>
+     </div>
     </div>
   );
 }

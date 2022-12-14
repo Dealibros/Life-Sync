@@ -44,6 +44,45 @@
   color: #0e9095;
 }
 
+.wrapper {
+  margin: 0;
+  padding: 0;
+  width: 50vw;
+  background-color:#ECF0F8;
+}
+
+.top-banner {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to left, #ffc3a0, #ffafbd);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px 0px 20px 20px;
+  align-items: center;
+}
+
+.welcome {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0px 20px 0px 20px;
+  color: #000000;
+}
+
+.greeting {
+  margin: 10px;
+  padding: 10px 0;
+}
+
+.main-date {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000000;
+  padding: 0px 20px;
+  padding-top: 0px;
+}
+
+
+
 
 
 @font-face {
