@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/Life-Sync.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d9c5e7e-60f4-4bae-96ed-046f168400b6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d9c5e7e-60f4-4bae-96ed-046f168400b6/storage_v2/_src_/database/life_sync._iHA7Q.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d9c5e7e-60f4-4bae-96ed-046f168400b6/storage_v2/_src_/database/life_sync._iHA7Q/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d9c5e7e-60f4-4bae-96ed-046f168400b6/storage_v2/_src_/database/life_sync._iHA7Q/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d9c5e7e-60f4-4bae-96ed-046f168400b6/storage_v2/_src_/database/life_sync._iHA7Q/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +85,10 @@
       <method v="2" />
     </configuration>
     <configuration name="LyfeSyncApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <envs>
-        <env name="PSQL_USER_NAME" value="dea" />
-        <env name="PSQL_PASSWORD" value="Emmita789" />
+        <env name="PSQL_USER_NAME" value="doriana" />
+        <env name="PSQL_PASSWORD" value="postgresql" />
         <env name="PSQL_HOST" value="localhost" />
         <env name="PSQL_DB_NAME" value="life_sync " />
       </envs>
@@ -104,13 +111,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="14fc9633-f681-4319-ada3-36987d5df175" name="Changes" comment="" />
+      <changelist id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="initial commit" />
       <created>1670863288769</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670863288769</updated>
       <workItem from="1670863290072" duration="1857000" />
       <workItem from="1670925239287" duration="3433000" />
+      <workItem from="1671007205390" duration="850000" />
+      <workItem from="1671016793496" duration="1316000" />
     </task>
     <servers />
   </component>

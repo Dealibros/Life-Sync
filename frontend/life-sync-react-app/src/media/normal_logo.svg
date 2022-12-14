@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4872.28 1330.19">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #75ddde;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: FrederickatheGreat-Regular, 'Fredericka the Great';
+        font-size: 1166.09px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <text class="cls-1" transform="translate(10.23 1022.61)"><tspan x="0" y="0">Life</tspan></text>
+    <text class="cls-2" transform="translate(2398.9 1040.94)"><tspan x="0" y="0">Sync</tspan></text>
+  </g>
+</svg>
