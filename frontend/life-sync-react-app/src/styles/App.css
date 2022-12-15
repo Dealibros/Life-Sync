@@ -95,10 +95,25 @@
 }
 
 .action-area {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
   margin: 20px 10px;
   justify-content: space-between;
+}
+
+.div-date{
+  width: 100%;
+  text-align: center;
+}
+
+.selected-date {
+  text-align: center;
+}
+
+.centerCalendar{
+  margin-right:0 auto !important;
+  margin-left: 0 auto !important;
+
 }
 
 

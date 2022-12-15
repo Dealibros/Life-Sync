@@ -1,25 +1,35 @@
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
-import Calendar from "../components/calendar/Calendar" 
+// import Calendar from "../components/calendar/Calendar1"
+import Calendar from 'react-calendar'; 
+import 'react-calendar/dist/Calendar.css';
+import '../styles/CalendarReact.css';
+
+
 
 
 export default function CalendarPage() {
     const today = new Date();
-    const [dayEvents, setDayEvents] = useState([]);
+    const [date, setDate] = useState(new Date());
+    console.log(date)
+
+
+
+    // const [dayEvents, setDayEvents] = useState([]);
    
     // Getting events from events + date
     //We need to an Create Endpoint
 
-    useEffect(() => {
-      fetch(`/events/date/${format(today, "yyyy-MM-dd")}`)
-        .then((res) => res.json())
-        .then((res) => {
-          setDayEvents(res.data);
-          console.log("Today's events: ", res.data);
-        })
-        .catch((error) => console.log("error!", error));
-    }, []);
+    // useEffect(() => {
+    //   fetch(`/events/date/${format(today, "yyyy-MM-dd")}`)
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //       setDayEvents(res.data);
+    //       console.log("Today's events: ", res.data);
+    //     })
+    //     .catch((error) => console.log("error!", error));
+    // }, []);
     
 
   let greeting = "";
@@ -45,8 +55,22 @@ export default function CalendarPage() {
      </div>
      <h2 className="section-title"> Planner</h2>
      <div className="action-area">
-      <Calendar/>
-    
+      <div className="centerCalendar">
+      <Calendar onChange={setDate} value={date} defaultView='month' nextLabel='>>' maxDetail='month' 
+  nextAriaLabel='Go to next month'
+  next2Label='>>'
+  next2AriaLabel='Go to next year'
+  prevLabel='<<'
+  prevAriaLabel='Go to prev month'
+  prev2Label='<<'
+  prev2AriaLabel='Go to prev year'/>
+      </div>
+      <div className='div-date'>
+      <p className='selected-date'>
+        <span className='bold'>Selected Date:</span>{' '}
+        {date.toDateString()}
+      </p>
+      </div>
      </div>
     </div>
   );
