@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/calendar/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/calendar/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/App.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

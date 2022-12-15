@@ -53,22 +53,23 @@ export default function CalendarPage() {
           </div>
       </div>
      </div>
-     <h2 className="section-title"> Planner</h2>
+     <h2 className="section-title">Planner</h2>
      <div className="action-area">
       <div className="centerCalendar">
-      <Calendar onChange={setDate} value={date} defaultView='month' nextLabel='>>' maxDetail='month' 
+      <Calendar onChange={setDate} value={date} defaultView='month' maxDetail='month' 
+  nextLabel='>>' 
   nextAriaLabel='Go to next month'
-  next2Label='>>'
+  next2Label='>'
   next2AriaLabel='Go to next year'
   prevLabel='<<'
   prevAriaLabel='Go to prev month'
-  prev2Label='<<'
+  prev2Label='<'
   prev2AriaLabel='Go to prev year'/>
       </div>
       <div className='div-date'>
       <p className='selected-date'>
-        <span className='bold'>Selected date:</span>{' '}
-        {date.toDateString()}
+        <span className='bold'>Selected date</span> {' '}<br/>
+        <strong>{date.toDateString()}</strong>
       </p>
       </div>
      </div>
