@@ -67,7 +67,7 @@ export default function CalendarPage() {
       </div>
       <div className='div-date'>
       <p className='selected-date'>
-        <span className='bold'>Selected Date:</span>{' '}
+        <span className='bold'>Selected date:</span>{' '}
         {date.toDateString()}
       </p>
       </div>
