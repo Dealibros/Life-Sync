@@ -1,10 +1,12 @@
 import '../styles/App.css';
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
-// import Calendar from "../components/calendar/Calendar1"
+import EventsBoard from "../components/eventsBoard/EventsBoard"
 import Calendar from 'react-calendar'; 
 import 'react-calendar/dist/Calendar.css';
+import '../styles/CalendarPage.css';
 import '../styles/CalendarReact.css';
+
 
 
 
@@ -46,25 +48,29 @@ export default function CalendarPage() {
     <div className="App">
      <div className="wrapper">
       <div className="top-banner">
-        <div className="logo" src="/planner_logo.png" ></div>
          <div className="greeting">
+         {/* <img src="/media/planner_logo.png" className="planner" alt="planner" width="6rem" height="65rem"></img> */}
+         <div>
           <h2 className="welcome">{greeting}</h2>
-            <h3 className="main-date">{format(today, "EEEE, LLLL do").toLowerCase()}.</h3>
+            <h3 className="main-date">{format(today, "EEEE, LLLL do").toLowerCase()}.</h3></div>
           </div>
       </div>
      </div>
      <h2 className="section-title">Planner</h2>
      <div className="action-area">
       <div className="centerCalendar">
+     
       <Calendar onChange={setDate} value={date} defaultView='month' maxDetail='month' 
-  nextLabel='>>' 
-  nextAriaLabel='Go to next month'
-  next2Label='>'
-  next2AriaLabel='Go to next year'
-  prevLabel='<<'
-  prevAriaLabel='Go to prev month'
-  prev2Label='<'
-  prev2AriaLabel='Go to prev year'/>
+      nextLabel='>>' 
+      nextAriaLabel='Go to next month'
+      next2Label='>'
+      next2AriaLabel='Go to next year'
+      prevLabel='<<'
+      prevAriaLabel='Go to prev month'
+      prev2Label='<'
+      prev2AriaLabel='Go to prev year'/>
+      <EventsBoard/>
+      </div>
       </div>
       <div className='div-date'>
       <p className='selected-date'>
@@ -73,7 +79,7 @@ export default function CalendarPage() {
       </p>
       </div>
      </div>
-    </div>
+    
   );
 }
 

@@ -44,77 +44,7 @@
   color: #0e9095;
 }
 
-.wrapper {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  background-color:#ECF0F8;
-  text-align: center;
-}
 
-.top-banner {
-  text-align: center;
-  width: 100vw;
-  flex-direction: row;
-  background: linear-gradient(to left, #ffc3a0, #ffafbd);
-  border-radius: 5px;
-  margin: 10px;
-  padding: 20px 0px 20px 20px;
-  align-items: center;
-}
-
-.welcome {
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 0px 20px 0px 20px;
-  color: #000000;
-}
-
-.greeting {
-
-  margin: 10px;
-  padding: 10px 0;
-
-}
-
-.main-date {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #000000;
-  padding: 0px 20px;
-  padding-top: 0px;
-}
-
-.section-title {
-  width: 100%;
-  text-align: center;
-  margin: 20px 0 10px 0;
-  padding-bottom: 6px;
-  font-weight: 600;
-  font-family: "Varela Round", sans-serif;
-}
-
-.action-area {
-  width: 100%;
-  text-align: center;
-  margin: 20px 10px;
-  justify-content: space-between;
-}
-
-.div-date{
-  width: 100%;
-  text-align: center;
-}
-
-.selected-date {
-  text-align: center;
-}
-
-.centerCalendar{
-  margin-right:0 auto !important;
-  margin-left: 0 auto !important;
-
-}
 
 
 

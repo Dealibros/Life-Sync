@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 // import { useHistory } from "react-router-dom";
 import { format } from "date-fns";	
-import 'react-calendar/dist/Calendar.css';
+
 import "./styles.css"
 
 const MyCalendar = ({ updateCurrentMonth }) => {
