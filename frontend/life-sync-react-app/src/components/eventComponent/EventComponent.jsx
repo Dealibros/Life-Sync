@@ -1,7 +1,7 @@
 import './styles.css';
 
 export default function EventsComponent({singleEvent}) {
- 
+
       return (
         <div className="event-component">
             <h4 className='title-event'>{singleEvent.eventTitle}</h4>

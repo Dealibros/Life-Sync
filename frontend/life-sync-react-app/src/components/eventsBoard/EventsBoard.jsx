@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Calendar from "react-calendar";
-import { format } from "date-fns";	
 import EventsComponent from "../eventComponent/EventComponent";
 import "./styles.css"
 
@@ -13,7 +11,6 @@ export default function EventsBoard() {
       .then(response => response.json())
       .then(data => {
         setEvents(data);
-    
       })
   }, []);
 

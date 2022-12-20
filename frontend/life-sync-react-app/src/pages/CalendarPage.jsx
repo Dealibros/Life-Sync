@@ -1,4 +1,4 @@
-import '../styles/App.css';
+
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
 import EventsBoard from "../components/eventsBoard/EventsBoard"
@@ -11,28 +11,11 @@ import '../styles/CalendarReact.css';
 
 
 
+
 export default function CalendarPage() {
     const today = new Date();
     const [date, setDate] = useState(new Date());
     console.log(date)
-
-
-
-    // const [dayEvents, setDayEvents] = useState([]);
-   
-    // Getting events from events + date
-    //We need to an Create Endpoint
-
-    // useEffect(() => {
-    //   fetch(`/events/date/${format(today, "yyyy-MM-dd")}`)
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //       setDayEvents(res.data);
-    //       console.log("Today's events: ", res.data);
-    //     })
-    //     .catch((error) => console.log("error!", error));
-    // }, []);
-    
 
   let greeting = "";
   if (today.getHours() < 12) {
@@ -43,8 +26,17 @@ export default function CalendarPage() {
     greeting = "Good evening!";
   }
 
+  let month = "march"
+
+  console.log(date.toLocaleString('en-US', {month:'long'}))
 
   return (
+    <body style={{ 
+    backgroundImage: `url(/backgrounds/watercolor-${date.toLocaleString('en-US', {month:'long'})}.jpg` ,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat' }}>
+
+
     <div className="App">
      <div className="wrapper">
       <div className="top-banner">
@@ -75,10 +67,13 @@ export default function CalendarPage() {
       <div className='div-date'>
       <p className='selected-date'>
         <span className='bold'>Selected date</span> {' '}<br/>
-        <strong>{date.toDateString()}</strong>
+        <strong>{date.toLocaleString('en-US', {weekday:'long', day:'numeric', month: 'long'})}</strong><br/>
+        <strong>{date.toLocaleString('en-US', {year:'numeric'})}</strong>
       </p>
       </div>
      </div>
+   </body>
+
     
   );
 }

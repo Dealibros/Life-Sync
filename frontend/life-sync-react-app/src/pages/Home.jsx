@@ -34,7 +34,7 @@ console.log(data);
         <img src="/media/life_sync_logo.png" className="App-logo" alt="logo" />
         <p className="welcome-message">
           Welcome to <span className="life-sync-title">Life Sync</span></p>
-        <p>{data.message}</p>
+        {/* <p>{data.message}</p> */}
         
         <Link to="calendarPage"> Let's get started! </Link>
 
