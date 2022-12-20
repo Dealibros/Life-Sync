@@ -1,23 +1,20 @@
 
 .App{
-  width: 100vw;
   height: 100vh;
 }
+
 .wrapper {
     margin: 0;
     padding: 0;
-    width: 100vw;
     text-align: center;
   }
   
   .top-banner {
     text-align: center;
-    width: 100vw;
     flex-direction: row;
     background-color: transparent;
     /* background: linear-gradient(to left, #ffc3a0, #ffafbd); */
     border-radius: 5px;
-    margin: 10px;
     padding: 20px 0px 20px 20px;
   }
 
@@ -54,7 +51,7 @@
   }
   
   .action-area {
-    width: 100%;
+    width: 95%;
     margin: 20px 10px;
     justify-content: space-between;
    
@@ -78,9 +75,6 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-right: auto 0;
-    margin-left: auto 0;
-   
   }
 
   
