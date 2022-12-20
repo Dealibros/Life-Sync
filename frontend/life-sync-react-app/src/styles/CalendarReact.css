@@ -39,7 +39,7 @@
         max-width: 11vw;
         height: 3.2vw;
         text-align: center;
-        padding: 0.5em 0em;
+        padding: 0.6em 0em;
         background-color: white;
         border-radius: 50px;
       }
@@ -109,4 +109,9 @@
         border-bottom-right-radius: 10px;
         background: #d4a713;
       }
+
+      .react-calendar__month-view__days__day--neighboringMonth {
+        display: none;
+      }
+    
 

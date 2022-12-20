@@ -64,7 +64,17 @@ export default function CalendarPage() {
       <Calendar  
       value={date} 
       onChange={setDate} 
-      showNeighboringMonth="false"
+      activeStartDate={date}
+      onActiveStartDateChange={({value, activeStartDate, action})=>{
+        if(action ==='next'){
+          setDate(new Date(activeStartDate))
+        }
+        if(action === 'prev'){
+          setDate(new Date(activeStartDate))
+        }
+      }}
+
+  
       // onActiveStartDateChange={onActiveStartDateChange}
       // 
       

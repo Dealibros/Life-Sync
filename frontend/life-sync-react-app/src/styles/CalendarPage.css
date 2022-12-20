@@ -77,4 +77,8 @@
     flex-direction: row;
   }
 
+  .react-calendar__month-view__days__day--neighboringMonth {
+    display: none;
+  }
+
   
