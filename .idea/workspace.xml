@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="initial commit">
+    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="restructured frontend folder and small cleanup">
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-1568607 1 (1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-1568607 1 (2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-1568607 1 (3).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-1568607 1 (4).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-1568607 1 (5).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-1568607 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/pexels-zaksheuskaya-4457896.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/watercolor-April.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/public/backgrounds/watercolor-April.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +52,16 @@
     </option>
   </component>
   <component name="ProjectId" id="2Ip0bWtNgiSuN0rGtjea7aMxdQP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -56,6 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/doriana/code/ADVANCED/extra/cinema-jpa",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -109,6 +124,9 @@
       <workItem from="1670925239287" duration="3433000" />
       <workItem from="1671007205390" duration="850000" />
       <workItem from="1671016793496" duration="4834000" />
+      <workItem from="1671316280583" duration="107000" />
+      <workItem from="1671320366705" duration="2358000" />
+      <workItem from="1671549416019" duration="902000" />
     </task>
     <task id="LOCAL-00001" summary="first page design and pages routing implemented">
       <created>1671025841722</created>
@@ -149,6 +167,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first page design and pages routing implemented" />
     <MESSAGE value="restructured frontend project" />
     <MESSAGE value="restructured frontend folder and small cleanup" />
