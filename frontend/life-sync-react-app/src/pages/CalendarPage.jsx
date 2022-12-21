@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { format, set } from "date-fns";
 import EventsBoard from "../components/eventsBoard/EventsBoard"
+import QuoteComponent from "../components/quoteComponent/QuoteComponent"
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
@@ -52,9 +53,7 @@ export default function CalendarPage() {
             <h2 className="section-title">
               {/* <img src="/calendar.png" className="calendar-logo" alt="calendar-title"> </img> */}
               My Calendar
-              </h2>
-            
-            
+            </h2>
 
             <div className="calendarEventDiv">
               <Calendar
@@ -69,25 +68,25 @@ export default function CalendarPage() {
                     setDate(new Date(activeStartDate))
                   }
                 }}
-                // calendarType="ISO 8601"
                 formatShortWeekday={(locale, value) => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][value.getDay()]}
 
                 next2Label={null}
                 prev2Label={null}
 
                 tileClassName={({ date }) => {
-                  if (date.toLocaleDateString('en-US', { weekday: 'long'}).slice(0,2) == "Sa" || date.toLocaleDateString('en-US', { weekday: 'long'}).slice(0,2) == "Su") {
+                  if (date.toLocaleDateString('en-US', { weekday: 'long' }).slice(0, 2) == "Sa" || date.toLocaleDateString('en-US', { weekday: 'long' }).slice(0, 2) == "Su") {
                     return 'highlight';
                   }
                 }
-               
+
                 }
               />
+              <QuoteComponent />
               <EventsBoard />
             </div>
             <div className='div-date'>
               <p className='selected-date'>
-                <span className='bold'>Selected date</span> {' '}<br/>
+                <span className='bold'>Selected date</span> {' '}<br />
                 <strong>{date.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })}</strong><br />
                 <strong>{date.toLocaleString('en-US', { year: 'numeric' })}</strong>
               </p>

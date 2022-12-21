@@ -117,7 +117,7 @@
 
       .react-calendar__month-view__days__day--neighboringMonth {
         color: rgb(14, 13, 13);
-        background-color: #F2F3F7;
+        background-color: #F2F3F7 !important;
       }
 
 
