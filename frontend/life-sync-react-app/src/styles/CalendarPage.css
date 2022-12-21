@@ -1,84 +1,94 @@
-
-.App{
+.App {
   height: 100vh;
 }
 
 .wrapper {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  .top-banner {
-    text-align: center;
-    flex-direction: row;
-    background-color: transparent;
-    /* background: linear-gradient(to left, #ffc3a0, #ffafbd); */
-    border-radius: 5px;
-    padding: 20px 0px 20px 20px;
-  }
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-  
-  .welcome {
-    font-size: 1.2rem;
-    font-weight: 400;
-    padding: 0px 20px 0px 20px;
-    color: #000000;
-  }
-  
-  .greeting {
-    display: inline-flex;
-    align-items: center;
-    margin: 10px;
-    padding: 10px 0;
-  }
-  
-  .main-date {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #000000;
-    padding: 0px 20px;
-    padding-top: 0px;
-  }
-  
-  .section-title {
-    width: 100%;
-    text-align: center;
-    margin: 20px 0 10px 0;
-    padding-bottom: 6px;
-    font-weight: 600;
-    font-family: "Varela Round", sans-serif;
-  }
-  
-  .action-area {
-    width: 95%;
-    margin: 20px 10px;
-    justify-content: space-between;
-   
-  }
-  
-  .div-date{
-    width: 100%;
-    text-align: center;
-  }
-  
-  .selected-date {
-    font-size: 1.2rem;
-    text-align: center;
-  }
+.top-banner {
+  text-align: center;
+  flex-direction: row;
+  background-color: transparent;
+  /* background: linear-gradient(to left, #ffc3a0, #ffafbd); */
+  border-radius: 5px;
+  padding: 20px 0px 20px 20px;
+}
 
-  .bold {
-    margin-bottom: 0.3rem;
-  }
+.welcome {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0px 20px 0px 20px;
+  color: #000000;
+}
 
-  .centerCalendar {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
+.greeting {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px 0;
+}
 
-  .react-calendar__month-view__days__day--neighboringMonth {
-    display: none;
-  }
+.main-date {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000000;
+  padding: 0px 20px;
+  padding-top: 0px;
+}
 
-  
+.section-title {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Varela Round", sans-serif;
+}
+
+.div-date {
+  width: 100%;
+  text-align: center;
+  flex: 0 0 100%;
+  margin-top: -5.6rem;
+}
+
+.selected-date {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.bold {
+  margin-bottom: 0.3rem;
+}
+
+.action-area {
+  width: 100%;
+  margin: 20px 10px;
+  justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.centerCalendar {
+  background: rgba(255, 255, 255, 0.7);
+  padding-top: 1rem;
+  height: 70vh;
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.calendarEventDiv {
+  margin-top: -4rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
