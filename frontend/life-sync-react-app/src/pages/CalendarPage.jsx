@@ -65,11 +65,15 @@ export default function CalendarPage() {
                 calendarType="ISO 8601"
                 formatShortWeekday={(locale, value) => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][value.getDay()]}
 
+                next2Label={null}
+                prev2Label={null}
+
                 tileClassName={({ date }) => {
                   if (date.getDay() == 3 || date.getDay() == 2) {
                     return 'highlight';
                   }
                 }
+               
                 }
               />
               <EventsBoard />
