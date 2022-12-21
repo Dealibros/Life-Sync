@@ -16,7 +16,7 @@ export default function EventsBoard() {
 
       return (
         <div className="events-wrapper">
-          <h3>My Events</h3>
+          <h3 className="event-board-title">My Events</h3>
           <div className="div-today-week-events">
             <button className="today-button">Today</button>
             <button className="week-button">Week</button>

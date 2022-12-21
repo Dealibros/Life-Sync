@@ -49,20 +49,20 @@
     padding-top: 0.2rem;
     border: #fff;
     background-color: #fff;
+    font-size: 1rem;
 }
 
 .today-button, .week-button :active{
     border-bottom: 1px solid rgb(169, 166, 166);
-    padding-bottom: 3px;
+    padding-bottom: 1px;
     padding: 0.4rem;
 }
 
 .today-button{
     margin-right: 0.3rem;
-   
-
 }
 
-.week-button{
-    
+.event-board-title{
+    margin-top: 1.2rem;
+    margin-bottom: -0.2rem;
 }
