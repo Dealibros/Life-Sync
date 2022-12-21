@@ -1,8 +1,10 @@
 .event-component {
-    margin: 1.3rem;
+    display: inline-block;
+    margin: 1.3rem 0 0 0;
     padding-top: 0.4rem;
     padding: 1rem 2rem;
-    height: 8.5vh;
+    height: 8.8vh;
+    width: 17vw;
     border-radius: 0.4rem;
     color: white;
     background-color: rgb(212, 223, 236);
@@ -14,22 +16,23 @@
     font-size: 1.2rem;
     margin: 0;
     margin-top: 0.7rem;
-    color: rgb(160, 165, 170);
+    font-weight: 500;
 }  
+
+.description-event {
+    font-family:'Kanit';
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 0.4rem;
+    font-weight: 400;
+    /* color: rgb(194, 198, 201); */
+}
 
 .time-div {
     font-size: 1.2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
-.description-event {
-    font-family:'Kanit';
-    font-size: 1.1rem;
-    margin: 0;
-    margin-top: 0.4rem;
-    color: rgb(194, 198, 201);
 }
 
 .hour-event {
