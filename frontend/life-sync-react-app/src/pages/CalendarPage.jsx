@@ -8,6 +8,7 @@ import '../styles/CalendarReact.css';
 
 
 
+
 export default function CalendarPage() {
   const today = new Date();
   const [date, setDate] = useState(new Date());
@@ -40,14 +41,20 @@ export default function CalendarPage() {
               {/* <img src="/media/planner_logo.png" className="planner" alt="planner" width="6rem" height="65rem"></img> */}
               <div>
                 <h2 className="welcome">{greeting}</h2>
-                <h3 className="main-date">{format(today, "EEEE, LLLL do").toLowerCase()}.</h3></div>
+                <h3 className="main-date-week">Today is {format(today, "EEEE")}.</h3>
+                <h3 className="main-date-month">{format(today, "LLLL do")}.</h3></div>
             </div>
           </div>
         </div>
 
         <div className="action-area">
           <div className="centerCalendar">
-            <h2 className="section-title">Planner</h2>
+            <h2 className="section-title">
+              {/* <img src="/calendar.png" className="calendar-logo" alt="calendar-title"> </img> */}
+              My Calendar
+              </h2>
+            
+            
 
             <div className="calendarEventDiv">
               <Calendar

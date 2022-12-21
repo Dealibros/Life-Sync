@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'Kanit';
+  src: local('Kanit'), url(../../public/fonts/Kanit-Regular.ttf) format('truetype');
+}
+
+
 .App {
   text-align: center;
+  font-family: 'Kanit';
 }
 
 .App-logo {

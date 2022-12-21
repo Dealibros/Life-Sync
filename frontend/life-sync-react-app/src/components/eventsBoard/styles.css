@@ -1,8 +1,8 @@
 .events-wrapper {
     display: inline-block;
     margin-left: 0.6rem;
-    width: 400px;
-    height: 420px;
+    width: 470px;
+    height: 530px;
     max-width: 100%;
     background-color: #fff;
     color: #222;
@@ -11,9 +11,44 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     line-height: 1.125em;
-    padding-bottom: 1.2rem ;
-    }
+    padding-bottom: 1.2rem;
+}
 
-  
+.div-today-week-events {
+    padding-left: 1.7rem;
+    display: flex;
+    flex-direction: row;
+}
 
+.button-add-event-div {
+    padding-right: 1.8rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
 
+.today-button, .week-button {
+    /* border-bottom: #fff;
+    border-color: rgb(209, 209, 207);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    background-color: #fff; */
+    padding-top: 0.2rem;
+    border: #fff;
+    background-color: #fff;
+}
+
+.today-button, .week-button :active{
+    border-bottom: 1px solid rgb(169, 166, 166);
+    padding-bottom: 3px;
+    padding: 0.4rem;
+}
+
+.today-button{
+    margin-right: 0.3rem;
+   
+
+}
+
+.week-button{
+    
+}

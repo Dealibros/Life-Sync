@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  height: 100vh; 
 }
 
 .wrapper {
@@ -14,36 +14,56 @@
   background-color: transparent;
   /* background: linear-gradient(to left, #ffc3a0, #ffafbd); */
   border-radius: 5px;
-  padding: 20px 0px 20px 20px;
 }
 
-.welcome {
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 0px 20px 0px 20px;
+
+.greeting {
+  font-family: 'Kanit';
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
+  backdrop-filter: blur(5px);
   color: #000000;
 }
 
-.greeting {
-  display: inline-flex;
-  align-items: center;
-  margin: 10px;
-  padding: 10px 0;
+.welcome {
+  font-family:'Kanit';
+  font-size: 2.1rem;
+  
+  text-shadow: aliceblue 
+  1px 0px 1px #ccc, 0px 1px 1px #eee, 
+  2px 1px 1px #ccc, 1px 2px 1px #eee,
+  3px 2px 1px #ccc, 2px 3px 1px #eee,
+  4px 3px 1px #ccc, 3px 4px 1px #eee,
+  5px 4px 1px #ccc, 4px 5px 1px #eee,
+  6px 5px 1px #ccc, 5px 6px 1px #eee,
+  7px 6px 1px #ccc;
+  
 }
 
-.main-date {
+.main-date-week {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0px 20px;
+  margin-top: -2.1rem;
+}
+
+.main-date-month {
   font-size: 1.4rem;
   font-weight: 500;
   color: #000000;
   padding: 0px 20px;
-  padding-top: 0px;
+  margin-top: -2rem;
+  margin-bottom: 0.8rem;
 }
 
 .section-title {
+  font-size: 2rem;
+  margin-top: -1rem;
   margin: 0;
   width: 100%;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Varela Round", sans-serif;
 }
 
@@ -58,6 +78,7 @@
   margin: 0;
   font-size: 1.2rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .bold {
@@ -66,7 +87,6 @@
 
 .action-area {
   width: 100%;
-  margin: 20px 10px;
   justify-content: space-between;
   display: flex;
   justify-content: center;
@@ -75,8 +95,7 @@
 
 .centerCalendar {
   background: rgba(255, 255, 255, 0.7);
-  padding-top: 1rem;
-  height: 70vh;
+  height: 80vh;
   min-width: 62vw;
   display: flex;
   flex-wrap: wrap;
@@ -87,7 +106,7 @@
 }
 
 .calendarEventDiv {
-  margin-top: -4rem;
+  margin-top: -3rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
