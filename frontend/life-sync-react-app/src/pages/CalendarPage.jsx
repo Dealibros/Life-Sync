@@ -62,14 +62,14 @@ export default function CalendarPage() {
                     setDate(new Date(activeStartDate))
                   }
                 }}
-                calendarType="ISO 8601"
+                // calendarType="ISO 8601"
                 formatShortWeekday={(locale, value) => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][value.getDay()]}
 
                 next2Label={null}
                 prev2Label={null}
 
                 tileClassName={({ date }) => {
-                  if (date.getDay() == 3 || date.getDay() == 2) {
+                  if (date.toLocaleDateString('en-US', { weekday: 'long'}).slice(0,2) == "Sa" || date.toLocaleDateString('en-US', { weekday: 'long'}).slice(0,2) == "Su") {
                     return 'highlight';
                   }
                 }

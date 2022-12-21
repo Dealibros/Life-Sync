@@ -138,6 +138,12 @@
         background-color: #f7f0da;
       }
 
+      .react-calendar__navigation button {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
 
 
       
