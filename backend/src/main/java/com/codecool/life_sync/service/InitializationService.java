@@ -1,19 +1,36 @@
 package com.codecool.life_sync.service;
 
 import com.codecool.life_sync.entity.Calendar;
+import com.codecool.life_sync.entity.Event;
 import com.codecool.life_sync.repository.CalendarRepository;
+import com.codecool.life_sync.repository.EventRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
-public class InitializationService {
-    @Autowired
-    private CalendarRepository calendarRepository;
+import java.time.LocalDateTime;
+import java.time.Month;
 
-    @PostConstruct
-    private void postConstruct() {
-        Calendar calendar = new Calendar(0L, "Hello World, from SpringBoot");
-        calendarRepository.save(calendar);
+@Configuration
+public class InitializationService {
+    @Bean
+
+    ApplicationRunner runner(EventRepository eventRepository, CalendarRepository calendarRepository) {
+        return args -> {
+            Calendar calendar = new Calendar(0L, "Hello World, from SpringBoot");
+            calendarRepository.save(calendar);
+
+            Event event1 = new Event("Supermarket", "Buy Groceries for Christmas", LocalDateTime.of(2022, Month.DECEMBER, 23, 11,0, 0), LocalDateTime.of(2022, Month.DECEMBER, 23, 13,0, 0), "Market", "Alarm");
+            Event event2 = new Event("Prepare Christmas Dinner", "Find some nice recipes and cook", LocalDateTime.of(2022, Month.DECEMBER, 23, 14,0, 0), LocalDateTime.of(2022, Month.DECEMBER, 23, 17,0, 0), "Home", "Alarm");
+            Event event3 = new Event("Check on Hayoung", "See how she is doing", LocalDateTime.of(2022, Month.DECEMBER, 22, 12,0, 0), LocalDateTime.of(2022, Month.DECEMBER, 22, 12,30, 0), "Home", "Alarm");
+
+            eventRepository.save(event1);
+            eventRepository.save(event2);
+            eventRepository.save(event3);
+        };
     }
+
 }
