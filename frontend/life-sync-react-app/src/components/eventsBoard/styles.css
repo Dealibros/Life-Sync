@@ -24,6 +24,20 @@
     padding-right: 1.8rem;
     display: flex;
     flex-direction: row-reverse;
+    
+}
+
+.button-add-event {
+    color: white;
+    background: #a667d0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8360c3, #7476ca); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ac6bd1, #7476ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: 900;
+    background-color: #7476ca;
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 50%;
+    border:none
 }
 
 .today-button, .week-button {
