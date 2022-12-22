@@ -39,7 +39,6 @@ export default function CalendarPage() {
         <div className="wrapper">
           <div className="top-banner">
             <div className="greeting">
-              {/* <img src="/media/planner_logo.png" className="planner" alt="planner" width="6rem" height="65rem"></img> */}
               <div>
                 <h2 className="welcome">{greeting}</h2>
                 <h3 className="main-date-week">Today is {format(today, "EEEE")}.</h3>
@@ -81,7 +80,6 @@ export default function CalendarPage() {
 
                 }
               />
-              <QuoteComponent />
               <EventsBoard />
             </div>
             <div className='div-date'>
@@ -90,9 +88,15 @@ export default function CalendarPage() {
                 <strong>{date.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })}</strong><br />
                 <strong>{date.toLocaleString('en-US', { year: 'numeric' })}</strong>
               </p>
+              <div className="quoteDiv">
+              <QuoteComponent />
+              </div>
             </div>
+           
           </div>
+         
         </div>
+       
       </div>
     </body>
 

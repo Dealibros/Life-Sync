@@ -78,6 +78,7 @@
   font-size: 1.2rem;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .bold {
@@ -96,6 +97,7 @@
   background: rgba(255, 255, 255, 0.7);
   height: 80vh;
   min-width: 62vw;
+  max-width: 73vw;
   display: flex;
   flex-wrap: wrap;
   border-radius: 1rem;
@@ -109,4 +111,15 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
+}
+
+.quote-div{
+  
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+
 }

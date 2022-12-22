@@ -1,14 +1,14 @@
 .event-component {
-    margin: 1.3rem 1rem 0 0;
+    display: inline-block;
+    margin: 0.7rem 0 0 0;
     padding-top: 0.4rem;
     padding: 1rem 2rem;
     height: 10vh;
-    width: 13vw;
+    width: 17vw;
     border-radius: 0.4rem;
     color: white;
     background-color: rgb(212, 223, 236);
     text-align: left;
-
 }
 
 .title-event {

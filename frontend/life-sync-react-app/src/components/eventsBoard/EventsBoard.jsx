@@ -6,16 +6,12 @@ export default function EventsBoard() {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-    
     fetch('http://localhost:8080/calendar/event', )
       .then(response => response.json())
       .then(data => {
         setEvents(data);
       })
   }, []);
-
-
- 
 
   const threeColors = ["#68B99F", "#D15A41", "#66A7CA"]
   const newArrayOfColors = [];
@@ -26,15 +22,8 @@ export default function EventsBoard() {
           break;
         }
         newArrayOfColors.push(threeColors[i])
-        }
-        
+        } 
     }
-
-
-
-console.log(newArrayOfColors);
-
-
 
       return (
         <div className="events-wrapper">
@@ -49,11 +38,8 @@ console.log(newArrayOfColors);
             <EventsComponent 
             singleEvent= {singleEvent} color={newArrayOfColors[i]} key={singleEvent.id}/>
           ))}
-          
           </div>
-       
-          <div className="button-add-event-div"><button className="button-add-event"> + </button></div>
-          
+          <div className="button-add-event-div"><button className="button-add-event"> + </button></div> 
       </div>
       );
     };
