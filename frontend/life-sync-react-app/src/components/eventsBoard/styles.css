@@ -31,11 +31,12 @@
 }
 
 .events-div{
-    /* display: inline-block; */
+    display: inline-block;
     height: 407px;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
+
 }
 
 .events-wrapper ::-webkit-scrollbar-thumb:hover {

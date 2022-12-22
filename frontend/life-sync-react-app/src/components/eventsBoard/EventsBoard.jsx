@@ -14,7 +14,27 @@ export default function EventsBoard() {
       })
   }, []);
 
+
+ 
+
   const threeColors = ["#68B99F", "#D15A41", "#66A7CA"]
+  const newArrayOfColors = [];
+
+    while(newArrayOfColors.length < events.length){
+      for (let i = 0; i < threeColors.length; i++) {
+        if(newArrayOfColors.length == events.length){
+          break;
+        }
+        newArrayOfColors.push(threeColors[i])
+        }
+        
+    }
+
+
+
+console.log(newArrayOfColors);
+
+
 
       return (
         <div className="events-wrapper">
@@ -24,11 +44,12 @@ export default function EventsBoard() {
             <button className="week-button">Week</button>
           </div>
           <div className="events-div">
-          {events.map((singleEvent, i) => (
 
+          {events.map((singleEvent, i) => (
             <EventsComponent 
-            singleEvent= {singleEvent} color={threeColors[i]} key={singleEvent.id}/>
+            singleEvent= {singleEvent} color={newArrayOfColors[i]} key={singleEvent.id}/>
           ))}
+          
           </div>
        
           <div className="button-add-event-div"><button className="button-add-event"> + </button></div>
