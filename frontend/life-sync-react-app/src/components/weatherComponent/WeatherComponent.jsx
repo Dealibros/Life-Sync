@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 
 export default function QuoteComponent() {
 
+  const API_KEY =`${process.env.REACT_APP_WEATHER_API_KEY}`
+
   const [weatherIconData, setWeatherIconData] = useState([])
   const [weatherIconLink, setWeatherIconLink] = useState([])
 
-  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=8ef5cbf8459a41c7afe95707222312&q=Vienna`;
+  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Vienna`;
   
   
   useEffect(() => {
@@ -19,13 +21,9 @@ export default function QuoteComponent() {
     .then(response => response.json())
     .then(data => {
     setWeatherIconData(data.current.condition.icon)
-    console.log(data)
-
     const weatherIconLink = weatherIconData.slice(20, weatherIconData.length);
-    console.log(weatherIconLink)
     setWeatherIconLink(weatherIconLink)
 
-    console.log(weatherIconLink)
   })
   }, [weatherIconData]);
 
@@ -34,6 +32,7 @@ export default function QuoteComponent() {
             {weatherIconLink.length > 0 && 
                 <img src={weatherIconLink} className="weather-image" alt="weather-icon" />
             }
+
         </div>
             
       );
