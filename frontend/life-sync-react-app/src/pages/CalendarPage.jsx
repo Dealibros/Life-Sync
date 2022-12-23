@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { format, set } from "date-fns";
 import EventsBoard from "../components/eventsBoard/EventsBoard"
 import QuoteComponent from "../components/quoteComponent/QuoteComponent"
+import WeatherComponent from "../components/weatherComponent/WeatherComponent"
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
 import '../styles/CalendarReact.css';
-
-
 
 
 export default function CalendarPage() {
@@ -24,6 +23,7 @@ export default function CalendarPage() {
   }
 
 
+
   // Returns the month after and before
   const nextMonth = `${(date.getMonth() + 1) % 12 + 1}, ${date.getDay()} ${date.getFullYear()}`.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long' });
   const previousMonth = `${(date.getMonth() + 11) % 12 + 1}, ${date.getDay()} ${date.getFullYear()};`.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })
@@ -38,23 +38,23 @@ export default function CalendarPage() {
       <div className="App">
         <div className="wrapper">
           <div className="top-banner">
+            <div className="greeting-weather-div">
             <div className="greeting">
-              <div>
-                <h2 className="welcome">{greeting}</h2>
-                <h3 className="main-date-week">Today is {format(today, "EEEE")}.</h3>
-                <h3 className="main-date-month">{format(today, "LLLL do")}.</h3></div>
+                <h3 className="greeting-date-week"> {greeting} <br></br> Is {format(today, "EEEE")} {format(today, "LLLL do")}  </h3>   
+            </div>
+            <div><WeatherComponent /></div>
             </div>
           </div>
         </div>
 
         <div className="action-area">
-          <div className="centerCalendar">
+          <div className="center-calendar">
             <h2 className="section-title">
               {/* <img src="/calendar.png" className="calendar-logo" alt="calendar-title"> </img> */}
               My Calendar
             </h2>
 
-            <div className="calendarEventDiv">
+            <div className="calendar-event-div">
               <Calendar
                 value={date}
                 onChange={setDate}
@@ -85,11 +85,13 @@ export default function CalendarPage() {
             <div className='div-date'>
               <p className='selected-date'>
                 <span className='bold'>Selected date</span> {' '}<br />
-                <strong>{date.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })}</strong><br />
-                <strong>{date.toLocaleString('en-US', { year: 'numeric' })}</strong>
+                <span className="selected-date-first">{date.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })}</span><br />
+                <span className="selected-date-second">{date.toLocaleString('en-US', { year: 'numeric' })}</span>
               </p>
               <div className="quoteDiv">
               <QuoteComponent />
+            
+              
               </div>
             </div>
            

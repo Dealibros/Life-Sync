@@ -19,7 +19,6 @@ export default function QuoteComponent() {
     
     .then(response => response.json())
     .then(data => {
-    console.log(data)
     setQuote(data)
    
   })
@@ -28,8 +27,8 @@ export default function QuoteComponent() {
       return (
         <div className="quote-component">
           {quote.length > 0 && 
-             <><h3 className='quote'>{quote[0].quote}</h3>
-             <h4 className='quote-author'>{quote[0].author}</h4></>
+             <><blockquote className='quote'>{quote[0].quote}</blockquote><br></br>
+             <cite className='quote-author'>-{quote[0].author}</cite></>
 }
         </div>
       );

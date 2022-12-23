@@ -3,6 +3,13 @@
   src: local('Kanit'), url(../../public/fonts/Kanit-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Special Elite';
+  src: local('SpecialElite'), url(../../public/fonts/SpecialElite-Regular.ttf) format('truetype');
+}
+
+
+
 
 .App {
   text-align: center;
