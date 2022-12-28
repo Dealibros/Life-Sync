@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { format, set } from "date-fns";
+import { format} from "date-fns";
 import EventsBoard from "../components/eventsBoard/EventsBoard"
 import QuoteComponent from "../components/quoteComponent/QuoteComponent"
 import WeatherComponent from "../components/weatherComponent/WeatherComponent"
+
 import Calendar from 'react-calendar';
+
 import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
-import '../styles/CalendarReact.css';
+// import '../styles/CalendarReact.css';
 
 
 export default function CalendarPage() {
@@ -39,10 +41,10 @@ export default function CalendarPage() {
         <div className="wrapper">
           <div className="top-banner">
             <div className="greeting-weather-div">
-            <div className="greeting">
-                <h3 className="greeting-date-week"> {greeting} <br></br> Is {format(today, "EEEE")} {format(today, "LLLL do")}  </h3>   
-            </div>
-            <div><WeatherComponent /></div>
+              <div className="greeting">
+                <h3 className="greeting-date-week"> {greeting} <br></br> Is {format(today, "EEEE")} {format(today, "LLLL do")}  </h3>
+              </div>
+              <div><WeatherComponent /></div>
             </div>
           </div>
         </div>
@@ -89,16 +91,18 @@ export default function CalendarPage() {
                 <span className="selected-date-second">{date.toLocaleString('en-US', { year: 'numeric' })}</span>
               </p>
               <div className="quoteDiv">
-              <QuoteComponent />
-            
-              
+                <QuoteComponent />
+
+
+
+
               </div>
             </div>
-           
+
           </div>
-         
+
         </div>
-       
+
       </div>
     </body>
 

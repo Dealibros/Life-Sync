@@ -1,0 +1,50 @@
+.label {
+  padding-bottom: 10px;
+  display: block;
+  font-size: 1.2rem;
+}
+
+.time-section {
+display: flex;
+justify-content: space-between;
+}
+
+.time-label {
+    display: inline-block;
+}
+
+.allDaySection {
+    font-size: 1.2rem;
+
+}
+
+.checkBoxBox {
+    margin: 0 5px;
+}
+
+.time-range {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  padding: 0 10px;
+}
+
+select {
+  appearance: none;
+  padding: 1px 6px;
+  margin: 0 2px;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #ffffff;
+}
+
+.time-minute-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255)
+;
+
+}

@@ -2,6 +2,7 @@ import './styles.css';
 import React, { useState, useEffect } from "react";
 
 export default function QuoteComponent() {
+  const API_KEY =`${process.env.REACT_APP_QUOTE_API_KEY}`
 
   const [quote, setQuote] = useState([]); 
   const apiUrl = `https://api.api-ninjas.com/v1/quotes?category=happiness`;
@@ -12,7 +13,7 @@ export default function QuoteComponent() {
       method: 'GET',
       mode:'cors',
       headers: {
-        'X-Api-Key': 'HOqsexoTVGil9yp+CHel+Q==pxWJPhs55PYK4WQ1'
+        'X-Api-Key': `${API_KEY}`
       },
       contentType: 'application/json',
       })
