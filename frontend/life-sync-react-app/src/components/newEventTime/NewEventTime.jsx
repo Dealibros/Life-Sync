@@ -1,76 +1,99 @@
 import './styles.css';
+// import moment from 'moment';
 import React from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { HOURS, MINUTES } from '../../Constants';
 
-const NewEventTime = ({ form, setForm }) => {
-  const allDaySelect = (checked) => {
-    if (checked) {
-      setForm({
-        ...form,
-        start: { ...form.start, time: { ...form.start.time, allday: true } },
-        end: { ...form.end, time: { ...form.end.time, allday: true } },
-      });
-    } else {
-      setForm({
-        ...form,
-        start: { ...form.start, time: { ...form.start.time, allday: false } },
-        end: { ...form.end, time: { ...form.end.time, allday: false } },
-      });
-    }
-  };
+const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
+  console.log(sortTime);
 
-  console.log(form);
+  const onDayChanged = (value) => {
+    setSortTime({
+      ...sortTime,
+
+      startingTime: {
+        ...sortTime.startingTime,
+        time: { ...sortTime.startingTime.time, day: value },
+      },
+
+      endingTime: {
+        ...sortTime.endingTime,
+        time: { ...sortTime.endingTime.time, day: value },
+      },
+    });
+  };
 
   const onStartHourChange = (value) => {
-    setForm({
-      ...form,
-      start: { ...form.start, time: { ...form.start.time, hours: value } },
-    });
-  };
-  const onStartMinChange = (value) => {
-    setForm({
-      ...form,
-      start: { ...form.start, time: { ...form.start.time, minutes: value } },
-    });
-  };
-  const onStartAPChange = (value) => {
-    setForm({
-      ...form,
-      start: { ...form.start, time: { ...form.start.time, ap: value } },
-    });
-  };
-  const onEndHourChange = (value) => {
-    setForm({
-      ...form,
-      end: { ...form.end, time: { ...form.end.time, hours: value } },
-    });
-  };
-  const onEndMinChange = (value) => {
-    setForm({
-      ...form,
-      end: { ...form.end, time: { ...form.end.time, minutes: value } },
-    });
-  };
-  const onEndAPChange = (value) => {
-    setForm({
-      ...form,
-      end: { ...form.end, time: { ...form.end.time, ap: value } },
+    setSortTime({
+      ...sortTime,
+      startingTime: {
+        ...sortTime.startingTime,
+        time: { ...sortTime.startingTime.time, hours: value },
+      },
     });
   };
 
+  const onStartMinChange = (value) => {
+    setSortTime({
+      ...sortTime,
+      startingTime: {
+        ...sortTime.startingTime,
+        time: { ...sortTime.startingTime.time, minutes: value },
+      },
+    });
+  };
+
+  const onStartAPChange = (value) => {
+    setSortTime({
+      ...sortTime,
+      startingTime: {
+        ...sortTime.startingTime,
+        time: { ...sortTime.startingTime.time, ap: value },
+      },
+    });
+  };
+
+  const onEndHourChange = (value) => {
+    setSortTime({
+      ...sortTime,
+      endingTime: {
+        ...sortTime.endingTime,
+        time: { ...sortTime.endingTime.time, hours: value },
+      },
+    });
+  };
+
+  const onEndMinChange = (value) => {
+    setSortTime({
+      ...sortTime,
+      endingTime: {
+        ...sortTime.endingTime,
+        time: { ...sortTime.endingTime.time, minutes: value },
+      },
+    });
+  };
+
+  const onEndAPChange = (value) => {
+    setSortTime({
+      ...sortTime,
+      endingTime: {
+        ...sortTime.endingTime,
+        time: { ...sortTime.endingTime.time, ap: value },
+      },
+    });
+
+    console.log(form);
+  };
   return (
     <>
       <div className="time-section">
         <section className="time-title">
           <label className="time-label">Time</label>{' '}
           <div className="all-day-section">
-            {/* <input
-            type="checkbox"
-            className="checkBoxBox"
-            onChange={(ev) => allDaySelect(ev.target.checked)}
-          /> */}
-            {/* <label>All-day</label> */}
+            <div
+              className="dayDiv"
+              onChange={(ev) => onDayChanged(ev.target.value)}
+            />
           </div>
         </section>
         <div className="time-minute-div">

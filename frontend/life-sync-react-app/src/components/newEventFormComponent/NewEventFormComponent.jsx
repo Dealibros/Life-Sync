@@ -1,48 +1,111 @@
 import './styles.css';
 import { format } from 'date-fns';
-import React, { useState } from 'react';
+import moment from 'moment';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineBell } from 'react-icons/ai';
 import { BsArrowRight } from 'react-icons/bs';
 import { FiCalendar } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
 import { CSSTransition } from 'react-transition-group';
-import { INITIAL_EVENT } from '../../Constants';
+import { INITIAL_EVENT, SORTING_TIME } from '../../Constants';
 import CalendaOfNewEventFormComponent from '../calendaOfNewEventFormComponent/CalendaOfNewEventFormComponent';
 import NewEventTime from '../newEventTime/NewEventTime';
 
 const NewEventFormComponent = (props) => {
   const nodeRef = React.useRef(null);
-
   const [form, setForm] = useState(INITIAL_EVENT);
-  // const [buttonDisabled, setButtonDisabled] = useState(true);
-  // const [status, setStatus] = useState('idle');
+  const [sortTime, setSortTime] = useState(SORTING_TIME);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  // useEffect(() => {
-  //   if (form.title != null && form.start.date != null) {
-  //     if (form.start.time.allday === true) {
-  //       setButtonDisabled(false);
-  //     } else {
-  //       if (
-  //         form.start.time.hours != null &&
-  //         form.start.time.minutes != null &&
-  //         form.start.time.ap != null &&
-  //         form.end.time.hours != null &&
-  //         form.end.time.minutes != null &&
-  //         form.end.time.ap != null
-  //       ) {
-  //         setButtonDisabled(false);
-  //       } else {
-  //         setButtonDisabled(true);
-  //       }
-  //     }
-  //   } else {
-  //     setButtonDisabled(true);
-  //   }
-  // }, [form]);
+  useEffect(() => {
+    if (
+      form.title != null &&
+      form.location != null &&
+      form.description != null
+    ) {
+      if (
+        sortTime.startingTime.time.hours != null &&
+        sortTime.startingTime.time.minutes != null &&
+        sortTime.startingTime.time.ap != null &&
+        sortTime.endingTime.time.hours != null &&
+        sortTime.endingTime.time.minutes != null &&
+        sortTime.endingTime.time.ap != null
+      ) {
+        setButtonDisabled(false);
+        console.log('changing button');
+
+        //the setForm here seems to be causing an indefined loop
+        //sortTime.startingTime
+        // setForm({
+        //   ...form,
+        //   startingTime: formatDate(sortTime.startingTime),
+        //   endingTime: formatDate(sortTime.endingTime),
+        // });
+        // console.log('getting into database');
+      } else {
+        setButtonDisabled(true);
+      }
+    }
+  }, [form]);
+
+  const formatDate = (sortingTime) => {
+    const startingDate = new Date(sortingTime.date).toISOString().split('T')[0];
+    console.log(startingDate);
+
+    const singularDates = startingDate.split('-');
+    const day = parseInt(startingDate.split('-')[2]) + 1;
+
+    console.log(singularDates[1]);
+    console.log(String(day));
+    console.log(sortingTime.time.hours);
+    const fullDate = moment(
+      singularDates[0] +
+        singularDates[1] +
+        String(day) +
+        sortingTime.time.hours +
+        ':' +
+        sortingTime.time.minutes +
+        ':' +
+        sortTime.startingTime.time.ap,
+      'YYYY-MM-DD h:m A',
+    ).format('YYYY-MM-DD HH:mm:ss.SSSSSS');
+    return fullDate;
+  };
+
+  const CreateEvent = (event) => {
+    event.preventDefault();
+    // setStatus('loading');
+    let headers = new Headers();
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+
+    fetch('http://localhost:8080/api/event/newEvent', {
+      mode: 'cors',
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(form),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response, 'new event');
+        //show new event message
+        //close modal
+        // refreshEvents();
+        // setStatus('created');
+        setButtonDisabled(true);
+      })
+      .catch((error) => {
+        console.log('error!', error);
+        setButtonDisabled(true);
+      });
+  };
 
   const handleTitle = (value) => setForm({ ...form, title: value });
   const handleDescription = (value) => setForm({ ...form, description: value });
   const handleLocation = (value) => setForm({ ...form, location: value });
+  const handleNotification = (value) =>
+    setForm({ ...form, notification: value });
 
   //Select start & end date input fields
   const [displayStartDate, setDisplayStartDate] = useState('');
@@ -63,13 +126,19 @@ const NewEventFormComponent = (props) => {
   const onEndCalendarChange = (nextValue) => setCalendarEndDate(nextValue);
 
   //Select date value
-
   const selectStartDate = (value) => {
-    setForm({ ...form, start: { ...form.start, date: value } });
+    setSortTime({
+      ...sortTime,
+      startingTime: { ...sortTime.startingTime, date: value },
+    });
     setCalendarStartDate(value);
   };
+
   const selectEndDate = (value) => {
-    setForm({ ...form, end: { ...form.end, date: value } });
+    setSortTime({
+      ...sortTime,
+      endingTime: { ...sortTime.endingTime, date: value },
+    });
     setCalendarEndDate(value);
   };
 
@@ -80,8 +149,11 @@ const NewEventFormComponent = (props) => {
 
     let formatted = format(CalendarStartDate, 'EEE. MMM. d, y');
     setDisplayStartDate(formatted);
-    if (form.end.date < CalendarStartDate) {
-      setForm({ ...form, end: { ...form.end, date: CalendarStartDate } });
+    if (sortTime.endingTime.date < CalendarStartDate) {
+      setSortTime({
+        ...sortTime,
+        endingTime: { ...sortTime.endingTime, date: CalendarStartDate },
+      });
       let formatted = format(CalendarStartDate, 'EEE. MMM. d, y');
       setDisplayEndDate(formatted);
     }
@@ -92,8 +164,11 @@ const NewEventFormComponent = (props) => {
     document.getElementById('calendar-form-end').style.visibility = 'hidden';
     let formatted = format(CalendarEndDate, 'EEE. MMM. d, y');
     setDisplayEndDate(formatted);
-    if (form.start.date > CalendarEndDate) {
-      setForm({ ...form, start: { ...form.start, date: CalendarEndDate } });
+    if (sortTime.startingTime.date > CalendarEndDate) {
+      setSortTime({
+        ...sortTime,
+        startingTime: { ...form.startingTime, date: CalendarEndDate },
+      });
       let formatted = format(CalendarEndDate, 'EEE. MMM. d, y');
       setDisplayStartDate(formatted);
     }
@@ -196,7 +271,12 @@ const NewEventFormComponent = (props) => {
             </section>
 
             <section className="section section-time">
-              <NewEventTime form={form} setForm={setForm} />
+              <NewEventTime
+                form={form}
+                setForm={setForm}
+                sortTime={sortTime}
+                setSortTime={setSortTime}
+              />
             </section>
 
             <section className="section">
@@ -220,15 +300,20 @@ const NewEventFormComponent = (props) => {
                   className="section-input-second"
                   type="text"
                   placeholder="Add notification"
+                  onChange={(ev) => handleNotification(ev.target.value)}
                 />
               </div>
             </section>
           </form>
 
           <div className="modal-footer">
-            <button className="submit-button" onClick={props.onSubmit}>
-              {/* onClick={(ev) => CreateEvent(ev)}
-          disabled={buttonDisabled} */}
+            <button
+              className="submit-button"
+              // onClick={props.onSubmit}
+              onClick={(ev) => CreateEvent(ev)}
+              disabled={buttonDisabled}
+            >
+              {/* disabled={buttonDisabled} */}
               Submit
             </button>
             <button className="close-button" onClick={props.onClose}>

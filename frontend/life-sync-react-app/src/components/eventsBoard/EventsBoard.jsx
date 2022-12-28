@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
-import EventsComponent from "../eventComponent/EventComponent";
-import NewEventFormComponent from "../newEventFormComponent/NewEventFormComponent";
-import "./styles.css"
+import './styles.css';
+import React, { useEffect, useState } from 'react';
+import EventsComponent from '../eventComponent/EventComponent';
+import NewEventFormComponent from '../newEventFormComponent/NewEventFormComponent';
 
 export default function EventsBoard() {
   const [events, setEvents] = useState([]);
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8080/calendar/event',)
-      .then(response => response.json())
-      .then(data => {
+    fetch('http://localhost:8080/api/event')
+      .then((response) => response.json())
+      .then((data) => {
         setEvents(data);
-      })
+        console.log(data);
+      });
   }, []);
 
-  const threeColors = ["#68B99F", "#D15A41", "#66A7CA"]
+  const threeColors = ['#68B99F', '#D15A41', '#66A7CA'];
   const newArrayOfColors = [];
 
   while (newArrayOfColors.length < events.length) {
@@ -23,12 +24,12 @@ export default function EventsBoard() {
       if (newArrayOfColors.length == events.length) {
         break;
       }
-      newArrayOfColors.push(threeColors[i])
+      newArrayOfColors.push(threeColors[i]);
     }
   }
 
-  function onSubmit(){
-    console.log("submit")
+  function onSubmit() {
+    console.log('submit');
   }
 
   return (
@@ -39,18 +40,24 @@ export default function EventsBoard() {
         <button className="week-button">Week</button>
       </div>
       <div className="events-div">
-
         {events.map((singleEvent, i) => (
           <EventsComponent
-            singleEvent={singleEvent} color={newArrayOfColors[i]} key={singleEvent.id} />
+            singleEvent={singleEvent}
+            color={newArrayOfColors[i]}
+            key={singleEvent.id}
+          />
         ))}
       </div>
 
       <div className="button-add-event-div">
-        <button className="button-add-event" onClick={() => setShow(true) } > + </button></div>
-        <NewEventFormComponent onClose={() => setShow(false)} show={show}  />
+        <button className="button-add-event" onClick={() => setShow(true)}>
+          {' '}
+          +{' '}
+        </button>
+      </div>
+      <NewEventFormComponent onClose={() => setShow(false)} show={show} />
     </div>
   );
-};
+}
 
 //onSubmit={onSubmit()}

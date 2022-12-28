@@ -132,13 +132,13 @@ input .modeal-title {
 .section {
   box-sizing: border-box;
   border-top: 1px solid #b3b3b3;
-  padding: 21px 20px;
+  padding: 18px 20px;
 }
 
 .section-bottom{
   box-sizing: border-box;
   border-top: 1px solid #b3b3b3;
-  padding: 21px 5px 20px 20px;
+  padding: 18px 5px 8px 20px;
 
 }
 
@@ -155,7 +155,7 @@ flex-direction: column;
 }
 
 .arrowRight {
-  margin: 0 0.4rem;
+  margin: 0 0.9rem;
 }
 
 .label {
