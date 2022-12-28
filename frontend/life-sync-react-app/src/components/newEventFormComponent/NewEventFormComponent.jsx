@@ -1,20 +1,21 @@
 import './styles.css';
-import { format, set } from 'date-fns';
-import React, { useEffect, useState } from 'react';
+import { format } from 'date-fns';
+import React, { useState } from 'react';
+import { AiOutlineBell } from 'react-icons/ai';
+import { BsArrowRight } from 'react-icons/bs';
+import { FiCalendar } from 'react-icons/fi';
+import { GrLocation } from 'react-icons/gr';
 import { CSSTransition } from 'react-transition-group';
 import { INITIAL_EVENT } from '../../Constants';
 import CalendaOfNewEventFormComponent from '../calendaOfNewEventFormComponent/CalendaOfNewEventFormComponent';
 import NewEventTime from '../newEventTime/NewEventTime';
 
-// import { GrLocation } from "react-icons/gr";
-// import {AiOutlineBell} from "react-icons/ai";
-
 const NewEventFormComponent = (props) => {
   const nodeRef = React.useRef(null);
 
   const [form, setForm] = useState(INITIAL_EVENT);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [status, setStatus] = useState('idle');
+  // const [buttonDisabled, setButtonDisabled] = useState(true);
+  // const [status, setStatus] = useState('idle');
 
   // useEffect(() => {
   //   if (form.title != null && form.start.date != null) {
@@ -145,9 +146,9 @@ const NewEventFormComponent = (props) => {
                     onClick={() => startField()}
                     value={displayStartDate}
                   />
-                  {/* <FiCalendar color='#b3b3b3' /> */}
+                  <FiCalendar color="#b3b3b3" />
                 </div>
-                {/* <BsArrowRight /> */}
+                <BsArrowRight className="arrowRight" />
 
                 <div className="input-border">
                   <input
@@ -157,7 +158,7 @@ const NewEventFormComponent = (props) => {
                     onClick={() => endField()}
                     value={displayEndDate}
                   />
-                  {/* <FiCalendar color='#b3b3b3' /> */}
+                  <FiCalendar color="#b3b3b3" />
                 </div>
               </div>
 
@@ -200,8 +201,8 @@ const NewEventFormComponent = (props) => {
 
             <section className="section">
               <label className="label">Location</label>
-              <div>
-                {/* <GrLocation /> */}
+              <div className="label-div">
+                <GrLocation className="svg" />
                 <input
                   className="section-input-second"
                   type="text"
@@ -211,14 +212,16 @@ const NewEventFormComponent = (props) => {
               </div>
             </section>
 
-            <section className="section">
+            <section className="section-bottom">
               <label className="label">Notifications</label>
-              {/* <AiOutlineBell/> */}
-              <input
-                className="section-input-second"
-                type="text"
-                placeholder="Add notification"
-              />
+              <div className="label-div">
+                <AiOutlineBell className="svg" />
+                <input
+                  className="section-input-second"
+                  type="text"
+                  placeholder="Add notification"
+                />
+              </div>
             </section>
           </form>
 

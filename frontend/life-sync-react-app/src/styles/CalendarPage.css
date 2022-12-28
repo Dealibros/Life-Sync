@@ -68,20 +68,24 @@
   font-size: 1.2rem;
   text-align: center;
   margin-top: 5rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.3rem;
 
 }
 
 .bold {
-  margin-bottom: 0.3rem;
+  color: rgb(123, 122, 122);
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+
 }
 
 
 .selected-date-first {
-  margin: 0rem;
+  margin-top: 0.1rem;
 }
 
 .selected-date-second {
-  margin-top: -2.1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -99,7 +103,7 @@
   height: 80vh;
   min-width: 62vw;
   max-width: 71vw;
-  margin-top: 2.7rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   border-radius: 1rem;
