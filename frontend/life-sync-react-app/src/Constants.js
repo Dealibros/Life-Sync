@@ -1,18 +1,10 @@
 export const INITIAL_EVENT = {
-  title: '',
-  description: '',
-  location: '',
-  startingTime: '',
-  // startingTime: {
-  //   date: null,
-  //   time: { hours: null, minutes: null, ap: null },
-  // }, //allday: false?
-  endingTime: '',
-  // endingTime: {
-  //   date: null,
-  //   time: { hours: null, minutes: null, ap: null },
-  // }, //allday: false?
-  notification: '',
+  title: null,
+  description: null,
+  location: null,
+  startingTime: null,
+  endingTime: null,
+  notification: null,
 };
 
 export const SORTING_TIME = {

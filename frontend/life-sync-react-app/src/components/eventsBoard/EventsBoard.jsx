@@ -12,7 +12,6 @@ export default function EventsBoard() {
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);
-        console.log(data);
       });
   }, []);
 
@@ -21,15 +20,11 @@ export default function EventsBoard() {
 
   while (newArrayOfColors.length < events.length) {
     for (let i = 0; i < threeColors.length; i++) {
-      if (newArrayOfColors.length == events.length) {
+      if (newArrayOfColors.length === events.length) {
         break;
       }
       newArrayOfColors.push(threeColors[i]);
     }
-  }
-
-  function onSubmit() {
-    console.log('submit');
   }
 
   return (
@@ -42,9 +37,9 @@ export default function EventsBoard() {
       <div className="events-div">
         {events.map((singleEvent, i) => (
           <EventsComponent
+            key={i}
             singleEvent={singleEvent}
             color={newArrayOfColors[i]}
-            key={singleEvent.id}
           />
         ))}
       </div>

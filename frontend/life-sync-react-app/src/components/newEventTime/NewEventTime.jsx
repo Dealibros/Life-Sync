@@ -1,27 +1,23 @@
 import './styles.css';
-// import moment from 'moment';
 import React from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { HOURS, MINUTES } from '../../Constants';
 
-const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
-  console.log(sortTime);
+const NewEventTime = ({ newEvent, sortTime, setSortTime }) => {
+  // const onDayChanged = (value) => {
+  //   setSortTime({
+  //     ...sortTime,
+  //     startingTime: {
+  //       ...sortTime.startingTime,
+  //       time: { ...sortTime.startingTime.time, day: value },
+  //     },
 
-  const onDayChanged = (value) => {
-    setSortTime({
-      ...sortTime,
-
-      startingTime: {
-        ...sortTime.startingTime,
-        time: { ...sortTime.startingTime.time, day: value },
-      },
-
-      endingTime: {
-        ...sortTime.endingTime,
-        time: { ...sortTime.endingTime.time, day: value },
-      },
-    });
-  };
+  //     endingTime: {
+  //       ...sortTime.endingTime,
+  //       time: { ...sortTime.endingTime.time, day: value },
+  //     },
+  //   });
+  // };
 
   const onStartHourChange = (value) => {
     setSortTime({
@@ -81,21 +77,11 @@ const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
         time: { ...sortTime.endingTime.time, ap: value },
       },
     });
-
-    console.log(form);
   };
   return (
     <>
       <div className="time-section">
-        <section className="time-title">
-          <label className="time-label">Time</label>{' '}
-          <div className="all-day-section">
-            <div
-              className="dayDiv"
-              onChange={(ev) => onDayChanged(ev.target.value)}
-            />
-          </div>
-        </section>
+        <label className="time-label">Time</label>{' '}
         <div className="time-minute-div">
           <div>
             <select
@@ -103,8 +89,10 @@ const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
               onChange={(ev) => onStartHourChange(ev.target.value)}
             >
               <option className="option" hidden></option>
-              {HOURS.map((hour) => (
-                <option className="option">{hour}</option>
+              {HOURS.map((hour, i) => (
+                <option key={i} className="option">
+                  {hour}
+                </option>
               ))}
             </select>
             :
@@ -113,8 +101,10 @@ const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
               onChange={(ev) => onStartMinChange(ev.target.value)}
             >
               <option className="option" hidden></option>
-              {MINUTES.map((min) => (
-                <option className="option">{min}</option>
+              {MINUTES.map((min, i) => (
+                <option key={i} className="option">
+                  {min}
+                </option>
               ))}
             </select>
             :
@@ -127,17 +117,17 @@ const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
               <option className="option">PM</option>
             </select>
           </div>
-          <div className="arrow-right">
-            <BsArrowRight />
-          </div>
+
+          <BsArrowRight className="arrow-right" />
+
           <div>
             <select
               className="time-box"
               onChange={(ev) => onEndHourChange(ev.target.value)}
             >
               <option className="option" hidden></option>
-              {HOURS.map((hour) => (
-                <option>{hour}</option>
+              {HOURS.map((hour, i) => (
+                <option key={i}>{hour}</option>
               ))}
             </select>
             :
@@ -146,8 +136,8 @@ const NewEventTime = ({ form, setForm, sortTime, setSortTime }) => {
               onChange={(ev) => onEndMinChange(ev.target.value)}
             >
               <option className="option" hidden></option>
-              {MINUTES.map((min) => (
-                <option>{min}</option>
+              {MINUTES.map((min, i) => (
+                <option key={i}>{min}</option>
               ))}
             </select>
             :

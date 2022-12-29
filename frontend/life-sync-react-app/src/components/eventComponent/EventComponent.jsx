@@ -1,5 +1,5 @@
 import './styles.css';
-import { format, set } from 'date-fns';
+import { format } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
 import React from 'react';
 
@@ -17,7 +17,7 @@ export default function EventsComponent({ singleEvent, color }) {
           {format(parseISO(singleEvent.startingTime), 'p')}
         </h5>
       </div>
-      <h5 className="title-event">{singleEvent.eventTitle}</h5>
+      <h5 className="title-event">{singleEvent.title}</h5>
       <h5 className="description-event">{singleEvent.description}</h5>
     </div>
   );

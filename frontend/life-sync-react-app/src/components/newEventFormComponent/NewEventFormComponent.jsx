@@ -13,15 +13,17 @@ import NewEventTime from '../newEventTime/NewEventTime';
 
 const NewEventFormComponent = (props) => {
   const nodeRef = React.useRef(null);
-  const [form, setForm] = useState(INITIAL_EVENT);
+  const [newEvent, setNewEvent] = useState(INITIAL_EVENT);
   const [sortTime, setSortTime] = useState(SORTING_TIME);
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (
-      form.title != null &&
-      form.location != null &&
-      form.description != null
+      newEvent.title != null &&
+      newEvent.location != null &&
+      newEvent.description != null &&
+      newEvent.notification != null
     ) {
       if (
         sortTime.startingTime.time.hours != null &&
@@ -31,68 +33,64 @@ const NewEventFormComponent = (props) => {
         sortTime.endingTime.time.minutes != null &&
         sortTime.endingTime.time.ap != null
       ) {
+        console.log('all fields checked');
         setButtonDisabled(false);
-        console.log('changing button');
-
-        //the setForm here seems to be causing an indefined loop
-        //sortTime.startingTime
-        // setForm({
-        //   ...form,
-        //   startingTime: formatDate(sortTime.startingTime),
-        //   endingTime: formatDate(sortTime.endingTime),
-        // });
-        // console.log('getting into database');
+        setReady(true);
+        console.log('formSaved ', newEvent);
+        console.log('timeSaved ', sortTime);
       } else {
         setButtonDisabled(true);
       }
     }
-  }, [form]);
+  }, [sortTime]);
 
-  const formatDate = (sortingTime) => {
-    const startingDate = new Date(sortingTime.date).toISOString().split('T')[0];
-    console.log(startingDate);
+  const formatDate = (timeValue) => {
+    const time = new Date(timeValue.date);
+    const okTime =
+      time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate();
 
-    const singularDates = startingDate.split('-');
-    const day = parseInt(startingDate.split('-')[2]) + 1;
-
-    console.log(singularDates[1]);
-    console.log(String(day));
-    console.log(sortingTime.time.hours);
     const fullDate = moment(
-      singularDates[0] +
-        singularDates[1] +
-        String(day) +
-        sortingTime.time.hours +
+      okTime +
+        timeValue.time.hours +
         ':' +
-        sortingTime.time.minutes +
+        timeValue.time.minutes +
         ':' +
-        sortTime.startingTime.time.ap,
-      'YYYY-MM-DD h:m A',
-    ).format('YYYY-MM-DD HH:mm:ss.SSSSSS');
+        timeValue.time.ap,
+      'yyyy-MM-DD h:m A',
+    ).format('yyyy-MM-DDTHH:mm:ss');
     return fullDate;
   };
 
+  useEffect(() => {
+    if (ready) {
+      console.log('ready to set the form');
+      setNewEvent({
+        ...newEvent,
+        startingTime: formatDate(sortTime.startingTime),
+        endingTime: formatDate(sortTime.endingTime),
+      });
+    }
+  }, [ready, sortTime.endingTime, sortTime.startingTime]);
+
   const CreateEvent = (event) => {
     event.preventDefault();
-    // setStatus('loading');
-    let headers = new Headers();
-
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-
     fetch('http://localhost:8080/api/event/newEvent', {
-      mode: 'cors',
       method: 'POST',
-      headers: headers,
-      body: JSON.stringify(form),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(newEvent),
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response, 'new event');
-        //show new event message
-        //close modal
-        // refreshEvents();
-        // setStatus('created');
+        console.log(response.json());
+        console.log(response);
+        console.log('post send');
+
+        // TODO Here a new event message needs to be trigger
+        // TODO close modal
+        // TODO refreshEvents?
         setButtonDisabled(true);
       })
       .catch((error) => {
@@ -101,11 +99,13 @@ const NewEventFormComponent = (props) => {
       });
   };
 
-  const handleTitle = (value) => setForm({ ...form, title: value });
-  const handleDescription = (value) => setForm({ ...form, description: value });
-  const handleLocation = (value) => setForm({ ...form, location: value });
+  const handleTitle = (value) => setNewEvent({ ...newEvent, title: value });
+  const handleDescription = (value) =>
+    setNewEvent({ ...newEvent, description: value });
+  const handleLocation = (value) =>
+    setNewEvent({ ...newEvent, location: value });
   const handleNotification = (value) =>
-    setForm({ ...form, notification: value });
+    setNewEvent({ ...newEvent, notification: value });
 
   //Select start & end date input fields
   const [displayStartDate, setDisplayStartDate] = useState('');
@@ -142,7 +142,6 @@ const NewEventFormComponent = (props) => {
     setCalendarEndDate(value);
   };
 
-  // OK button in the calendar view
   const submitStartDate = (event) => {
     event.preventDefault();
     document.getElementById('calendar-form-start').style.visibility = 'hidden';
@@ -167,7 +166,7 @@ const NewEventFormComponent = (props) => {
     if (sortTime.startingTime.date > CalendarEndDate) {
       setSortTime({
         ...sortTime,
-        startingTime: { ...form.startingTime, date: CalendarEndDate },
+        startingTime: { ...sortTime.startingTime, date: CalendarEndDate },
       });
       let formatted = format(CalendarEndDate, 'EEE. MMM. d, y');
       setDisplayStartDate(formatted);
@@ -187,7 +186,7 @@ const NewEventFormComponent = (props) => {
         ref={nodeRef}
       >
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <form>
+          <form className="center-form">
             <div className="top">
               <div className="modal-header">
                 <h4 className="modal-title">Create Event</h4>
@@ -272,8 +271,8 @@ const NewEventFormComponent = (props) => {
 
             <section className="section section-time">
               <NewEventTime
-                form={form}
-                setForm={setForm}
+                newEvent={newEvent}
+                setNewEvent={setNewEvent}
                 sortTime={sortTime}
                 setSortTime={setSortTime}
               />
