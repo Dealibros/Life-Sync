@@ -1,23 +1,20 @@
 import './styles.css';
-import React from 'react';
+import moment from 'moment';
+import React, { useEffect } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { HOURS, MINUTES } from '../../Constants';
 
-const NewEventTime = ({ newEvent, sortTime, setSortTime }) => {
-  // const onDayChanged = (value) => {
-  //   setSortTime({
-  //     ...sortTime,
-  //     startingTime: {
-  //       ...sortTime.startingTime,
-  //       time: { ...sortTime.startingTime.time, day: value },
-  //     },
-
-  //     endingTime: {
-  //       ...sortTime.endingTime,
-  //       time: { ...sortTime.endingTime.time, day: value },
-  //     },
-  //   });
-  // };
+const NewEventTime = ({ sortTime, setSortTime, setNewEvent }) => {
+  const formatDate = (timeValue) => {
+    const fullDate = moment(
+      timeValue.date +
+        timeValue.time.hours +
+        timeValue.time.minutes +
+        timeValue.time.ap,
+      'yyyy-MM-DD h:m A',
+    ).format('yyyy-MM-DDTHH:mm');
+    return fullDate;
+  };
 
   const onStartHourChange = (value) => {
     setSortTime({
@@ -78,6 +75,23 @@ const NewEventTime = ({ newEvent, sortTime, setSortTime }) => {
       },
     });
   };
+
+  useEffect(() => {
+    const validateTimeFirst = !Object.values(sortTime.startingTime.time).some(
+      (item) => item == null || item.length === 0,
+    );
+    const validateTimeSecond = !Object.values(sortTime.endingTime.time).some(
+      (item) => item == null || item.length === 0,
+    );
+    if (validateTimeFirst && validateTimeSecond) {
+      setNewEvent((newEvent) => ({
+        ...newEvent,
+        startingTime: formatDate(sortTime.startingTime),
+        endingTime: formatDate(sortTime.endingTime),
+      }));
+    }
+  }, [sortTime]);
+
   return (
     <>
       <div className="time-section">

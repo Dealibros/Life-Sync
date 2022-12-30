@@ -50,7 +50,11 @@ export default function EventsBoard() {
           +{' '}
         </button>
       </div>
-      <NewEventFormComponent onClose={() => setShow(false)} show={show} />
+      <NewEventFormComponent
+        onClose={() => setShow(false)}
+        show={show}
+        setShow={setShow}
+      />
     </div>
   );
 }

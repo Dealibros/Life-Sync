@@ -13,3 +13,18 @@
 //   day: 'numeric',
 //   month: 'long',
 // });
+
+// const onDayChanged = (value) => {
+//   setSortTime({
+//     ...sortTime,
+//     startingTime: {
+//       ...sortTime.startingTime,
+//       time: { ...sortTime.startingTime.time, day: value },
+//     },
+
+//     endingTime: {
+//       ...sortTime.endingTime,
+//       time: { ...sortTime.endingTime.time, day: value },
+//     },
+//   });
+// };

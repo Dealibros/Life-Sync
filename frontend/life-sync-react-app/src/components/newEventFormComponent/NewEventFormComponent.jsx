@@ -11,66 +11,22 @@ import { INITIAL_EVENT, SORTING_TIME } from '../../Constants';
 import CalendaOfNewEventFormComponent from '../calendaOfNewEventFormComponent/CalendaOfNewEventFormComponent';
 import NewEventTime from '../newEventTime/NewEventTime';
 
-const NewEventFormComponent = (props) => {
+const NewEventFormComponent = (props, setShow) => {
   const nodeRef = React.useRef(null);
   const [newEvent, setNewEvent] = useState(INITIAL_EVENT);
   const [sortTime, setSortTime] = useState(SORTING_TIME);
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (
-      newEvent.title != null &&
-      newEvent.location != null &&
-      newEvent.description != null &&
-      newEvent.notification != null
-    ) {
-      if (
-        sortTime.startingTime.time.hours != null &&
-        sortTime.startingTime.time.minutes != null &&
-        sortTime.startingTime.time.ap != null &&
-        sortTime.endingTime.time.hours != null &&
-        sortTime.endingTime.time.minutes != null &&
-        sortTime.endingTime.time.ap != null
-      ) {
-        console.log('all fields checked');
-        setButtonDisabled(false);
-        setReady(true);
-        console.log('formSaved ', newEvent);
-        console.log('timeSaved ', sortTime);
-      } else {
-        setButtonDisabled(true);
-      }
+    const validateForm = !Object.values(newEvent).some(
+      (item) => item === null || item.length === 0,
+    );
+    if (validateForm) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
     }
-  }, [sortTime]);
-
-  const formatDate = (timeValue) => {
-    const time = new Date(timeValue.date);
-    const okTime =
-      time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate();
-
-    const fullDate = moment(
-      okTime +
-        timeValue.time.hours +
-        ':' +
-        timeValue.time.minutes +
-        ':' +
-        timeValue.time.ap,
-      'yyyy-MM-DD h:m A',
-    ).format('yyyy-MM-DDTHH:mm:ss');
-    return fullDate;
-  };
-
-  useEffect(() => {
-    if (ready) {
-      console.log('ready to set the form');
-      setNewEvent({
-        ...newEvent,
-        startingTime: formatDate(sortTime.startingTime),
-        endingTime: formatDate(sortTime.endingTime),
-      });
-    }
-  }, [ready, sortTime.endingTime, sortTime.startingTime]);
+  }, [newEvent]);
 
   const CreateEvent = (event) => {
     event.preventDefault();
@@ -78,24 +34,24 @@ const NewEventFormComponent = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json',
       },
       body: JSON.stringify(newEvent),
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.json());
         console.log(response);
         console.log('post send');
+        console.log(props.show);
+        setShow(false);
+        console.log(props.show);
 
         // TODO Here a new event message needs to be trigger
         // TODO close modal
         // TODO refreshEvents?
-        setButtonDisabled(true);
+        // TODO return values from newEvent to null
       })
       .catch((error) => {
         console.log('error!', error);
-        setButtonDisabled(true);
       });
   };
 
@@ -125,19 +81,24 @@ const NewEventFormComponent = (props) => {
   const onStartCalendarChange = (nextValue) => setCalendarStartDate(nextValue);
   const onEndCalendarChange = (nextValue) => setCalendarEndDate(nextValue);
 
-  //Select date value
   const selectStartDate = (value) => {
+    const newValue = moment(value);
+    const formatedValue = newValue.format('yyyy-MM-DD');
+
     setSortTime({
       ...sortTime,
-      startingTime: { ...sortTime.startingTime, date: value },
+      startingTime: { ...sortTime.startingTime, date: formatedValue },
     });
     setCalendarStartDate(value);
   };
 
   const selectEndDate = (value) => {
+    const newValue = moment(value);
+    const formatedValue = newValue.format('yyyy-MM-DD');
+
     setSortTime({
       ...sortTime,
-      endingTime: { ...sortTime.endingTime, date: value },
+      endingTime: { ...sortTime.endingTime, date: formatedValue },
     });
     setCalendarEndDate(value);
   };
@@ -308,11 +269,9 @@ const NewEventFormComponent = (props) => {
           <div className="modal-footer">
             <button
               className="submit-button"
-              // onClick={props.onSubmit}
-              onClick={(ev) => CreateEvent(ev)}
+              onClick={(ev) => CreateEvent(ev)} // && props.onClose
               disabled={buttonDisabled}
             >
-              {/* disabled={buttonDisabled} */}
               Submit
             </button>
             <button className="close-button" onClick={props.onClose}>
