@@ -13,7 +13,7 @@ export default function EventsBoard() {
       .then((data) => {
         setEvents(data);
       });
-  }, []);
+  }, [show]);
 
   const threeColors = ['#68B99F', '#D15A41', '#66A7CA'];
   const newArrayOfColors = [];
@@ -50,11 +50,7 @@ export default function EventsBoard() {
           +{' '}
         </button>
       </div>
-      <NewEventFormComponent
-        onClose={() => setShow(false)}
-        show={show}
-        setShow={setShow}
-      />
+      <NewEventFormComponent onClose={() => setShow(false)} show={show} />
     </div>
   );
 }

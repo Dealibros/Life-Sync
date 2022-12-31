@@ -11,7 +11,7 @@ import { INITIAL_EVENT, SORTING_TIME } from '../../Constants';
 import CalendaOfNewEventFormComponent from '../calendaOfNewEventFormComponent/CalendaOfNewEventFormComponent';
 import NewEventTime from '../newEventTime/NewEventTime';
 
-const NewEventFormComponent = (props, setShow) => {
+const NewEventFormComponent = (props) => {
   const nodeRef = React.useRef(null);
   const [newEvent, setNewEvent] = useState(INITIAL_EVENT);
   const [sortTime, setSortTime] = useState(SORTING_TIME);
@@ -39,16 +39,8 @@ const NewEventFormComponent = (props, setShow) => {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
-        console.log('post send');
-        console.log(props.show);
-        setShow(false);
-        console.log(props.show);
-
-        // TODO Here a new event message needs to be trigger
-        // TODO close modal
-        // TODO refreshEvents?
-        // TODO return values from newEvent to null
+        props.onClose();
+        // TODO? Inform about new message created?
       })
       .catch((error) => {
         console.log('error!', error);
@@ -278,10 +270,12 @@ const NewEventFormComponent = (props, setShow) => {
               Close
             </button>
           </div>
-
-          {/* <ConfirmationBox>
+          {
+            //Confirmation Of Event Creation here
+            /* <ConfirmationBox>
         <FcCheckmark /> Your event was added to your calendar!
-        </ConfirmationBox>  */}
+        </ConfirmationBox>  */
+          }
         </div>
       </div>
     </CSSTransition>

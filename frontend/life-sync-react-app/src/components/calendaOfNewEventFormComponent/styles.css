@@ -11,7 +11,6 @@ text-align: center;
 .react-calendar button {
 border: none;
 outline: none;
-font-size: 1.3rem;
 }
 .react-calendar__month-view__weekdays__weekday abbr {
 text-decoration: none;
