@@ -1,13 +1,27 @@
 .event-component {
     display: inline-block;
     margin: 0.7rem 0 0 0;
-    padding: 1rem 1.8rem;
-    height: 10vh;
-    width: 15vw;
+    /* padding: 1rem 1.8rem; */
+    height: 40%;
+    width: 90%;
     border-radius: 0.4rem;
     color: white;
     background-color: rgb(212, 223, 236);
     text-align: left;
+}
+
+.event-content {
+    padding: 0 2rem  1rem 2rem;
+
+}
+
+.time-div {
+    margin-top: 0.1rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 .title-event {
@@ -26,12 +40,6 @@
     /* color: rgb(194, 198, 201); */
 }
 
-.time-div {
-    font-size: 1.2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 .hour-event {
     margin: 0;
@@ -39,4 +47,31 @@
 
 .time-event {
     margin: 0;
+}
+
+.button-div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-top:0.2rem;
+    padding-right: 0.4rem;
+
+}
+
+.delete-button {
+    font-size: 0.6rem;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    border-color: rgb(247, 245, 245);
+    margin-right: 0.2rem;
+    padding: 0.1rem 0.1rem;
+    content-visibility: hidden;
+    background-color: rgb(239, 239, 216);
+    /* display: none; */
+}
+
+.delete-button:hover {
+    /* display: inline; */
+    content-visibility: visible;
+
 }

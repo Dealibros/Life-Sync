@@ -6,6 +6,7 @@ import NewEventFormComponent from '../newEventFormComponent/NewEventFormComponen
 export default function EventsBoard() {
   const [events, setEvents] = useState([]);
   const [show, setShow] = useState(false);
+  //const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/event')
@@ -14,6 +15,8 @@ export default function EventsBoard() {
         setEvents(data);
       });
   }, [show]);
+
+  // Ask menthor why adding refresh into the useEffect didn't triggered a reload and refresh the events
 
   const threeColors = ['#68B99F', '#D15A41', '#66A7CA'];
   const newArrayOfColors = [];
@@ -40,6 +43,10 @@ export default function EventsBoard() {
             key={i}
             singleEvent={singleEvent}
             color={newArrayOfColors[i]}
+            events={events}
+            //setRefresh={setRefresh}
+            //refresh={refresh}
+            setEvents={setEvents}
           />
         ))}
       </div>
