@@ -1,39 +1,63 @@
 import './styles.css';
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 
 export default function QuoteComponent() {
+  const [location, setLocation] = useState([]);
+  const [weatherIconData, setWeatherIconData] = useState([]);
+  const [weatherIconLink, setWeatherIconLink] = useState([]);
 
-  const API_KEY =`${process.env.REACT_APP_WEATHER_API_KEY}`
+  const apiLocationUrl = `http://ip-api.com/json/`;
 
-  const [weatherIconData, setWeatherIconData] = useState([])
-  const [weatherIconLink, setWeatherIconLink] = useState([])
-
-  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Vienna`;
-  
-  
   useEffect(() => {
-    fetch(apiUrl, {
+    fetch(apiLocationUrl, {
       method: 'GET',
-      mode:'cors',
-      contentType: 'application/json',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setLocation(response);
       })
-    
-    .then(response => response.json())
-    .then(data => {
-    setWeatherIconData(data.current.condition.icon)
-    const weatherIconLink = weatherIconData.slice(20, weatherIconData.length);
-    setWeatherIconLink(weatherIconLink)
+      .catch((error) => {
+        console.log('error!', error);
+      });
+  }, []);
 
-  })
-  }, [weatherIconData]);
+  const API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`;
+  const apiWeatherUrl = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${
+    location.lat + ',' + location.lon
+  }`;
 
-   return (
-        <div className="weather-component">
-            {weatherIconLink.length > 0 && 
-                <img src={weatherIconLink} className="weather-image" alt="weather-icon" />
-            }
+  //Why is it still compleining after the condition statement?
+  useEffect(() => {
+    if (location.lat && location.lon) {
+      fetch(apiWeatherUrl, {
+        method: 'GET',
+        mode: 'cors',
+        contentType: 'application/json',
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setWeatherIconData(data.current.condition.icon);
+          const weatherIconLink = weatherIconData.slice(
+            20,
+            weatherIconData.length,
+          );
+          setWeatherIconLink(weatherIconLink);
+        });
+    }
+  }, [weatherIconData, location]);
 
-        </div>
-            
-      );
-  }
+  return (
+    <div className="weather-component">
+      {weatherIconLink.length > 0 && (
+        <img
+          src={weatherIconLink}
+          className="weather-image"
+          alt="weather-icon"
+        />
+      )}
+    </div>
+  );
+}

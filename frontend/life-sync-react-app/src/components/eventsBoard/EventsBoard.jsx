@@ -6,15 +6,18 @@ import NewEventFormComponent from '../newEventFormComponent/NewEventFormComponen
 export default function EventsBoard() {
   const [events, setEvents] = useState([]);
   const [show, setShow] = useState(false);
+  const [timeFrame, setTimeFrame] = useState('All');
   //const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/event')
+    fetch(`http://localhost:8080/api/events/${timeFrame}`)
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);
+        console.log(timeFrame);
+        console.log(data);
       });
-  }, [show]);
+  }, [show, timeFrame]);
 
   // Ask menthor why adding refresh into the useEffect didn't triggered a reload and refresh the events
 
@@ -34,8 +37,15 @@ export default function EventsBoard() {
     <div className="events-wrapper">
       <h3 className="event-board-title">My Events</h3>
       <div className="div-today-week-events">
-        <button className="today-button">Today</button>
-        <button className="week-button">Week</button>
+        <button className="today-button" onClick={() => setTimeFrame('Today')}>
+          Today
+        </button>
+        <button className="week-button" onClick={() => setTimeFrame('Week')}>
+          Week
+        </button>
+        <button className="all-button" onClick={() => setTimeFrame('All')}>
+          All
+        </button>
       </div>
       <div className="events-div">
         {events.map((singleEvent, i) => (
