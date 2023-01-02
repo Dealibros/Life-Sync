@@ -8,9 +8,6 @@
   src: local('SpecialElite'), url(../../public/fonts/SpecialElite-Regular.ttf) format('truetype');
 }
 
-
-
-
 .App {
   text-align: center;
   font-family: 'Kanit';
@@ -42,20 +39,22 @@
 
 .App-header {
   background-color: #d4f3e4;
-  /* background-image: url(/src/media/background.png); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  /* color: white; */
-
   color: rgb(8, 67, 57);
 }
 
 .App-link {
   color: #0e9095;
+}
+
+.bm-burger-button{
+  /* visibility: hidden; */
+  border-color: #d4f3e4;
 }
 
 
@@ -68,5 +67,3 @@
   font-family: "Frederika";
   src: url("/public/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
 }
-
-

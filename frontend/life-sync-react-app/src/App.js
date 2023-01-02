@@ -1,9 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CalendarPage from './pages/CalendarPage';
-
-
+import Home from './pages/Home';
 
 export default function App() {
   return (
@@ -11,10 +9,9 @@ export default function App() {
       <Routes>
         <Route>
           <Route index element={<Home />} />
-           <Route path="CalendarPage" element={<CalendarPage />} /> 
+          <Route path="CalendarPage" element={<CalendarPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
-
