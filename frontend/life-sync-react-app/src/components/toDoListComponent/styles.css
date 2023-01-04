@@ -73,6 +73,7 @@ flex-direction: column;
   border-radius: 0.4rem;
   margin-bottom: 0.5rem;
   border-color: gray;
+  text-align: center;
 }
 
 .task-button {

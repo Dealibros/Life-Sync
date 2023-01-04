@@ -4,7 +4,14 @@ import Calendar from 'react-calendar';
 
 const CalendaOfNewEventFormComponent = ({ onChange, value, onClickDay }) => {
   return (
-    <div className="wrapper" style={{height:"5rem", width:"23rem", marginLeft:"3rem"}}>
+    <div
+      className="wrapper-time"
+      style={{
+        width: '23rem',
+        marginLeft: '3.3rem',
+        marginTop: '3.4rem',
+      }}
+    >
       <Calendar
         onChange={onChange}
         defaultView="month"

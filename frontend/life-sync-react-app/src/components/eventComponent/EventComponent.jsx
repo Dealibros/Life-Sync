@@ -52,7 +52,7 @@ export default function EventsComponent({
       <div className="event-content">
         <div className="time-div">
           <h5 className="time-event">
-            {format(parseISO(singleEvent.startingTime), 'EEEE - H LLL ')}
+            {format(parseISO(singleEvent.startingTime), 'EEEE - dd LLL ')}
           </h5>
           <h5 className="hour-event">
             {format(parseISO(singleEvent.startingTime), 'p')}

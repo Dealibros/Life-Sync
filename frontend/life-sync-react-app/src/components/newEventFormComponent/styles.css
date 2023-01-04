@@ -98,6 +98,7 @@ input .modeal-title {
 }
 
 .event-title {
+  text-align: center;
   margin: 10px 0;
   border: none;
   border-bottom: 1px solid #b3b3b3;
@@ -117,6 +118,7 @@ input .modeal-title {
 }
 
 .event-description {
+  text-align: center;
   margin: 10px 0;
   border: none;
   border-bottom: 1px solid #b3b3b3;
@@ -191,6 +193,7 @@ flex-direction: column;
 }
 
 .section-input {
+  text-align: center;
   padding: 5px 9px;
   font-size: 1rem;
   width: 140px;
@@ -206,37 +209,31 @@ flex-direction: column;
 }
 
 #calendar-form-start {
-  padding: 47.4vh 3.3vw 0 1.3vw;
-  padding-bottom: 1px;
-  height: 61.1vh;
   box-sizing: border-box;
   position: absolute;
   top: 0rem;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(22, 22, 22, 0.5);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   visibility: hidden;
-  border-radius: 0.3rem;
+  border-radius: 1rem;
+  padding-right: 2.4rem ;
+  padding-bottom: 1rem;
 }
 
 #calendar-form-end {
-  padding: 47.4vh 3.3vw 0 1.3vw;
-  padding-bottom: 1px;
-  height: 61.1vh;
   box-sizing: border-box;
   position: absolute;
   top: 0rem;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(22, 22, 22, 0.5);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   visibility: hidden;
-  border-radius: 0.3rem;
+  border-radius: 1rem;
+  padding-right: 2.4rem ;
+  padding-bottom: 1rem;
 }
 
 .button-box {
@@ -245,11 +242,14 @@ flex-direction: column;
 }
 
 .button-start-end{
-  padding: 0.3rem 1.4rem 0.3rem 1.4rem;
+  padding: 0.4rem 3.5rem 0.3rem 3.5rem;
+  margin-left: 2.9rem;
   border-radius: 0.3rem;
+  z-index: 10;
 }
 
 .section-input-second {
+  text-align: center;
   padding: 5px 0;
   font-size: 1.2rem;
   width: 145px;
