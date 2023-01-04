@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ToDo = ({ todo, handleToggle }) => {
+const ToDo = ({ toDo, handleToggle }) => {
   const handleClick = (e) => {
     e.preventDefault();
     handleToggle(e.currentTarget.id);
@@ -9,14 +9,17 @@ const ToDo = ({ todo, handleToggle }) => {
   return (
     <>
       <div
-        id={todo.toDoId}
-        className={todo.complete ? 'strike' : 'todo'}
-        key={todo.toDoId}
+        id={toDo.toDoId}
+        className={toDo.complete ? 'strike' : 'todo'}
+        key={toDo.toDoId}
         name="todo"
-        value={todo.id}
+        value={toDo.id}
         onClick={handleClick}
       >
-        {todo.toDo}
+        {/* <button className="toDo-button" onClick={()=>click}> */}
+        {toDo.toDo}
+        {toDo.complete}
+        {/* </button> */}
       </div>
     </>
   );

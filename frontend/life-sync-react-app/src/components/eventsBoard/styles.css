@@ -120,11 +120,11 @@
     display: flex;
     align-items:flex-start;
     justify-content: flex-end;
-    z-index: 10;
+
 }
 
 .toDo-button {
     background-color: white;
     border: none;
-    z-index: 10;
+
 }

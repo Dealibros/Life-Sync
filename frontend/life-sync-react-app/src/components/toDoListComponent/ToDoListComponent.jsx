@@ -9,6 +9,25 @@ export default function TodoListComponent(props) {
   const [toDoList, setToDoList] = useState([]);
   const [refresh, setRefresh] = useState(' ');
 
+  const handleToggle = (id) => {
+    console.log(id);
+    fetch(`http://localhost:8080/api/toDos/updateToDo/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(id),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setRefresh(toDoList);
+      })
+      .catch((error) => {
+        console.log('error!', error);
+      });
+  };
+
   useEffect(() => {
     fetch(`http://localhost:8080/api/toDos/all`)
       .then((response) => response.json())
@@ -16,15 +35,6 @@ export default function TodoListComponent(props) {
         setToDoList(data);
       });
   }, [setRefresh, refresh]);
-
-  const handleToggle = (id) => {
-    let mapped = toDoList.map((task) => {
-      return task.id === Number(id)
-        ? { ...task, complete: !task.complete }
-        : { ...task };
-    });
-    setToDoList(mapped);
-  };
 
   const handleFilter = () => {
     let filtered = toDoList.filter((task) => {
@@ -76,11 +86,11 @@ export default function TodoListComponent(props) {
             />
 
             <div className="tasks-div">
-              {toDoList.map((todo) => {
+              {toDoList.map((toDo) => {
                 return (
                   <ToDo
-                    key={todo.toDoId}
-                    todo={todo}
+                    key={toDo.toDoId}
+                    toDo={toDo}
                     handleToggle={handleToggle}
                     handleFilter={handleFilter}
                   />
