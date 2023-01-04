@@ -4,9 +4,10 @@
 
 .wrapper {
   display: flex;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  align-items: center;
   justify-content:flex-end;
-  height: 4.2rem;
+  height: 4.3rem;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -18,6 +19,8 @@
   background-color: transparent;
   border-radius: 5px;
 
+
+
 }
 
 .greeting {
@@ -26,13 +29,15 @@
   padding: 0 1rem;
   margin: 0;
   color: #000000;
+
 }
 
 .greeting-weather-div {
   width:fit-content;
   display: flex;
   flex-direction: row;
-  margin-right: 0.7rem;
+  margin-right: 1.3rem;
+
 }
 
 .greeting-date-week {
@@ -43,8 +48,8 @@
   font-weight: 500;
   line-height: 1.1;
   padding: 0px 40px;
-  margin: 0.9rem 0 0.6rem 0;
   align-items: center;
+  margin: 0;
 }
 
 .section-title {
@@ -77,9 +82,7 @@
   color: rgb(123, 122, 122);
   margin-bottom: 1rem;
   line-height: 1.5rem;
-
 }
-
 
 .selected-date-first {
   margin-top: 0.1rem;
@@ -88,7 +91,6 @@
 .selected-date-second {
   margin-bottom: 0.5rem;
 }
-
 
 .action-area {
   width: 100%;

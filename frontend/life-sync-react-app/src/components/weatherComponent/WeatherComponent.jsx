@@ -5,6 +5,7 @@ export default function QuoteComponent() {
   const [location, setLocation] = useState([]);
   const [weatherIconData, setWeatherIconData] = useState([]);
   const [weatherIconLink, setWeatherIconLink] = useState([]);
+  const [temperature, setTemperature] = useState([]);
 
   const apiLocationUrl = `http://ip-api.com/json/`;
 
@@ -39,6 +40,7 @@ export default function QuoteComponent() {
       })
         .then((response) => response.json())
         .then((data) => {
+          setTemperature(data.current.temp_c);
           setWeatherIconData(data.current.condition.icon);
           const weatherIconLink = weatherIconData.slice(
             20,
@@ -52,11 +54,14 @@ export default function QuoteComponent() {
   return (
     <div className="weather-component">
       {weatherIconLink.length > 0 && (
-        <img
-          src={weatherIconLink}
-          className="weather-image"
-          alt="weather-icon"
-        />
+        <>
+          <img
+            src={weatherIconLink}
+            className="weather-image"
+            alt="weather-icon"
+          />
+          <h6 className="temperature">{temperature} °C</h6>
+        </>
       )}
     </div>
   );

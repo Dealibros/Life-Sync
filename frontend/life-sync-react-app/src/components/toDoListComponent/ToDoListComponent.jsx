@@ -50,7 +50,7 @@ export default function TodoListComponent(props) {
         console.log('error!', error);
       });
   };
-  if (!toDoList.length) return <h3>" "</h3>;
+  if (!toDoList.length) return <h3>'</h3>;
 
   return (
     <CSSTransition
