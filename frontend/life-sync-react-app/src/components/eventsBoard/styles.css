@@ -94,16 +94,37 @@
     border-bottom: 1.5px dashed rgb(169, 166, 166);
     padding-bottom: 1px;
     padding: 0.2rem;
-
 }
 
 .today-button{
     margin-right: 0.3rem;
-
 }
 
 .event-board-title{
-    margin-top: 2.1rem;
     margin-bottom: 0.6rem;
+    margin-top: -2rem;
     font-size: 1.4rem;
+}
+
+
+.check-icon {
+    margin-top: 1.8rem;
+    margin-right: 1.9rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    background-color: #fffdf5;
+
+}
+
+.icon-div{
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.toDo-button {
+    background-color: white;
+    border: none;
+    z-index: 10;
 }

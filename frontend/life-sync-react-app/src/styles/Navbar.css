@@ -37,6 +37,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  width: 290px;
 }
 
 /* General sidebar styles */
@@ -50,7 +51,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
   opacity: 1;
   transition: opacity 0.3s ease 0s;
-  width: 14vw;
+  box-sizing:content-box;
+  margin: 0;
 
 }
 

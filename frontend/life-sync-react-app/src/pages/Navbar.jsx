@@ -28,7 +28,7 @@ function Navbar() {
         </a>
 
         <a onClick={() => showSettings()} className="menu-item--small" href="/">
-          Settings
+          {/* Settings */}
         </a>
       </Menu>
     </nav>
