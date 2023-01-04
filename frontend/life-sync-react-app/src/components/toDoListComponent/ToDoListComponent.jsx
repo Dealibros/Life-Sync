@@ -9,6 +9,14 @@ export default function TodoListComponent(props) {
   const [toDoList, setToDoList] = useState([]);
   const [refresh, setRefresh] = useState(' ');
 
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/toDos/all`)
+      .then((response) => response.json())
+      .then((data) => {
+        setToDoList(data);
+      });
+  }, [setRefresh, refresh]);
+
   const handleToggle = (id) => {
     console.log(id);
     fetch(`http://localhost:8080/api/toDos/updateToDo/${id}`, {
@@ -20,7 +28,6 @@ export default function TodoListComponent(props) {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         setRefresh(toDoList);
       })
       .catch((error) => {
@@ -28,30 +35,21 @@ export default function TodoListComponent(props) {
       });
   };
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/api/toDos/all`)
+  const deleteToDos = () => {
+    fetch('http://localhost:8080/api/toDos/deleteToDos', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => response.json())
-      .then((data) => {
-        setToDoList(data);
+      .then((response) => {
+        setRefresh(toDoList);
+      })
+      .catch((error) => {
+        console.log('error!', error);
       });
-  }, [setRefresh, refresh]);
-
-  const handleFilter = () => {
-    let filtered = toDoList.filter((task) => {
-      return !task.complete;
-    });
-    setToDoList(filtered);
   };
-
-  const addTask = (userInput) => {
-    let copy = [...toDoList];
-    copy = [
-      ...copy,
-      { id: toDoList.length + 1, task: userInput, complete: false },
-    ];
-    setToDoList(copy);
-  };
-
   if (!toDoList.length) return <h3>" "</h3>;
 
   return (
@@ -79,11 +77,7 @@ export default function TodoListComponent(props) {
             <header className="toDo-header">
               <h1>To Do List</h1>
             </header>
-            <ToDoForm
-              addTask={addTask}
-              refresh={refresh}
-              setRefresh={setRefresh}
-            />
+            <ToDoForm refresh={refresh} setRefresh={setRefresh} />
 
             <div className="tasks-div">
               {toDoList.map((toDo) => {
@@ -92,12 +86,11 @@ export default function TodoListComponent(props) {
                     key={toDo.toDoId}
                     toDo={toDo}
                     handleToggle={handleToggle}
-                    handleFilter={handleFilter}
                   />
                 );
               })}
 
-              <button className="clear-tasks-button" onClick={handleFilter}>
+              <button className="clear-tasks-button" onClick={deleteToDos}>
                 Clear Completed
               </button>
             </div>

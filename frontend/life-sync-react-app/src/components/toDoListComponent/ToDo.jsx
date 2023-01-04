@@ -16,10 +16,7 @@ const ToDo = ({ toDo, handleToggle }) => {
         value={toDo.id}
         onClick={handleClick}
       >
-        {/* <button className="toDo-button" onClick={()=>click}> */}
         {toDo.toDo}
-        {toDo.complete}
-        {/* </button> */}
       </div>
     </>
   );

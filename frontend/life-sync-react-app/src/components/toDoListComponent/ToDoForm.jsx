@@ -1,7 +1,7 @@
 import './styles.css';
 import React, { useState } from 'react';
 
-const ToDoForm = ({ addTask, refresh, setRefresh }) => {
+const ToDoForm = ({ setRefresh }) => {
   const [userInput, setUserInput] = useState('');
 
   const createToDo = (event) => {
@@ -30,7 +30,6 @@ const ToDoForm = ({ addTask, refresh, setRefresh }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(userInput);
     setUserInput('');
   };
   return (
