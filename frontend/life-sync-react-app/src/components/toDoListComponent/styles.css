@@ -17,6 +17,7 @@
 
 .toDo-header {
   margin-top: 1.5rem;
+  font-size: 1rem;
 }
 .close-toDo-div{
 text-align: right;
@@ -79,7 +80,7 @@ flex-direction: column;
   position: fixed;
   left: 0;
   top: 0;
-  right:14.4rem;
+  right:15.5rem;
   bottom: 4rem;
   display: flex;
   align-items: center;

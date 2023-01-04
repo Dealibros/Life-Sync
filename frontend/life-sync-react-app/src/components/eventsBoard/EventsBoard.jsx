@@ -17,8 +17,8 @@ export default function EventsBoard() {
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);
-        console.log(timeFrame);
-        console.log(data);
+        // console.log(timeFrame);
+        // console.log(data);
       });
   }, [show, timeFrame]);
 

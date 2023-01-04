@@ -28,7 +28,7 @@ const NewEventFormComponent = (props) => {
     }
   }, [newEvent]);
 
-  const CreateEvent = (event) => {
+  const createEvent = (event) => {
     event.preventDefault();
     fetch('http://localhost:8080/api/events/newEvent', {
       method: 'POST',
@@ -39,7 +39,6 @@ const NewEventFormComponent = (props) => {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         props.onClose();
         // TODO? Inform about new message created?
       })
@@ -262,7 +261,7 @@ const NewEventFormComponent = (props) => {
           <div className="modal-footer">
             <button
               className="submit-button"
-              onClick={(event) => CreateEvent(event)}
+              onClick={(event) => createEvent(event)}
               disabled={buttonDisabled}
             >
               Submit

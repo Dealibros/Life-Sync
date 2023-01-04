@@ -1,13 +1,21 @@
 import './styles.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import data from '../../data.json';
 import ToDo from './ToDo';
 import ToDoForm from './ToDoForm';
 
 export default function TodoListComponent(props) {
   const nodeRef = React.useRef(null);
-  const [toDoList, setToDoList] = useState(data);
+  const [toDoList, setToDoList] = useState([]);
+  const [refresh, setRefresh] = useState(' ');
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/toDos/all`)
+      .then((response) => response.json())
+      .then((data) => {
+        setToDoList(data);
+      });
+  }, [setRefresh, refresh]);
 
   const handleToggle = (id) => {
     let mapped = toDoList.map((task) => {
@@ -34,6 +42,8 @@ export default function TodoListComponent(props) {
     setToDoList(copy);
   };
 
+  if (!toDoList.length) return <h3>" "</h3>;
+
   return (
     <CSSTransition
       in={props.showToDoList}
@@ -59,19 +69,24 @@ export default function TodoListComponent(props) {
             <header className="toDo-header">
               <h1>To Do List</h1>
             </header>
-            <ToDoForm addTask={addTask} />
+            <ToDoForm
+              addTask={addTask}
+              refresh={refresh}
+              setRefresh={setRefresh}
+            />
 
             <div className="tasks-div">
               {toDoList.map((todo) => {
                 return (
                   <ToDo
-                    key={todo.id}
+                    key={todo.toDoId}
                     todo={todo}
                     handleToggle={handleToggle}
                     handleFilter={handleFilter}
                   />
                 );
               })}
+
               <button className="clear-tasks-button" onClick={handleFilter}>
                 Clear Completed
               </button>

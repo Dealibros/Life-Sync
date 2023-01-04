@@ -1,8 +1,28 @@
 import './styles.css';
 import React, { useState } from 'react';
 
-const ToDoForm = ({ addTask }) => {
+const ToDoForm = ({ addTask, refresh, setRefresh }) => {
   const [userInput, setUserInput] = useState('');
+
+  const createToDo = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:8080/api/toDos/newToDo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userInput),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setRefresh(userInput);
+        setUserInput('');
+      })
+      .catch((error) => {
+        console.log('error!', error);
+      });
+  };
 
   const handleChange = (e) => {
     setUserInput(e.currentTarget.value);
@@ -22,7 +42,9 @@ const ToDoForm = ({ addTask }) => {
         onChange={handleChange}
         placeholder="Enter task..."
       />
-      <button className="task-button">Submit</button>
+      <button className="task-button" onClick={(event) => createToDo(event)}>
+        Submit
+      </button>
     </form>
   );
 };

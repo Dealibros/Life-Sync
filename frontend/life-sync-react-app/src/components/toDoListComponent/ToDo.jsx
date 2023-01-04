@@ -7,16 +7,18 @@ const ToDo = ({ todo, handleToggle }) => {
   };
 
   return (
-    <div
-      id={todo.id}
-      className={todo.complete ? 'strike' : 'todo'}
-      key={todo.id + todo.task}
-      name="todo"
-      value={todo.id}
-      onClick={handleClick}
-    >
-      {todo.task}
-    </div>
+    <>
+      <div
+        id={todo.toDoId}
+        className={todo.complete ? 'strike' : 'todo'}
+        key={todo.toDoId}
+        name="todo"
+        value={todo.id}
+        onClick={handleClick}
+      >
+        {todo.toDo}
+      </div>
+    </>
   );
 };
 
