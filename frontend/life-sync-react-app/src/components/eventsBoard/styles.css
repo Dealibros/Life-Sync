@@ -69,7 +69,7 @@
     font-weight: 900;
     background-color: #7476ca;
     font-size: 1rem;
-    padding: 0.5rem 0.7rem;
+    padding: 0.4rem 0.7rem;
     margin-top: 0.4rem;
     margin-right: 0.6rem;
     border-radius: 50%;
@@ -78,25 +78,39 @@
 }
 
 .today-button, .week-button, .all-button {
-    /* border-bottom: #fff;
-    border-color: rgb(209, 209, 207);
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
-    background-color: #fff; */
     padding-top: 0.2rem;
     border: #fff;
     background-color: #fff;
     font-size: 1.1rem;
     margin-bottom: 0.4rem;
+    color: gray;
+    cursor: pointer;
+
 }
 
-.today-button, .week-button, .all-button :active{
-    border-bottom: 1.5px dashed rgb(169, 166, 166);
+.today-button:focus{
+    border-bottom: 1.5px dashed rgb(1, 1, 1);
     padding-bottom: 1px;
-    padding: 0.2rem;
+    padding: 0.1rem;
+}
+
+.week-button:focus {
+    border-bottom: 1.5px dashed rgb(10, 10, 10);
+    padding-bottom: 1px;
+    padding: 0.1rem;
+}
+
+.all-button:focus {
+    border-bottom: 1.5px dashed rgb(6, 6, 6);
+    padding-bottom: 1px;
+    padding: 0.1rem;
 }
 
 .today-button{
+    margin-right: 0.3rem;
+}
+
+.week-button{
     margin-right: 0.3rem;
 }
 
