@@ -46,10 +46,11 @@ border: none;
 
 .clear-tasks-button {
   background-color: #f2efdc;
-  margin: 0.5rem;
+  margin: 0.5rem 0.3rem 0.5rem 0.7rem;
   border-radius: 0.3rem;
   border-color: rgb(211, 207, 207);
   margin-top: 2rem;
+  width: 15vw;
 }
 
 .task-form {
@@ -74,6 +75,7 @@ flex-direction: column;
   margin-bottom: 0.5rem;
   border-color: gray;
   text-align: center;
+  width: 15vw;
 }
 
 .task-button {
@@ -82,6 +84,7 @@ flex-direction: column;
   border-color:rgb(211, 207, 207);
   background-color:#f2efdc;
   color: rgb(0, 0, 0);
+
 }
 
 

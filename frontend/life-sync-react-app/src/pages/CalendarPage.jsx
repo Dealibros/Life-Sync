@@ -1,13 +1,12 @@
 import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
+import '../styles/CalendarReact.css';
 import { format } from 'date-fns';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import EventsBoard from '../components/eventsBoard/EventsBoard';
 import QuoteComponent from '../components/quoteComponent/QuoteComponent';
 import WeatherComponent from '../components/weatherComponent/WeatherComponent';
-
-// import '../styles/CalendarReact.css';
 
 export default function CalendarPage() {
   const today = new Date();
@@ -47,7 +46,7 @@ export default function CalendarPage() {
                 </h3>
               </div>
               <div>
-                <WeatherComponent />
+                <WeatherComponent cl />
               </div>
             </div>
           </div>

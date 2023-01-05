@@ -16,7 +16,7 @@ export default function EventsComponent({
   const [hover, setHover] = useState(false);
 
   const DeleteEvent = (eventId) => {
-    fetch(`http://localhost:8080/api/event/${eventId}`, {
+    fetch(`http://localhost:8080/api/events/${eventId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
