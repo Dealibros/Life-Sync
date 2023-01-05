@@ -44,7 +44,7 @@
         text-align: center;
         padding: 1.6rem 1rem 1.6rem 1rem;
         background-color: rgb(255, 255, 255);
-        font-family: "Special Elite";
+        /* font-family: "Special Elite"; */
 
       }
 
@@ -132,11 +132,11 @@
 
       .react-calendar__month-view__weekdays__weekday:nth-child(6),
       .react-calendar__month-view__weekdays__weekday:nth-child(7) {
-        color: rgb(236, 105, 105);
+        color: rgb(208, 99, 99);
 }
 
        .highlight{
-        color: rgb(196, 112, 112);
+        color: rgb(205, 164, 164);
        border-radius: 0.1rem;
         background-color: #f7f0da;
       }
@@ -153,7 +153,7 @@
       }
 
       .react-calendar button {
-        border: #e8e8ee 0.7px;
+        border: #ededf1 0.7px;
         border-style: solid;
         font-size: 1.1rem;
       }

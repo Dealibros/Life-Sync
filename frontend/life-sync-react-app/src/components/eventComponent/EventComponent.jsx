@@ -1,13 +1,12 @@
 import './styles.css';
 import { format } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
+import moment from 'moment';
 import React, { useState } from 'react';
 
 export default function EventsComponent({
   singleEvent,
   color,
-  //setRefresh,
-  //refresh,
   setEvents,
   events,
 }) {
@@ -24,7 +23,6 @@ export default function EventsComponent({
     })
       .then((response) => response.json())
       .then((response) => {
-        //setRefresh(true);
         setEvents(events.filter((event) => event.eventId !== eventId));
       })
       .catch((error) => {
@@ -32,8 +30,13 @@ export default function EventsComponent({
       });
   };
 
+  const past =
+    singleEvent.endingTime < moment(new Date()).format('yyyy-MM-DDTHH:mm:ss');
   return (
-    <div className="event-component" style={{ backgroundColor: color }}>
+    <div
+      className="event-component"
+      style={{ backgroundColor: color, opacity: past ? '.3' : '' }}
+    >
       <div className="button-div">
         <button
           className="delete-button"

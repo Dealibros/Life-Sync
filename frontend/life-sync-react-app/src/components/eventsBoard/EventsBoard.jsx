@@ -17,12 +17,8 @@ export default function EventsBoard() {
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);
-        console.log(timeFrame);
-        console.log(data);
       });
   }, [show, timeFrame]);
-
-  // Ask menthor why adding refresh into the useEffect didn't triggered a reload and refresh the events
 
   const threeColors = ['#68B99F', '#D15A41', '#66A7CA'];
   const newArrayOfColors = [];
@@ -65,8 +61,6 @@ export default function EventsBoard() {
             singleEvent={singleEvent}
             color={newArrayOfColors[i]}
             events={events}
-            //setRefresh={setRefresh}
-            //refresh={refresh}
             setEvents={setEvents}
           />
         ))}
@@ -87,5 +81,3 @@ export default function EventsBoard() {
     </div>
   );
 }
-
-//onSubmit={onSubmit()}

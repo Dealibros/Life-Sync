@@ -1,7 +1,6 @@
 .event-component {
     display: inline-block;
     margin: 0.7rem 0 0 0;
-    /* padding: 1rem 1.8rem; */
     height: 40%;
     width: 90%;
     border-radius: 0.4rem;
@@ -11,8 +10,7 @@
 }
 
 .event-content {
-    padding: 0 2rem  1rem 2rem;
-
+    padding: 0 2rem 1rem 2rem;
 }
 
 .time-div {
@@ -21,41 +19,39 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
 
 .title-event {
-    font-family:'Kanit';
-    font-size: 1.2rem;
+    font-family: 'Kanit';
+    font-size: 1.1rem;
     margin: 0;
     margin-top: 0.7rem;
     font-weight: 500;
 }
 
 .description-event {
-    font-family:'Kanit';
-    font-size: 1rem;
+    font-family: 'Kanit';
+    font-size: 0.9rem;
     margin: 0.4rem 0 0.1rem 0;
-    font-weight: 400;
-    /* color: rgb(194, 198, 201); */
+    font-weight: 100;
 }
-
 
 .hour-event {
     margin: 0;
+    font-weight: 200;
 }
 
 .time-event {
     margin: 0;
+    font-weight: 200;
 }
 
 .button-div {
     width: 100%;
     display: flex;
     justify-content: end;
-    padding-top:0.2rem;
+    padding-top: 0.2rem;
     padding-right: 0.4rem;
-
 }
 
 .delete-button {
@@ -67,11 +63,9 @@
     padding: 0.1rem 0.1rem;
     content-visibility: hidden;
     background-color: rgb(239, 239, 216);
-    /* display: none; */
 }
 
 .delete-button:hover {
-    /* display: inline; */
     content-visibility: visible;
 
 }
