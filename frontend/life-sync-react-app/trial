@@ -1,4 +1,9 @@
 import './styles.css';
+// import '@geoapify/geocoder-autocomplete/styles/minimal.css';
+import {
+  GeoapifyContext,
+  GeoapifyGeocoderAutocomplete,
+} from '@geoapify/react-geocoder-autocomplete';
 import { format } from 'date-fns';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
@@ -16,7 +21,9 @@ const NewEventFormComponent = (props) => {
   const [newEvent, setNewEvent] = useState(INITIAL_EVENT);
   const [sortTime, setSortTime] = useState(SORTING_TIME);
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  // const [location, setLocation] = useState('');
 
+  console.log(newEvent);
   useEffect(() => {
     const validateForm = !Object.values(newEvent).some(
       (item) => item === null || item.length === 0,
@@ -46,11 +53,35 @@ const NewEventFormComponent = (props) => {
       });
   };
 
+  const API_KEY_GEO_AUTOCOMPLETE = `${process.env.REACT_APP_GEO_AUTOCOMPLETE_API_KEY}`;
+
+  function onPlaceSelect(value) {
+    console.log(value.properties);
+    if (value !== null) {
+    }
+  }
+
+  function onSuggectionChange(value) {
+    console.log('suggestionchange' + value);
+  }
+
+  function value(value) {
+    console.log('suggestionchange' + value);
+  }
+
+  function onUserInput(input) {
+    console.log(input);
+  }
+
   const handleTitle = (value) => setNewEvent({ ...newEvent, title: value });
   const handleDescription = (value) =>
     setNewEvent({ ...newEvent, description: value });
-  const handleLocation = (value) =>
-    setNewEvent({ ...newEvent, location: value });
+
+  const handleLocation = (value, field) => {
+    setNewEvent({ ...newEvent, location: value.target.value });
+    // setLocation(value.target.value);
+    console.log(value.target.value);
+  };
   const handleNotification = (value) =>
     setNewEvent({ ...newEvent, notification: value });
 
@@ -233,13 +264,23 @@ const NewEventFormComponent = (props) => {
             <section className="section">
               <label className="label">Location</label>
               <div className="label-div">
-                <GrLocation className="svg" />
-                <input
-                  className="section-input-second"
-                  type="text"
-                  placeholder="Add location"
-                  onChange={(ev) => handleLocation(ev.target.value)}
-                />
+                <GeoapifyContext apiKey={API_KEY_GEO_AUTOCOMPLETE}>
+                  <GrLocation className="svg" />
+                  <GeoapifyGeocoderAutocomplete
+                    onChange={(ev) => handleLocation(ev.target.value)}
+                    className="section-input-second"
+                    placeholder="Location"
+                    value={value}
+                    placeSelect={onPlaceSelect}
+                    suggestionsChange={onSuggectionChange}
+                    limit="3"
+                    allowNonVerifiedStreet={true}
+                    allowNonVerifiedHouseNumber={true}
+                    onUserInput={onUserInput}
+                    // allowNonVerifiedStreet={allowNonVerifiedStreet}
+                    // suggestionsFilter={suggestionsFilter}
+                  />
+                </GeoapifyContext>
               </div>
             </section>
 

@@ -175,12 +175,15 @@ flex-direction: column;
 
 .label-div{
  margin: 0;
+ display: flex;
+ justify-content: center;
 }
 
 .label-div input {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   margin-top: -0.2rem;
+
 }
 
 .input-border {
@@ -272,6 +275,60 @@ flex-direction: column;
 
 .section-input-second::placeholder {
   opacity: 70%;
+}
+
+.geocoder-container{
+  width:fit-content;
+  margin-right: 1rem;
+  margin-top: 0.4rem;
+
+}
+
+.geoapify-autocomplete-input{
+  border:none;
+  border-bottom: 1px solid #b3b3b3;
+  padding-bottom: 9px;
+  width: 300px;
+  text-align: center;
+}
+
+.geoapify-autocomplete-items{
+  font-size: 1rem;
+  text-align: left;
+  background-color: #f3f0f0;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+}
+
+.geoapify-autocomplete-item .icon svg{
+  height: 14px;
+  margin-right: 0.4rem;
+}
+
+.geoapify-autocomplete-item .address .secondary-part{
+  font-size: 0.9rem;
+
+}
+
+.geoapify-close-button{
+width:fit-content;
+display: flex;
+margin-left: 24rem;
+
+}
+
+
+.geoapify-autocomplete-item .main-part {
+  margin-right: 0.4rem;
+}
+
+
+.geoapify-autocomplete-input:focus,
+textarea:focus,
+select:focus {
+  border: none;
+  outline: none;
+
 }
 
 .submit-button{

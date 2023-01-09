@@ -2,7 +2,7 @@
     display: block;
     margin-left: 0.6rem;
     width: 470px;
-    height: 530px;
+    height: 534px;
     max-width: 100%;
     padding: 0 0.8rem;
     background-color: #fff;
@@ -35,7 +35,7 @@
     flex-direction: column;
     align-items: center;
     height: 375px;
-    padding: 0.1rem 4rem 0 4rem;
+    padding: 0.1rem 3.6rem 0 3.6rem;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
@@ -48,7 +48,7 @@
 
 .div-today-week-events {
     padding-left: 1.7rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     display: flex;
     flex-direction: row;
 }
