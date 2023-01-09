@@ -4,13 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-
-import java.time.LocalDate;
+import lombok.NoArgsConstructor;;
 import java.time.LocalDateTime;
-import java.util.Optional;
-
 
 @Data
 @Builder
@@ -23,27 +18,20 @@ public class Event {
     @Id
     @GeneratedValue
     private Long eventId;
-    private String eventTitle;
-
-    //THis could be done as optional
+    private String title;
     private String description;
-
     private LocalDateTime startingTime;
     private LocalDateTime endingTime;
-
-    //This could be later changed using a proper location API
-    private String Location;
-
-    private String Notification;
-
+    private String location;
+    private String notification;
 
     public Event(String eventTitle, String description, LocalDateTime startingTime, LocalDateTime endingTime, String location, String notification) {
-        this.eventTitle = eventTitle;
+        this.title = eventTitle;
         this.description = description;
         this.startingTime = startingTime;
         this.endingTime = endingTime;
-        Location = location;
-        Notification = notification;
+        this.location = location;
+        this.notification = notification;
     }
 }
 

@@ -3,15 +3,16 @@ package com.codecool.life_sync.controller;
 import com.codecool.life_sync.entity.Event;
 import com.codecool.life_sync.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin
 
 @RestController
-@RequestMapping("/calendar/event")
+@RequestMapping("/api/events")
 public class EventController {
     private final EventService eventService;
 
@@ -20,13 +21,31 @@ public class EventController {
         this.eventService = eventService;
     }
 
-    @GetMapping
+    @GetMapping(value = "/All")
     public List<Event> getAllEvents(){
         return eventService.getAllEvents();
     }
 
-    @PostMapping
-    public void saveEvent(@RequestBody Event event){
-        eventService.saveEvent(event);
+    @GetMapping(value = "/Today")
+     public List<Event> getDailyEvents(){
+        return eventService.getDailyEvents();
+    }
+
+    @GetMapping(value = "/Week")
+    public List<Event> getWeeklyEvents(){
+        return eventService.getWeeklyEvents();
+    }
+
+    @CrossOrigin
+    @PostMapping(value = "/newEvent", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String saveEvent( @RequestBody Event newEvent){
+        eventService.saveEvent(newEvent);
+        return "{\"success\":1}";
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public String deleteEvent (@PathVariable Long id){
+        eventService.deleteEvent(id);
+        return "{\"success\":1}";
     }
 }
