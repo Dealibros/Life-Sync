@@ -30,7 +30,7 @@
     background-clip: content-box;
 }
 
-.events-div{
+.events-div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,7 +73,7 @@
     margin-top: 0.4rem;
     margin-right: 0.6rem;
     border-radius: 50%;
-    border:none;
+    border: none;
     z-index: 10;
 }
 
@@ -88,7 +88,7 @@
 
 }
 
-.today-button:focus{
+.today-button:focus {
     border-bottom: 1.5px dashed rgb(1, 1, 1);
     padding-bottom: 1px;
     padding: 0.1rem;
@@ -106,15 +106,15 @@
     padding: 0.1rem;
 }
 
-.today-button{
+.today-button {
     margin-right: 0.3rem;
 }
 
-.week-button{
+.week-button {
     margin-right: 0.3rem;
 }
 
-.event-board-title{
+.event-board-title {
     margin-bottom: 0.6rem;
     margin-top: -2rem;
     font-size: 1.4rem;
@@ -130,9 +130,9 @@
 
 }
 
-.icon-div{
+.icon-div {
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: flex-end;
 
 }

@@ -5,22 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="restructured frontend folder and small cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/ToDosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/ToDosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/ToDos.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/ToDos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/ToDosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/ToDosRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/InitializationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/InitializationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/ToDosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/ToDosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventComponent/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/calendaOfNewEventFormComponent/CalendaOfNewEventFormComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/calendarOfNewEventForm/CalendarOfNewEventForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/calendaOfNewEventFormComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/calendarOfNewEventForm/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventComponent/EventComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/event/Event.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/event/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventsBoard/EventsBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventsBoard/EventsBoard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventsBoard/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventsBoard/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventFormComponent/NewEventFormComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventForm/NewEventForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventFormComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventForm/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventTime/NewEventTime.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventTime/NewEventTime.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventTime/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventTime/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/quoteComponent/QuoteComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/quote/Quote.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/quoteComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/quote/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoListComponent/ToDo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoList/ToDo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoListComponent/ToDoForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoList/ToDoForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoListComponent/ToDoListComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoList/ToDoList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoListComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/toDoList/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/weatherComponent/WeatherComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/weather/Weather.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/weatherComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/weather/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/CalendarPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/CalendarPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/pages/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/CalendarPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/CalendarPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/CalendarReact.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/CalendarReact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/styles/Navbar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,9 +126,10 @@
       <method v="2" />
     </configuration>
     <configuration name="LyfeSyncApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <envs>
-        <env name="PSQL_USER_NAME" value="dea" />
-        <env name="PSQL_PASSWORD" value="Emmita789" />
+        <env name="PSQL_USER_NAME" value="doriana" />
+        <env name="PSQL_PASSWORD" value="postgresql" />
         <env name="PSQL_HOST" value="localhost" />
         <env name="PSQL_DB_NAME" value="life_sync " />
       </envs>
@@ -183,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671552881551</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="working on security structure">
+      <created>1673345864750</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673345864750</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +233,7 @@
     <MESSAGE value="restructured frontend project" />
     <MESSAGE value="restructured frontend folder and small cleanup" />
     <MESSAGE value="more background pictures added" />
-    <option name="LAST_COMMIT_MESSAGE" value="more background pictures added" />
+    <MESSAGE value="working on security structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on security structure" />
   </component>
 </project>
