@@ -7,6 +7,7 @@ import Calendar from 'react-calendar';
 import EventsBoard from '../components/EventRelated/EventsBoard/EventsBoard';
 import Quote from '../components/Quote/Quote';
 import Weather from '../components/Weather/Weather';
+import ImageLoader from "./ImageLoader";
 
 export default function CalendarPage() {
     const today = new Date();
@@ -21,6 +22,9 @@ export default function CalendarPage() {
         greeting = 'Good evening!';
     }
 
+
+    //data url
+    //transition
     return (<div
         style={{
             backgroundImage: `url(/backgrounds/watercolor-${date.toLocaleString('en-US', {month: 'long'},)}.jpg`,
@@ -30,6 +34,7 @@ export default function CalendarPage() {
             height: '100vh',
         }}
     >
+        <ImageLoader/>
         <div className="App">
             <div className="wrapper">
                 <div className="top-banner">
