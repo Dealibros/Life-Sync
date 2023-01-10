@@ -4,23 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="restructured frontend folder and small cleanup">
+    <list default="true" id="64a02459-4bfe-4895-b5ca-cc437b50ef1f" name="Changes" comment="compressed backgrounds added">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/config/AuthenticationConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/dto/AuthenticationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/dto/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/security_controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/security_controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/security_service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/security_service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/user/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/CalendarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/ToDosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/controller/ToDosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/ToDos.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/entity/ToDos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/ToDosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/repository/ToDosRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/InitializationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/InitializationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/ToDosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/service/ToDosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventComponent/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventComponent/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventsBoard/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/eventsBoard/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventFormComponent/NewEventFormComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/life-sync-react-app/src/components/newEventFormComponent/NewEventFormComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,43 +79,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/deali/Desktop/Programming Material/CodeCool Course/Projects/Advanced Module/security-practice&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Colors&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b737627fd6444c49e31b55102b0f390c&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/doriana/code/ADVANCED/el_proyecto_grande/Life-Sync/backend/src/main/java/com/codecool/life_sync/security",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Colors",
+    "spring.configuration.checksum": "b737627fd6444c49e31b55102b0f390c",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.codecool.life_sync.security.security_service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/src/main/java/com/codecool/life_sync/security" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.codecool.life_sync.security.config" />
+      <recent name="com.codecool.life_sync.security.security_service" />
+      <recent name="com.codecool.life_sync.service" />
+      <recent name="com.codecool.life_sync.security.security_controller" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.LyfeSyncApplication">
     <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="6" requestIdentifier="#6" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="LyfeSyncApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <envs>
-        <env name="PSQL_USER_NAME" value="dea" />
-        <env name="PSQL_PASSWORD" value="Emmita789" />
+        <env name="PSQL_USER_NAME" value="doriana" />
+        <env name="PSQL_PASSWORD" value="postgresql" />
         <env name="PSQL_HOST" value="localhost" />
         <env name="PSQL_DB_NAME" value="life_sync " />
       </envs>

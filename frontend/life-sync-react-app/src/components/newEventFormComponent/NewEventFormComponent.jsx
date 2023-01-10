@@ -16,6 +16,7 @@ const NewEventFormComponent = (props) => {
   const [newEvent, setNewEvent] = useState(INITIAL_EVENT);
   const [sortTime, setSortTime] = useState(SORTING_TIME);
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  console.log("Event", newEvent)
 
   useEffect(() => {
     const validateForm = !Object.values(newEvent).some(
