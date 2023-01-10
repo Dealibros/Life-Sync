@@ -20,6 +20,7 @@ export default function EventsComponent({
       headers: {
         'Content-Type': 'application/json',
       },
+      body: null,
     })
       .then((response) => response.json())
       .then((response) => {

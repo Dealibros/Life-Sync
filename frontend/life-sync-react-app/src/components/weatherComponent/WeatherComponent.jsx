@@ -30,7 +30,7 @@ export default function QuoteComponent() {
     location.lat + ',' + location.lon
   }`;
 
-  //Why is it still compleining after the condition statement?
+  //Why is it still complaining after the condition statement?
   useEffect(() => {
     if (location.lat && location.lon) {
       fetch(apiWeatherUrl, {
