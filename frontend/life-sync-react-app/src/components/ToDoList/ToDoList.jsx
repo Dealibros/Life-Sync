@@ -1,56 +1,36 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { apiFetch } from '../../apiFetch';
 import ToDo from './ToDo';
 import ToDoForm from './ToDoForm';
 
-export default function TodoListComponent(props) {
+export default function TodoList(props) {
   const nodeRef = React.useRef(null);
   const [toDoList, setToDoList] = useState([]);
   const [refresh, setRefresh] = useState(' ');
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/toDos/all`)
-      .then((response) => response.json())
-      .then((data) => {
+    apiFetch('http://localhost:8080/api/toDos/all', 'GET', null).then(
+      (data) => {
         setToDoList(data);
-      });
-  }, [setRefresh, refresh]);
+      },
+    );
+  }, [setRefresh, refresh, toDoList]);
 
   const handleToggle = (id) => {
-    console.log(id);
-    fetch(`http://localhost:8080/api/toDos/updateToDo/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(id),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        setRefresh(toDoList);
-      })
-      .catch((error) => {
-        console.log('error!', error);
-      });
+    apiFetch(
+      `http://localhost:8080/api/toDos/updateToDo/${id}`,
+      'PUT',
+      JSON.stringify(id),
+    );
+    setRefresh(toDoList);
   };
 
   const deleteToDos = () => {
-    fetch('http://localhost:8080/api/toDos/deleteToDos', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        setRefresh(toDoList);
-      })
-      .catch((error) => {
-        console.log('error!', error);
-      });
+    apiFetch('http://localhost:8080/api/toDos/deleteToDos', 'DELETE', null);
+    setRefresh(toDoList);
   };
-  // if (!toDoList.length) return <h3>'</h3>;
 
   return (
     <CSSTransition

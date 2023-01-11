@@ -7,11 +7,12 @@ import { BsArrowRight } from 'react-icons/bs';
 import { FiCalendar } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
 import { CSSTransition } from 'react-transition-group';
-import { INITIAL_EVENT, SORTING_TIME } from '../../Constants';
-import CalendaOfNewEventFormComponent from '../calendaOfNewEventFormComponent/CalendaOfNewEventFormComponent';
-import NewEventTime from '../newEventTime/NewEventTime';
+import { apiFetch } from '../../../apiFetch';
+import { INITIAL_EVENT, SORTING_TIME } from '../../../Constants';
+import CalendarOfNewEventForm from '../CalendarOfNewEventForm/CalendarOfNewEventForm';
+import NewEventTime from '../NewEventTime/NewEventTime';
 
-const NewEventFormComponent = (props) => {
+const NewEventForm = (props) => {
   const nodeRef = React.useRef(null);
   const [newEvent, setNewEvent] = useState(INITIAL_EVENT);
   const [sortTime, setSortTime] = useState(SORTING_TIME);
@@ -30,20 +31,12 @@ const NewEventFormComponent = (props) => {
 
   const createEvent = (event) => {
     event.preventDefault();
-    fetch('http://localhost:8080/api/events/newEvent', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newEvent),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        props.onClose();
-      })
-      .catch((error) => {
-        console.log('error!', error);
-      });
+    apiFetch(
+      'http://localhost:8080/api/events/newEvent',
+      'POST',
+      JSON.stringify(newEvent),
+    );
+    props.onClose();
   };
 
   const handleTitle = (value) => setNewEvent({ ...newEvent, title: value });
@@ -74,22 +67,22 @@ const NewEventFormComponent = (props) => {
 
   const selectStartDate = (value) => {
     const newValue = moment(value);
-    const formatedValue = newValue.format('yyyy-MM-DD');
+    const formattedValue = newValue.format('yyyy-MM-DD');
 
     setSortTime({
       ...sortTime,
-      startingTime: { ...sortTime.startingTime, date: formatedValue },
+      startingTime: { ...sortTime.startingTime, date: formattedValue },
     });
     setCalendarStartDate(value);
   };
 
   const selectEndDate = (value) => {
     const newValue = moment(value);
-    const formatedValue = newValue.format('yyyy-MM-DD');
+    const formattedValue = newValue.format('yyyy-MM-DD');
 
     setSortTime({
       ...sortTime,
-      endingTime: { ...sortTime.endingTime, date: formatedValue },
+      endingTime: { ...sortTime.endingTime, date: formattedValue },
     });
     setCalendarEndDate(value);
   };
@@ -189,7 +182,7 @@ const NewEventFormComponent = (props) => {
               </div>
 
               <div id="calendar-form-start">
-                <CalendaOfNewEventFormComponent
+                <CalendarOfNewEventForm
                   onChange={onStartCalendarChange}
                   value={CalendarStartDate}
                   onClickDay={(value, event) => selectStartDate(value, event)}
@@ -205,7 +198,7 @@ const NewEventFormComponent = (props) => {
               </div>
 
               <div id="calendar-form-end">
-                <CalendaOfNewEventFormComponent
+                <CalendarOfNewEventForm
                   onChange={onEndCalendarChange}
                   value={CalendarEndDate}
                   onClickDay={(value, event) => selectEndDate(value, event)}
@@ -276,4 +269,4 @@ const NewEventFormComponent = (props) => {
   );
 };
 
-export default NewEventFormComponent;
+export default NewEventForm;

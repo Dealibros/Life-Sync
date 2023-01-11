@@ -3,32 +3,14 @@ import { format } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
 import moment from 'moment';
 import React, { useState } from 'react';
+import { apiFetch } from '../../../apiFetch';
 
-export default function EventsComponent({
-  singleEvent,
-  color,
-  setEvents,
-  events,
-}) {
-  //Keep this for For weekly use
-  // console.log(parseISO(singleEvent.startingTime, "EEEE LLLL do MMM LLLL"))
+export default function Event({ singleEvent, color, setEvents, events }) {
   const [hover, setHover] = useState(false);
 
   const DeleteEvent = (eventId) => {
-    fetch(`http://localhost:8080/api/events/${eventId}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: null,
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        setEvents(events.filter((event) => event.eventId !== eventId));
-      })
-      .catch((error) => {
-        console.log('error!', error);
-      });
+    apiFetch(`http://localhost:8080/api/events/${eventId}`, 'DELETE', null);
+    setEvents(events.filter((event) => event.eventId !== eventId));
   };
 
   const past =

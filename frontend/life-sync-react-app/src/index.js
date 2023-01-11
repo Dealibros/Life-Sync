@@ -5,10 +5,8 @@ import App from './App';
 import Layout from './pages/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+root.render(<React.StrictMode>
     <Layout>
-      <App />
+        <App/>
     </Layout>
-  </React.StrictMode>,
-);
+</React.StrictMode>,);

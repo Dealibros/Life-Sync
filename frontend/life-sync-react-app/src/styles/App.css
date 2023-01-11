@@ -1,69 +1,64 @@
 @font-face {
-  font-family: 'Kanit';
-  src: local('Kanit'), url(../../public/fonts/Kanit-Regular.ttf) format('truetype');
+    font-family: 'Kanit';
+    src: local('Kanit'), url(../../public/fonts/Kanit-Regular.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'Special Elite';
-  src: local('SpecialElite'), url(../../public/fonts/SpecialElite-Regular.ttf) format('truetype');
+    font-family: 'Special Elite';
+    src: local('SpecialElite'), url(../../public/fonts/SpecialElite-Regular.ttf) format('truetype');
 }
 
 .App {
-  text-align: center;
-  font-family: 'Kanit';
+    text-align: center;
+    font-family: 'Kanit';
 }
 
 .App-logo {
-  height: 50vmin;
-  pointer-events: none;
+    height: 50vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .welcome-message {
-  font-size: 70px;
-  font-weight: 500;
-  margin: 10px;
+    font-size: 70px;
+    font-weight: 500;
+    margin: 10px;
 }
 
 
 .life-sync-title {
-  font-size: 90px;
-  font-family: "Frederika";
+    font-size: 90px;
+    font-family: "Frederika";
 }
 
 
 .App-header {
-  background-color: #d4f3e4;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(8, 67, 57);
+    background-color: #d4f3e4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgb(8, 67, 57);
 }
 
 .App-link {
-  color: #0e9095;
+    color: #0e9095;
 }
 
-.bm-burger-button{
-  /* visibility: hidden; */
-  border-color: #D4F3E4;
+.bm-burger-button {
+    /* visibility: hidden; */
+    border-color: #D4F3E4;
 }
-
-
-
-
-
 
 
 @font-face {
-  font-family: "Frederika";
-  src: url("/public/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
+    font-family: "Frederika";
+    src: url("/public/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
 }

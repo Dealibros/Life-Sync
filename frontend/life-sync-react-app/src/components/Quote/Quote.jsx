@@ -1,25 +1,17 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
+import { apiFetch } from '../../apiFetch';
 
-export default function QuoteComponent() {
+export default function Quote() {
   const API_KEY = `${process.env.REACT_APP_QUOTE_API_KEY}`;
 
   const [quote, setQuote] = useState([]);
   const apiUrl = `https://api.api-ninjas.com/v1/quotes?category=happiness`;
 
   useEffect(() => {
-    fetch(apiUrl, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'X-Api-Key': `${API_KEY}`,
-      },
-      contentType: 'application/json',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setQuote(data);
-      });
+    apiFetch(apiUrl, 'GET', null, API_KEY).then((data) => {
+      setQuote(data);
+    });
   }, []);
 
   return (
