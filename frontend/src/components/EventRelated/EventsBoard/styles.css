@@ -1,0 +1,144 @@
+.events-wrapper {
+    display: block;
+    margin-left: 0.6rem;
+    width: 470px;
+    height: 534px;
+    max-width: 100%;
+    padding: 0 0.8rem;
+    background-color: #fff;
+    color: #222;
+    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    line-height: 1.125em;
+    padding-bottom: 1.2rem;
+}
+
+.events-wrapper ::-webkit-scrollbar {
+    width: 20px;
+}
+
+.events-wrapper ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.events-wrapper ::-webkit-scrollbar-thumb {
+    background-color: #eff3f4;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.events-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 375px;
+    padding: 0.1rem 3.6rem 0 3.6rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+
+}
+
+.events-wrapper ::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+.div-today-week-events {
+    padding-left: 1.7rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.button-add-event-div {
+    padding-right: 1.3rem;
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 10;
+
+}
+
+.button-add-event {
+    color: white;
+    background: #a667d0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8360c3, #7476ca); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ac6bd1, #7476ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: 900;
+    background-color: #7476ca;
+    font-size: 1rem;
+    padding: 0.4rem 0.7rem;
+    margin-top: 0.4rem;
+    margin-right: 0.6rem;
+    border-radius: 50%;
+    border: none;
+    z-index: 10;
+}
+
+.today-button, .week-button, .all-button {
+    padding-top: 0.2rem;
+    border: #fff;
+    background-color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: gray;
+    cursor: pointer;
+
+}
+
+.today-button:focus {
+    border-bottom: 1.5px dashed rgb(1, 1, 1);
+    padding-bottom: 1px;
+    padding: 0.1rem;
+}
+
+.week-button:focus {
+    border-bottom: 1.5px dashed rgb(10, 10, 10);
+    padding-bottom: 1px;
+    padding: 0.1rem;
+}
+
+.all-button:focus {
+    border-bottom: 1.5px dashed rgb(6, 6, 6);
+    padding-bottom: 1px;
+    padding: 0.1rem;
+}
+
+.today-button {
+    margin-right: 0.3rem;
+}
+
+.week-button {
+    margin-right: 0.3rem;
+}
+
+.event-board-title {
+    margin-bottom: 0.6rem;
+    margin-top: -2rem;
+    font-size: 1.4rem;
+}
+
+
+.check-icon {
+    margin-top: 1.8rem;
+    margin-right: 1.9rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    background-color: #fffdf5;
+
+}
+
+.icon-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+}
+
+.toDo-button {
+    background-color: white;
+    border: none;
+
+}
