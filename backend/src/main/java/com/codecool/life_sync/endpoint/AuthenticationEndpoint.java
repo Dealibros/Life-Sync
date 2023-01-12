@@ -19,6 +19,7 @@ public class AuthenticationEndpoint {
 
     @PostMapping("/register")
     public User register(@RequestBody RegisterRequest request) {
+        System.out.println("------- Arrived at the REGISTRATION ENDPOINT");
         return service.register(request);
     }
 

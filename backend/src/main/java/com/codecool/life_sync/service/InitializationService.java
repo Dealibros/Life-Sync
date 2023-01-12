@@ -52,8 +52,6 @@ public class InitializationService {
 
             User user = new User(1L,"doriana", "maria", "doriana@gmail.com", "123456", Role.USER);
             userRepository.save(user);
-
-
         };
     }
 
