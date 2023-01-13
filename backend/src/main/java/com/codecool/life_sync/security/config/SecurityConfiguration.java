@@ -33,7 +33,15 @@ public class SecurityConfiguration {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.cors().and().csrf().disable().authorizeHttpRequests(auth -> auth.anyRequest().authenticated()).oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt).sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).httpBasic(Customizer.withDefaults()).build();
+        return http.cors().and().csrf().disable()
+                .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers("/authentication/register").permitAll();
+                    auth.requestMatchers("/authentication/login").permitAll();
+                    auth.anyRequest().authenticated();
+                })
+                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .httpBasic(Customizer.withDefaults()).build();
     }
 
 

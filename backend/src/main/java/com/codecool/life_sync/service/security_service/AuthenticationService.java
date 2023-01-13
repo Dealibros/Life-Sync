@@ -1,5 +1,6 @@
 package com.codecool.life_sync.service.security_service;
 
+import com.codecool.life_sync.security.dto.LoginRequest;
 import com.codecool.life_sync.security.dto.RegisterRequest;
 import com.codecool.life_sync.entity.user.Role;
 import com.codecool.life_sync.entity.user.User;
@@ -37,6 +38,8 @@ public class AuthenticationService {
     //refactor these methods, more dynamic
 
     public String login(Authentication request) {
+        System.out.println( request);
+        //System.out.println(jwtService.generateToken(request));
         return jwtService.generateToken(request);
 
        /* authenticationManager.authenticate(

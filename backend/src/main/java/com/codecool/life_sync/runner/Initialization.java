@@ -1,4 +1,4 @@
-package com.codecool.life_sync.service;
+package com.codecool.life_sync.runner;
 
 import com.codecool.life_sync.entity.Calendar;
 import com.codecool.life_sync.entity.Event;
@@ -12,20 +12,21 @@ import com.codecool.life_sync.entity.user.UserRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
 import java.time.Month;
 
 @Configuration
-public class InitializationService {
+public class Initialization {
     private final UserRepository userRepository;
 
-    public InitializationService(UserRepository userRepository) {
+    public Initialization(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @Bean
-    ApplicationRunner runner(EventRepository eventRepository, CalendarRepository calendarRepository, ToDosRepository toDosRepository) {
+    ApplicationRunner runner(EventRepository eventRepository, CalendarRepository calendarRepository, ToDosRepository toDosRepository, PasswordEncoder passwordEncoder) {
         return args -> {
             Calendar calendar = new Calendar(0L, "Hello World, from SpringBoot");
             calendarRepository.save(calendar);
@@ -50,7 +51,7 @@ public class InitializationService {
             toDosRepository.save(todo4);
             toDosRepository.save(todo5);
 
-            User user = new User(1L,"doriana", "maria", "doriana@gmail.com", "123456", Role.USER);
+            User user = new User(1L,"doriana", "maria", "doriana@gmail.com", passwordEncoder.encode("123456"), Role.USER);
             userRepository.save(user);
         };
     }

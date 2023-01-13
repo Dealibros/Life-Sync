@@ -21,6 +21,7 @@ public class JwtService {
     }
 
     public String generateToken(Authentication authentication) {
+        System.out.println("AUTH " + authentication);
         Instant now = Instant.now();
         String scope = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
@@ -58,7 +59,7 @@ public class JwtService {
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
-    }
+    }*//*
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
         final String username = extractUsername(token);
