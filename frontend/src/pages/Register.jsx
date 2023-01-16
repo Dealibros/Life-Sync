@@ -13,7 +13,6 @@ export default function Register() {
     const [credentials, setCredentials] = useState(initialCredentials);
 
     const registerUser = (e) => {
-        console.log("STARING")
         e.preventDefault();
         const requestOptions = {
             method: 'POST',
@@ -34,30 +33,10 @@ export default function Register() {
                     if (!response.ok) throw new Error(response.status);
                     console.log(response.json)
                 })
-            //  .then(console.log("GETCHED"))
-
-            // .then(data => this.setState({ postId: data.id }));
-
-
-
-
-            //  await fetch('http://localhost:8080/authentication/register', {
-            //      method: 'POST', headers: {
-            //          'Content-Type': 'application/json',
-            //      }, mode:"no-cors",
-            //      body: JSON.stringify(credentials)
-            //  })
-            //  .then(response => response.json())
-            // .then(data => this.setState({ postId: data.id }));
-            //.then(response => console.log(response.json()))
 
         }
     }
 
-
-
-
-    console.log(credentials)
 
     const handleFirstname = (event) => {
         const name = event.target.name;

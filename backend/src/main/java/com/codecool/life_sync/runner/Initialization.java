@@ -8,7 +8,7 @@ import com.codecool.life_sync.repository.EventRepository;
 import com.codecool.life_sync.repository.ToDosRepository;
 import com.codecool.life_sync.entity.user.Role;
 import com.codecool.life_sync.entity.user.User;
-import com.codecool.life_sync.entity.user.UserRepository;
+import com.codecool.life_sync.repository.UserRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,10 +1,9 @@
 package com.codecool.life_sync.service.security_service;
 
-import com.codecool.life_sync.security.dto.LoginRequest;
 import com.codecool.life_sync.security.dto.RegisterRequest;
 import com.codecool.life_sync.entity.user.Role;
 import com.codecool.life_sync.entity.user.User;
-import com.codecool.life_sync.entity.user.UserRepository;
+import com.codecool.life_sync.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,33 +25,11 @@ public class AuthenticationService {
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();
-        System.out.println("user = " + user);
         return repository.save(user);
-       /* var jtwToken = jwtService.generateToken(user);
-        return AuthenticationResponse
-                .builder()
-                .token(jtwToken)
-                .build();*/
     }
 
-    //refactor these methods, more dynamic
-
-    public String login(Authentication request) {
-        System.out.println( request);
-        //System.out.println(jwtService.generateToken(request));
-        return jwtService.generateToken(request);
-
-       /* authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
-        var user = repository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new UsernameNotFoundException("User or password incorrect"));
-        var jwtToken = jwtService.generateToken(user);
-        return AuthenticationResponse.builder()
-                .token(jwtToken)
-                .build();*/
+    public String login(Authentication authentication) {
+        return jwtService.generateToken(authentication);
     }
+
 }

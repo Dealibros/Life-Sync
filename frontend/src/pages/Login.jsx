@@ -1,6 +1,5 @@
 import '../styles/Authentication.css';
 import React, { useState } from 'react';
-import {decode as base64_decode, encode as base64_encode} from 'base-64';
 
 
 export default function Login() {
@@ -10,70 +9,33 @@ export default function Login() {
         password: "",
     };
 
-    
-    
-
-
     const [credentials, setCredentials] = useState(initialCredentials);
 
-    const loginUser = (e) => {
-        //let encodedData = window.btoa(credentials);
-        // let encodedData = Buffer.from(JSON.stringify(credentials)).toString('base64');
-        
-        // //let authorizationHeaderString = "Authorization: Basic " + encodedData;
-        let encodedData = base64_encode(credentials.username +":" + credentials.password)
-        console.log("encoded data ", encodedData)
-        let authorizationHeaderString = "Authorization: Basic " + encodedData;
-
-        console.log("CREDENTIALS ", credentials)
-        console.log("STARING")
+    async function loginUser(e)  {
         e.preventDefault();
+        let encodedData = window.btoa(credentials.username + ":" + credentials.password)
+
         const requestOptions = {
             method: 'POST',
             headers: {
-                // 'Authorization': "Bearer Token",
-                // // 'Accept': 'application/json',s
-                // 'Authorization': 'Basic ' + credentials,
-                 //'Content-Type': 'application/json',
-                 'Authorization': 'Basic' + encodedData,
+                authorization: 'Basic ' + encodedData
             },
-             body: JSON.stringify(credentials)
         };
-
 
         if (credentials.username === "" || credentials.password === "") {
             alert("Fields are required");
         } else {
-            console.log("FETCHING")
-            fetch('http://localhost:8080/authentication/login', requestOptions)
-
-                .then(response => {
-                    if (!response.ok) throw new Error(response.status);
-                    console.log(response.json)
-                })
-
-
+            await fetch('http://localhost:8080/authentication/login', requestOptions)
+                .then(response => console.log(response.text()))
+                .catch(err => console.error(err))
         }
     }
 
 
-
-    function testing() {
-        let decodedData = base64_decode("ZG9yaWFuYUBnbWFpbC5jb206MTIzNDU2");
-        console.log("DECODE", decodedData)
-    }
-
-    testing();
-
-    console.log(credentials)
-
     const handleUsername = (event) => {
-        const name = event.target.name; 
+        const name = event.target.name;
         const value = event.target.value;
         setCredentials(values => ({ ...values, [name]: value }))
-
-        
-
     }
 
     const handlePassword = (event) => {
@@ -81,6 +43,7 @@ export default function Login() {
         const value = event.target.value;
         setCredentials(values => ({ ...values, [name]: value }))
     }
+
 
     return (
         <div className="login-root">
@@ -106,9 +69,9 @@ export default function Login() {
                                         <div className="grid--50-50">
                                             <label className="label"
                                                 htmlFor="password">Password</label>
-                                            <div className="reset-pass">
+                                            {/* <div className="reset-pass">
                                                 <a href="#">Forgot your password?</a>
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <input type="password" name="password" value={credentials.password}
                                             onChange={handlePassword} />
@@ -117,7 +80,6 @@ export default function Login() {
                                     <div className="field padding-bottom--24">
                                         <button className='submit-button' onClick={(e) => loginUser(e)} type="submit" name="submit" defaultValue="Continue">Submit</button>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
