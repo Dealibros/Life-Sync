@@ -1,8 +1,12 @@
 import '../styles/Authentication.css';
 import React, { useState } from 'react';
+import { useToken } from '../AuthenticantionContext';
 
 
 export default function Login() {
+
+    const [token, setToken] = useToken()
+    console.log("!!! ",token)
 
     const initialCredentials = {
         username: "",
@@ -11,7 +15,7 @@ export default function Login() {
 
     const [credentials, setCredentials] = useState(initialCredentials);
 
-    async function loginUser(e)  {
+    const loginUser = (e) => {
         e.preventDefault();
         let encodedData = window.btoa(credentials.username + ":" + credentials.password)
 
@@ -25,11 +29,15 @@ export default function Login() {
         if (credentials.username === "" || credentials.password === "") {
             alert("Fields are required");
         } else {
-            await fetch('http://localhost:8080/authentication/login', requestOptions)
-                .then(response => console.log(response.text()))
+            return fetch('http://localhost:8080/authentication/login', requestOptions)
+                .then(response => response.text())
+                .then(response => setToken(requestOptions.headers.authorization))
                 .catch(err => console.error(err))
         }
     }
+
+
+    
 
 
     const handleUsername = (event) => {
@@ -80,6 +88,7 @@ export default function Login() {
                                     <div className="field padding-bottom--24">
                                         <button className='submit-button' onClick={(e) => loginUser(e)} type="submit" name="submit" defaultValue="Continue">Submit</button>
                                     </div>
+
                                 </form>
                             </div>
                         </div>

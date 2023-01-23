@@ -1,13 +1,16 @@
 import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
 import '../styles/CalendarReact.css';
-import {format} from 'date-fns';
-import React, {useState} from 'react';
+import { format } from 'date-fns';
+import React, { useState , useContext} from 'react';
 import Calendar from 'react-calendar';
 import EventsBoard from '../components/EventRelated/EventsBoard/EventsBoard';
 import Quote from '../components/Quote/Quote';
 import Weather from '../components/Weather/Weather';
 import ImageLoader from "./ImageLoader";
+import { Navigate } from "react-router-dom";
+import { AuthenticationContext, useToken} from '../AuthenticantionContext';
+import { context } from '../App';
 
 export default function CalendarPage() {
     const today = new Date();
@@ -23,18 +26,22 @@ export default function CalendarPage() {
     }
 
 
-    //data url
-    //transition
+
+    // if (!authenticated) {
+    //     return <Navigate replace to="/login" />;
+    //     } else {
+    // //data url
+    // //transition
     return (<div
         style={{
-            backgroundImage: `url(/backgrounds/watercolor-${date.toLocaleString('en-US', {month: 'long'},)}.jpg`,
+            backgroundImage: `url(/backgrounds/watercolor-${date.toLocaleString('en-US', { month: 'long' },)}.jpg`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             width: '100vw',
             height: '100vh',
         }}
     >
-        <ImageLoader/>
+        <ImageLoader />
         <div className="App">
             <div className="wrapper">
                 <div className="top-banner">
@@ -47,7 +54,7 @@ export default function CalendarPage() {
                             </h3>
                         </div>
                         <div>
-                            <Weather cl/>
+                            <Weather cl />
                         </div>
                     </div>
                 </div>
@@ -66,8 +73,8 @@ export default function CalendarPage() {
                             onChange={setDate}
                             activeStartDate={date}
                             onActiveStartDateChange={({
-                                                          value, activeStartDate, action,
-                                                      }) => {
+                                value, activeStartDate, action,
+                            }) => {
                                 if (action === 'next') {
                                     setDate(new Date(activeStartDate));
                                 }
@@ -78,33 +85,33 @@ export default function CalendarPage() {
                             formatShortWeekday={(locale, value) => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][value.getDay()]}
                             next2Label={null}
                             prev2Label={null}
-                            tileClassName={({date}) => {
+                            tileClassName={({ date }) => {
                                 if (date
-                                    .toLocaleDateString('en-US', {weekday: 'long'})
+                                    .toLocaleDateString('en-US', { weekday: 'long' })
                                     .slice(0, 2) === 'Sa' || date
-                                    .toLocaleDateString('en-US', {weekday: 'long'})
-                                    .slice(0, 2) === 'Su') {
+                                        .toLocaleDateString('en-US', { weekday: 'long' })
+                                        .slice(0, 2) === 'Su') {
                                     return 'highlight';
                                 }
                             }}
                         />
-                        <EventsBoard/>
+                        <EventsBoard />
                     </div>
                     <div className="div-date">
                         <p className="selected-date">
-                            <span className="bold">Selected date</span> <br/>
+                            <span className="bold">Selected date</span> <br />
                             <span className="selected-date-first">
-                  {date.toLocaleString('en-US', {
-                      weekday: 'long', day: 'numeric', month: 'long',
-                  })}
-                </span>
-                            <br/>
+                                {date.toLocaleString('en-US', {
+                                    weekday: 'long', day: 'numeric', month: 'long',
+                                })}
+                            </span>
+                            <br />
                             <span className="selected-date-second">
-                  {date.toLocaleString('en-US', {year: 'numeric'})}
-                </span>
+                                {date.toLocaleString('en-US', { year: 'numeric' })}
+                            </span>
                         </p>
                         <div className="quoteDiv">
-                            <Quote/>
+                            <Quote />
                         </div>
                     </div>
                 </div>
