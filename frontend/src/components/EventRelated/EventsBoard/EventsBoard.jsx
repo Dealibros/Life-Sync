@@ -5,8 +5,11 @@ import { apiFetch } from '../../../apiFetch';
 import ToDoList from '../../ToDoList/ToDoList';
 import Event from '../Event/Event';
 import NewEventForm from '../NewEventForm/NewEventForm';
+import { useToken } from '../../../AuthenticantionContext';
 
 export default function EventsBoard() {
+  const token = useToken()
+  console.log("events board testing token", token)
   const [events, setEvents] = useState([]);
   const [show, setShow] = useState(false);
   const [showToDoList, setShowToDoList] = useState(false);
@@ -14,7 +17,7 @@ export default function EventsBoard() {
   //const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    apiFetch(`http://localhost:8080/api/events/${timeFrame}`, 'GET', null).then(
+    apiFetch(`http://localhost:8080/api/events/${timeFrame}`, 'GET', null, token).then(
       (data) => {
         setEvents(data);
       },

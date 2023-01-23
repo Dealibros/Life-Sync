@@ -35,6 +35,7 @@ const NewEventForm = (props) => {
       'http://localhost:8080/api/events/newEvent',
       'POST',
       JSON.stringify(newEvent),
+      null
     );
     props.onClose();
   };

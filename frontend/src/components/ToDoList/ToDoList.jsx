@@ -11,7 +11,7 @@ export default function TodoList(props) {
   const [refresh, setRefresh] = useState(' ');
 
   useEffect(() => {
-    apiFetch('http://localhost:8080/api/toDos/all', 'GET', null).then(
+    apiFetch('http://localhost:8080/api/toDos/all', 'GET', null, null).then(
       (data) => {
         setToDoList(data);
       },
@@ -23,12 +23,13 @@ export default function TodoList(props) {
       `http://localhost:8080/api/toDos/updateToDo/${id}`,
       'PUT',
       JSON.stringify(id),
+      null
     );
     setRefresh(toDoList);
   };
 
   const deleteToDos = () => {
-    apiFetch('http://localhost:8080/api/toDos/deleteToDos', 'DELETE', null);
+    apiFetch('http://localhost:8080/api/toDos/deleteToDos', 'DELETE', null, null);
     setRefresh(toDoList);
   };
 
