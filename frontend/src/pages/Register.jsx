@@ -1,7 +1,10 @@
 import '../styles/Authentication.css';
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+
+    let navigate = useNavigate();
 
     const initialCredentials = {
         firstname: "",
@@ -30,8 +33,12 @@ export default function Register() {
             fetch('http://localhost:8080/authentication/register', requestOptions)
 
                 .then(response => {
-                    if (!response.ok) throw new Error(response.status);
-                    console.log(response.json)
+                    if (!response.ok) {
+                        throw new Error(response.status)
+                    } else { 
+                        navigate("/login")
+                    };
+                    console.log(response)
                 })
 
         }

@@ -1,12 +1,12 @@
 import '../styles/App.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
     return (<div className="App">
         <header className="App-header">
 
-            <img src="/media/life_sync_logo.png" className="App-logo" alt="logo"/>
+            <img src="/media/life_sync_logo.png" className="App-logo" alt="logo" />
             <p className="welcome-message">
                 Welcome to <span className="life-sync-title">Life Sync</span></p>
 
@@ -14,15 +14,15 @@ function Home() {
 
             <div className="authentication-box">
 
-            <div className="authentication-message">
-                Let's get started! You can </div>
+                <div className="authentication-message">
+                    Let's get started! You can </div>
 
-            <Link to="login"> Login </Link>
+                <Link to="login"> Login </Link>
 
 
-            <div className="authentication-message">
-                Or </div>
-            <Link to="Register"> Register here. </Link>
+                <div className="authentication-message">
+                    Or </div>
+                <Link to="register"> Register here. </Link>
 
             </div>
 
