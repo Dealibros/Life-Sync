@@ -9,7 +9,7 @@ export default function Event({ singleEvent, color, setEvents, events }) {
   const [hover, setHover] = useState(false);
 
   const DeleteEvent = (eventId) => {
-    apiFetch(`http://localhost:8080/api/events/${eventId}`, 'DELETE', null, null);
+    apiFetch(`http://localhost:8080/api/events/${eventId}`, 'DELETE', null);
     setEvents(events.filter((event) => event.eventId !== eventId));
   };
 

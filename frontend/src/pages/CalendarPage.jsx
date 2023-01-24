@@ -9,8 +9,6 @@ import Quote from '../components/Quote/Quote';
 import Weather from '../components/Weather/Weather';
 import ImageLoader from "./ImageLoader";
 import { Navigate } from "react-router-dom";
-import { AuthenticationContext, useToken} from '../AuthenticantionContext';
-import { context } from '../App';
 
 export default function CalendarPage() {
     const today = new Date();
@@ -26,12 +24,6 @@ export default function CalendarPage() {
     }
 
 
-
-    // if (!authenticated) {
-    //     return <Navigate replace to="/login" />;
-    //     } else {
-    // //data url
-    // //transition
     return (<div
         style={{
             backgroundImage: `url(/backgrounds/watercolor-${date.toLocaleString('en-US', { month: 'long' },)}.jpg`,

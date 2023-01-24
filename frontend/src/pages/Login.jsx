@@ -1,19 +1,18 @@
 import '../styles/Authentication.css';
 import React, { useState } from 'react';
-import { useToken } from '../AuthenticantionContext';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-
-    const [token, setToken] = useToken()
-    console.log("!!! ",token)
 
     const initialCredentials = {
         username: "",
         password: "",
     };
 
+    let navigate = useNavigate();
+
     const [credentials, setCredentials] = useState(initialCredentials);
+
 
     const loginUser = (e) => {
         e.preventDefault();
@@ -31,11 +30,20 @@ export default function Login() {
         } else {
             return fetch('http://localhost:8080/authentication/login', requestOptions)
                 .then(response => response.text())
-                .then(response => setToken(requestOptions.headers.authorization))
-                .catch(err => console.error(err))
+                .then(token => {
+                    localStorage.setItem('token', token)
+                    if (token) {
+                        navigate('/calendarPage')
+                    } else {
+                        alert("Wrong username or password, try again!")
+                    }
+                    
+                })
+                .catch(err => {console.error(err)})
         }
     }
-
+    
+    console.log(localStorage)
 
     
 
