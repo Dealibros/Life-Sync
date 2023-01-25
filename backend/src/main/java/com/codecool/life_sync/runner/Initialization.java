@@ -1,9 +1,7 @@
 package com.codecool.life_sync.runner;
 
-import com.codecool.life_sync.entity.Calendar;
 import com.codecool.life_sync.entity.Event;
 import com.codecool.life_sync.entity.ToDos;
-import com.codecool.life_sync.repository.CalendarRepository;
 import com.codecool.life_sync.repository.EventRepository;
 import com.codecool.life_sync.repository.ToDosRepository;
 import com.codecool.life_sync.entity.user.Role;
@@ -26,14 +24,12 @@ public class Initialization {
     }
 
     @Bean
-    ApplicationRunner runner(EventRepository eventRepository, CalendarRepository calendarRepository, ToDosRepository toDosRepository, PasswordEncoder passwordEncoder) {
+    ApplicationRunner runner(EventRepository eventRepository, ToDosRepository toDosRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            Calendar calendar = new Calendar(0L, "Hello World, from SpringBoot");
-            calendarRepository.save(calendar);
 
-            Event event1 = new Event("Supermarket", "Buy Groceries for Christmas", LocalDateTime.of(2022, Month.DECEMBER, 23, 11, 0, 0), LocalDateTime.of(2022, Month.DECEMBER, 23, 13, 0, 0), "Market", "Alarm");
-            Event event2 = new Event("Prepare Christmas Dinner", "Find some nice recipes and cook", LocalDateTime.of(2022, Month.DECEMBER, 23, 14, 0, 0), LocalDateTime.of(2022, Month.DECEMBER, 23, 17, 0, 0), "Home", "Alarm");
-            Event event3 = new Event("Check on Hayoung", "See how she is doing", LocalDateTime.of(2022, Month.DECEMBER, 22, 12, 0, 0), LocalDateTime.of(2022, Month.DECEMBER, 22, 12, 30, 0), "Home", "Alarm");
+            Event event1 = new Event("Supermarket", "Buy Groceries for Christmas", LocalDateTime.of(2022, Month.DECEMBER, 23, 11, 0, 0), LocalDateTime.of(2022, Month.DECEMBER, 23, 13, 0, 0), "Market", "Alarm",1L);
+            Event event2 = new Event("Prepare Christmas Dinner", "Find some nice recipes and cook", LocalDateTime.of(2022, Month.DECEMBER, 23, 14, 0, 0), LocalDateTime.of(2022, Month.DECEMBER, 23, 17, 0, 0), "Home", "Alarm",1L);
+            Event event3 = new Event("Check on Hayoung", "See how she is doing", LocalDateTime.of(2022, Month.DECEMBER, 22, 12, 0, 0), LocalDateTime.of(2022, Month.DECEMBER, 22, 12, 30, 0), "Home", "Alarm",1L);
 
             eventRepository.save(event1);
             eventRepository.save(event2);

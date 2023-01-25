@@ -15,4 +15,6 @@ public interface EventRepository extends JpaRepository<Event, Long> {
     List<Event> findByStartingTimeBetweenOrderByStartingTimeDesc(@Param("startDate") LocalDateTime starDate,  @Param("endDate") LocalDateTime endDate);
 
     List<Event> findEventByOrderByStartingTimeDesc();
+
+    List<Event> findEventByUserId(Long userId);
 }

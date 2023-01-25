@@ -24,14 +24,16 @@ public class Event {
     private LocalDateTime endingTime;
     private String location;
     private String notification;
+    private Long userId;
 
-    public Event(String eventTitle, String description, LocalDateTime startingTime, LocalDateTime endingTime, String location, String notification) {
+    public Event(String eventTitle, String description, LocalDateTime startingTime, LocalDateTime endingTime, String location, String notification, Long userId) {
         this.title = eventTitle;
         this.description = description;
         this.startingTime = startingTime;
         this.endingTime = endingTime;
         this.location = location;
         this.notification = notification;
+        this.userId = userId;
     }
 }
 

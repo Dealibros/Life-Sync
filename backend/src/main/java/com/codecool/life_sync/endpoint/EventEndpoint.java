@@ -34,9 +34,8 @@ public class EventEndpoint {
         return eventService.getWeeklyEvents();
     }
 
-    @CrossOrigin
     @PostMapping(value = "/newEvent", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String saveEvent( @RequestBody Event newEvent){
+    public String saveEvent(@RequestBody Event newEvent){
         eventService.saveEvent(newEvent);
         return "{\"success\":1}";
     }

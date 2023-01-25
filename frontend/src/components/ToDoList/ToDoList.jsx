@@ -16,7 +16,7 @@ export default function TodoList(props) {
         setToDoList(data);
       },
     );
-  }, [setRefresh, refresh, toDoList]);
+  }, []);
 
   const handleToggle = (id) => {
     apiFetch(

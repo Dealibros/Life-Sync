@@ -32,6 +32,7 @@ export default function Login() {
                 .then(response => response.text())
                 .then(token => {
                     localStorage.setItem('token', token)
+                    localStorage.setItem('username', credentials.username)
                     if (token) {
                         navigate('/calendarPage')
                     } else {

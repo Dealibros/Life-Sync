@@ -19,6 +19,7 @@ const NewEventForm = (props) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   useEffect(() => {
+    console.log(newEvent)
     const validateForm = !Object.values(newEvent).some(
       (item) => item === null || item.length === 0,
     );
@@ -31,6 +32,7 @@ const NewEventForm = (props) => {
 
   const createEvent = (event) => {
     event.preventDefault();
+    
     apiFetch(
       'http://localhost:8080/api/events/newEvent',
       'POST',
@@ -39,13 +41,16 @@ const NewEventForm = (props) => {
     props.onClose();
   };
 
-  const handleTitle = (value) => setNewEvent({ ...newEvent, title: value });
+  
+  const handleTitle = (value) => 
+     setNewEvent({ ...newEvent, title: value });
   const handleDescription = (value) =>
     setNewEvent({ ...newEvent, description: value });
   const handleLocation = (value) =>
     setNewEvent({ ...newEvent, location: value });
-  const handleNotification = (value) =>
-    setNewEvent({ ...newEvent, notification: value });
+  const handleNotification = (value) =>{
+    setNewEvent({ ...newEvent, notification: value, userId: localStorage.getItem("user_id")})};
+
 
   //Select start & end date input fields
   const [displayStartDate, setDisplayStartDate] = useState('');
@@ -244,7 +249,9 @@ const NewEventForm = (props) => {
                   className="section-input-second"
                   type="text"
                   placeholder="Add notification"
-                  onChange={(ev) => handleNotification(ev.target.value)}
+                  onChange={(ev) => {
+                    handleNotification(ev.target.value);
+                  }}
                 />
               </div>
             </section>

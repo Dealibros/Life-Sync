@@ -12,8 +12,10 @@ function Navbar() {
     }
 
 
+
     return (<nav>
         <Menu>
+
             <a id="home" className="menu-item" href="/calendarPage">
                 My Calendar
             </a>

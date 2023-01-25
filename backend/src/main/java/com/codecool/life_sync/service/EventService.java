@@ -37,8 +37,10 @@ public class EventService {
     }
 
     public void saveEvent(Event event) {
+        System.out.println("EVENT "+ event);
         eventRepository.save(event);
     }
+
 
     public void deleteEvent(Long id){
         eventRepository.deleteById(id);
