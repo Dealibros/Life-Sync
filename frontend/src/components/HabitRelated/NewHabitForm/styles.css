@@ -1,0 +1,41 @@
+.habit-title {
+  text-align: center;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #b3b3b3;
+  padding-bottom: 9px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: transparent;
+  width: 13rem;
+}
+
+.habit-title:focus {
+  outline: none;
+}
+
+.habit-title::placeholder {
+  opacity: 50%;
+  font-weight: 400;
+}
+
+.habit-description-form {
+  text-align: center;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #b3b3b3;
+  padding: 0 1.5rem 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  margin-bottom: 1.5rem;
+  width: 10rem;
+}
+
+
+.habit-description-form:focus {
+  outline: none;
+}
+
+.habit-description-form::placeholder {
+  opacity: 60%;
+}
