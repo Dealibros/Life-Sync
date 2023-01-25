@@ -2,12 +2,12 @@
     display: inline-block;
     font-family: 'Special Elite';
     text-align: center;
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
     background: #fffdf5;
     padding: 0.1rem 0.6rem;
     margin: 0 0 -5rem 0;
     border: 2px dotted #C6D1BF;
-    max-width: 72rem;
+    max-width: 14rem;
     max-height: 34rem;
     min-height: 34rem;
     cursor: pointer;
@@ -51,7 +51,7 @@
     border-radius: 0.3rem;
     border-color: rgb(211, 207, 207);
     margin-top: 2rem;
-    width: 15vw;
+    width: 10vw;
 }
 
 .task-form {
@@ -76,7 +76,7 @@
     margin-bottom: 0.5rem;
     border-color: gray;
     text-align: center;
-    width: 15vw;
+    width: 10vw;
 }
 
 .task-button {
@@ -118,12 +118,10 @@
     opacity: 0;
 }
 
-.modal-content {
-    width: fit-content;
-    /* height: fit-content; */
+.modal-content-toDo {
+    width: 12.5rem;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
-    transform: translateY(-200px);
     border-radius: 1rem;
     padding-bottom: 0.5rem;
 

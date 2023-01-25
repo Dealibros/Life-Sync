@@ -46,7 +46,10 @@ export default function TodoList(props) {
         onClick={props.onClose}
         ref={nodeRef}
       >
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="modal-content-toDo"
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="toDo-component">
             <div className="close-toDo-div">
               <button className="close-toDo-button" onClick={props.onClose}>

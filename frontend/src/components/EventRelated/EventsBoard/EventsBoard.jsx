@@ -11,7 +11,6 @@ export default function EventsBoard() {
   const [show, setShow] = useState(false);
   const [showToDoList, setShowToDoList] = useState(false);
   const [timeFrame, setTimeFrame] = useState('All');
-  //const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     apiFetch(`http://localhost:8080/api/events/${timeFrame}`, 'GET', null).then(

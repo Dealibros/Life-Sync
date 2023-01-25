@@ -14,7 +14,7 @@
 }
 
 .App-logo {
-    height: 40vmin;
+    height: 50vmin;
     pointer-events: none;
 }
 
@@ -25,24 +25,14 @@
 }
 
 .welcome-message {
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 500;
-}
-
-p.authentication-message {
-    size: 80px;
-}
-
-.authentication-box {
-    background-color: #f8f8fa;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+    margin: 10px;
 }
 
 
 .life-sync-title {
-    font-size: 70px;
+    font-size: 90px;
     font-family: "Frederika";
 }
 

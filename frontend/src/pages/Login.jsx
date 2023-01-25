@@ -94,7 +94,7 @@ export default function Login() {
                                     </div>
 
                                     <div className="field padding-bottom--24">
-                                        <button className='submit-button' onClick={(e) => loginUser(e)} type="submit" name="submit" defaultValue="Continue">Submit</button>
+                                        <button className='submit-button-form' onClick={(e) => loginUser(e)} type="submit" name="submit" defaultValue="Continue">Submit</button>
                                     </div>
 
                                 </form>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CalendarPage from './pages/CalendarPage';
+import HabitTrackerPage from './pages/HabitTrackerPage';
 import Home from './pages/Home';
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -18,6 +19,7 @@ export default function App() {
                     <Route path="CalendarPage" element={<CalendarPage />} />
                     <Route path="Login" element={<Login />} />
                     <Route path="Register" element={<Register />} />
+                    <Route path="HabitTracker" element={<HabitTrackerPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

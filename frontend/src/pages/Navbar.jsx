@@ -18,7 +18,7 @@ function Navbar() {
                 My Calendar
             </a>
 
-            <a id="habit-tracker" className="menu-item" href="/habit-tracker">
+            <a id="habit-tracker" className="menu-item" href="/habitTracker">
                 Habit Tracker
             </a>
             <a id="patterns" className="menu-item" href="/patterns">
@@ -33,7 +33,7 @@ function Navbar() {
                 Profile
             </a>
 
-            <a id="logout" onClick={logout()} className="menu-item" href="/">
+            <a id="logout" onClick={logout} className="menu-item" href="/">
                 Logout
             </a>
 

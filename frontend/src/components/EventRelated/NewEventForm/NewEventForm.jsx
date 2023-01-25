@@ -34,7 +34,7 @@ const NewEventForm = (props) => {
     apiFetch(
       'http://localhost:8080/api/events/newEvent',
       'POST',
-      JSON.stringify(newEvent)
+      JSON.stringify(newEvent),
     );
     props.onClose();
   };

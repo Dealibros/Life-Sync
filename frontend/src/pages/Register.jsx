@@ -114,7 +114,7 @@ export default function Register() {
                                     </div>
 
                                     <div className="field padding-bottom--24">
-                                        <button className='submit-button' onClick={(e) => registerUser(e)} type="submit" name="submit" defaultValue="Continue">Submit</button>
+                                        <button className='submit-button-form' onClick={(e) => registerUser(e)} type="submit" name="submit" defaultValue="Continue">Submit</button>
                                     </div>
 
 
