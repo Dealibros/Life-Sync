@@ -22,11 +22,12 @@ export default function TodoList(props) {
     apiFetch(
       `http://localhost:8080/api/toDos/updateToDo/${id}`,
       'PUT',
-      JSON.stringify(id),
+      JSON.stringify({id}),
     ).then(() => {
       setRefresh((prevRefresh) => !prevRefresh);
     });
   };
+
 
   const deleteToDos = () => {
     apiFetch(
