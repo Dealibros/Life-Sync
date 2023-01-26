@@ -10,7 +10,7 @@ export default function EventsBoard() {
   const [events, setEvents] = useState([]);
   const [show, setShow] = useState(false);
   const [showToDoList, setShowToDoList] = useState(false);
-  const [timeFrame, setTimeFrame] = useState('All');
+  const [timeFrame, setTimeFrame] = useState('all');
 
   useEffect(() => {
     apiFetch(`http://localhost:8080/api/events/${timeFrame}`, 'GET', null).then(
@@ -31,6 +31,7 @@ export default function EventsBoard() {
       newArrayOfColors.push(threeColors[i]);
     }
   }
+  console.log("EVENTS ", events)
   if (!events) {
     return null;
   } else {
@@ -48,14 +49,14 @@ export default function EventsBoard() {
         <div className="div-today-week-events">
           <button
             className="today-button"
-            onClick={() => setTimeFrame('Today')}
+            onClick={() => setTimeFrame('today')}
           >
             Today
           </button>
-          <button className="week-button" onClick={() => setTimeFrame('Week')}>
+          <button className="week-button" onClick={() => setTimeFrame('week')}>
             Week
           </button>
-          <button className="all-button" onClick={() => setTimeFrame('All')}>
+          <button className="all-button" onClick={() => setTimeFrame('all')}>
             All
           </button>
         </div>

@@ -48,8 +48,8 @@ const NewEventForm = (props) => {
     setNewEvent({ ...newEvent, description: value });
   const handleLocation = (value) =>
     setNewEvent({ ...newEvent, location: value });
-  const handleNotification = (value) =>{
-    setNewEvent({ ...newEvent, notification: value, userId: localStorage.getItem("user_id")})};
+  const handleNotification = (value) =>
+    setNewEvent({ ...newEvent, notification: value});
 
 
   //Select start & end date input fields

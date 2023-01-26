@@ -29,7 +29,7 @@ public class DailyHabitEndpoint {
     }
 
     @PutMapping("/updateDailyHabit/{id}")
-    public DailyHabit updateTodos(@RequestBody DailyHabit dailyHabit, @PathVariable(value = "id") Long dailyHabitId) throws Exception {
+    public DailyHabit updateDailyHabit(@RequestBody DailyHabit dailyHabit, @PathVariable(value = "id") Long dailyHabitId) throws Exception {
         dailyHabitService.updateDailyHabit(dailyHabit, dailyHabitId);
         return dailyHabit;
     }

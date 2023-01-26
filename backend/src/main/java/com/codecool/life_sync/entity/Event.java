@@ -1,5 +1,6 @@
 package com.codecool.life_sync.entity;
 
+import com.codecool.life_sync.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,16 +25,18 @@ public class Event {
     private LocalDateTime endingTime;
     private String location;
     private String notification;
-    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "_user")
+    private User user;
 
-    public Event(String eventTitle, String description, LocalDateTime startingTime, LocalDateTime endingTime, String location, String notification, Long userId) {
+    public Event(String eventTitle, String description, LocalDateTime startingTime, LocalDateTime endingTime, String location, String notification, User user) {
         this.title = eventTitle;
         this.description = description;
         this.startingTime = startingTime;
         this.endingTime = endingTime;
         this.location = location;
         this.notification = notification;
-        this.userId = userId;
+        this.user = user;
     }
 }
 
