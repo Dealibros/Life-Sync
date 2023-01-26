@@ -8,7 +8,7 @@ import ToDoForm from './ToDoForm';
 export default function TodoList(props) {
   const nodeRef = React.useRef(null);
   const [toDoList, setToDoList] = useState([]);
-  const [refresh, setRefresh] = useState(' ');
+  const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
     apiFetch('http://localhost:8080/api/toDos/all', 'GET', null).then(
@@ -16,20 +16,26 @@ export default function TodoList(props) {
         setToDoList(data);
       },
     );
-  }, []);
+  }, [refresh, setRefresh]);
 
   const handleToggle = (id) => {
     apiFetch(
       `http://localhost:8080/api/toDos/updateToDo/${id}`,
       'PUT',
       JSON.stringify(id),
-    );
-    setRefresh(toDoList);
+    ).then(() => {
+      setRefresh((prevRefresh) => !prevRefresh);
+    });
   };
 
   const deleteToDos = () => {
-    apiFetch('http://localhost:8080/api/toDos/deleteToDos', 'DELETE', null);
-    setRefresh(toDoList);
+    apiFetch(
+      'http://localhost:8080/api/toDos/deleteToDos',
+      'DELETE',
+      null,
+    ).then(() => {
+      setRefresh((prevRefresh) => !prevRefresh);
+    });
   };
 
   return (
@@ -60,7 +66,12 @@ export default function TodoList(props) {
             <header className="toDo-header">
               <h1>To Do List</h1>
             </header>
-            <ToDoForm refresh={refresh} setRefresh={setRefresh} />
+            <ToDoForm
+              refresh={refresh}
+              setRefresh={setRefresh}
+              setToDoList={setToDoList}
+              toDoList={toDoList}
+            />
 
             <div className="tasks-div">
               {toDoList.map((toDo) => {

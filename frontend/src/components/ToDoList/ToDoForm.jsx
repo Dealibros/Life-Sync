@@ -1,6 +1,7 @@
 import './styles.css';
 import React, { useState } from 'react';
 import { apiFetch } from '../../apiFetch';
+import TodoList from './ToDoList';
 
 const ToDoForm = ({ setRefresh }) => {
   const [userInput, setUserInput] = useState('');
@@ -11,8 +12,9 @@ const ToDoForm = ({ setRefresh }) => {
       'http://localhost:8080/api/toDos/newToDo',
       'POST',
       JSON.stringify(userInput),
-    );
-    setRefresh(userInput);
+    ).then(() => {
+      setRefresh((prevRefresh) => !prevRefresh);
+    });
     setUserInput('');
   };
 

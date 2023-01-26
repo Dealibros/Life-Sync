@@ -5,12 +5,43 @@ body {
     background-color: #d4f3e4;
 }
 
+.register-link {
+    text-decoration: none;
+    font-size: 1.7rem;
+}
 
-.life-sync-title {
+
+.login-link {
+    text-decoration: none;
+    font-size: 1.7rem;
+
+
+}
+
+.login-link :visited {
+    text-decoration: none;
+}
+
+.title-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0 1.3rem 0;
+}
+
+.title-div-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3.5rem 0 2.3rem 0;
+}
+
+.life-sync-title-register-login {
     font-size: 70px;
     font-family: "Frederika", serif;
     color: #0e9095;
 }
+
 
 .login-root {
     display: flex;
@@ -121,22 +152,29 @@ body {
     background: white;
     border-radius: 4px;
     box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    border-radius: 0.5rem;
 }
 
 .span-login {
     display: block;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 28px;
     color: #1a1f36;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.9rem;
+
 }
 
 .label {
+    font-family: 'Special Elite';
     margin-bottom: 10px;
+
 }
 
 .reset-pass a, label {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     display: block;
 }
 
@@ -159,7 +197,7 @@ body {
     border: unset;
     border-radius: 4px;
     outline-color: rgb(84 105 212 / 0.5);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(246, 248, 251);
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
@@ -194,7 +232,7 @@ body {
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
 }
 
@@ -229,6 +267,12 @@ a.ssolink {
     color: #697386;
     font-weight: 600;
     margin: 0 10px;
+}
+
+.google-button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -266,6 +310,7 @@ a.ssolink {
     font-size: 14px;
     letter-spacing: 0.2px;
     font-family: "Roboto", serif;
+
 }
 
 
