@@ -25,6 +25,7 @@ public class ToDosEndpoint {
 
     @PostMapping(value = "/newToDo")
     public String saveToDos(@RequestBody ToDos newToDo){
+        System.out.println("NEW TODO IN ENDPOINT "+ newToDo);
         toDosService.saveToDo(newToDo);
         return "{\"success\":1}";
     }
@@ -36,8 +37,8 @@ public class ToDosEndpoint {
     }
 
     @DeleteMapping("/deleteToDos")
-    public String deleteTodos(ToDos deleteToDos){
-        toDosService.deleteAllToDos(deleteToDos);
+    public String deleteTodos(){
+        toDosService.deleteAllToDos();
         return "{\"success\":1}";
     }
 }

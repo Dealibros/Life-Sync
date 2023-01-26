@@ -4,33 +4,38 @@ import { apiFetch } from '../../apiFetch';
 import TodoList from './ToDoList';
 
 const ToDoForm = ({ setRefresh }) => {
-  const [userInput, setUserInput] = useState('');
+
+  const [toDo, setToDo] = useState('');
+
 
   const createToDo = (event) => {
     event.preventDefault();
+
     apiFetch(
       'http://localhost:8080/api/toDos/newToDo',
       'POST',
-      JSON.stringify(userInput),
+      JSON.stringify({toDo}),
     ).then(() => {
       setRefresh((prevRefresh) => !prevRefresh);
     });
-    setUserInput('');
+    setToDo('');
   };
 
   const handleChange = (e) => {
-    setUserInput(e.currentTarget.value);
+    setToDo(e.currentTarget.value);
   };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUserInput('');
+    setToDo('');
   };
   return (
     <form className="task-form" onSubmit={handleSubmit}>
       <input
         className="task-input"
-        value={userInput}
+        value={toDo}
         type="text"
         onChange={handleChange}
         placeholder="Enter task..."

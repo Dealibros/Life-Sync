@@ -1,5 +1,5 @@
 export const INITIAL_EVENT = {
-    title: null, description: null, location: null, startingTime: null, endingTime: null, notification: null, userId: null,
+    title: null, description: null, location: null, startingTime: null, endingTime: null, notification: null, 
 };
 
 export const SORTING_TIME = {

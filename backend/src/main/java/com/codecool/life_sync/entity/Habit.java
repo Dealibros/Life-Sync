@@ -1,5 +1,6 @@
 package com.codecool.life_sync.entity;
 
+import com.codecool.life_sync.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,11 +29,16 @@ public class Habit {
 
     private List<DailyHabit> habits;
 
-    public Habit(String title, String description, Boolean starred, List<DailyHabit> habits) {
+    @ManyToOne
+    @JoinColumn(name = "_user")
+    private User user;
+
+    public Habit(String title, String description, Boolean starred, List<DailyHabit> habits, User user) {
         this.title = title;
         this.description = description;
         this.starred = starred;
         this.habits = habits;
+        this.user = user;
     }
 
 
