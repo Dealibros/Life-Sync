@@ -22,12 +22,13 @@ export default function Habit() {
         {habits.map((habit, index) => (
           <div className="habit-list" key={index}>
             <>
-              <div className="habit-name">
-                {habit.title} {habit.starred && '🌟'}
+              <div className="habit-text">
+                <div className="habit-name">{habit.title}</div>
+
+                <div className="habit-description">
+                  {habit.description} {habit.starred && '🌟'}
+                </div>
               </div>
-
-              <div className="habit-description">{habit.description}</div>
-
               <DailyHabits
                 className="daily-habits"
                 habits={habit.habits}
@@ -35,9 +36,13 @@ export default function Habit() {
                 habitId={habit.habitId}
               />
             </>
+            <div className="achieved">
+              <h3 className="achieved-text">Achieved</h3>
+            </div>
           </div>
         ))}
       </div>
+
       <div className="button-add-event-div">
         <button className="button-add-event" onClick={() => setShow(true)}>
           {' '}

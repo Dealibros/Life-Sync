@@ -1,7 +1,8 @@
+import './styles.css';
 import dayjs from 'dayjs';
 import { apiFetch } from '../../apiFetch';
 
-export default function DayHabitSquare({ day, habitId, habits, setHabits }) {
+export default function DayHabitSquare({ day, setHabits }) {
   const dayInstance = dayjs().subtract(1, 'day');
   const current = dayInstance;
   const disabled = !dayjs(day.date).isAfter(current);
@@ -21,19 +22,17 @@ export default function DayHabitSquare({ day, habitId, habits, setHabits }) {
   };
 
   return (
-    <div
-      className="habit-square"
-      style={{
-        backgroundColor: day.done ? 'purple' : disabled ? 'gray' : 'white',
-      }}
-      onClick={() => {
-        console.log(day.id);
-        // if (!disabled) {
-        doneFunction(day.id);
-        // }
-      }}
-    >
-      <div className="square">{new Date(day.date).getDate()}</div>
-    </div>
+    <>
+      <div
+        className={`habit-square ${
+          day.done ? 'ticked-square' : disabled ? 'past-square' : 'white'
+        }`}
+        onClick={() => {
+          doneFunction(day.id);
+        }}
+      >
+        <div className="square">{new Date(day.date).getDate()}</div>
+      </div>
+    </>
   );
 }

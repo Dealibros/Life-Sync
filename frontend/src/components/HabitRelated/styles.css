@@ -2,25 +2,31 @@
   text-align: center;
 }
 
-.habit-name{
-  font-size: 1.5rem;
-  color: black;
-  margin-bottom:0.1rem;
+.habit-text {
+  width: 12rem;
+  margin-left: 1rem;
+  padding-left: 0;
+  margin-right: 2rem;
+}
 
+.habit-name{
+  font-size: 1.3rem;
+  color: black;
   font-family: 'Kanit';
-  text-align:center;
-  align-self: center;
-  margin-right:1rem;
+  text-align:left;
+  margin-top: -0.6rem;
+  padding-left: 1.8rem;
+
 }
 
 .habit-description {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   opacity: 0.6;
   font-family: 'Kanit';
-  text-align: center;
-  align-self: center;
-  margin-right: 2.5rem;
-  margin-bottom: 1rem;
+  text-align: left;
+  margin-top: -0.3rem;
+  padding-left: 0;
+  padding-left: 1.8rem;
 }
 
 .row{
@@ -29,11 +35,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .favourite-habit-text{
-
   font-size: 1.2rem;
   font-weight: 300;
 }
@@ -45,7 +50,8 @@
   margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
+  border-color: white;
   padding: 0.2rem;
 }
 
@@ -56,6 +62,8 @@
 }
 
 .habit-list {
+  display: flex;
+  justify-content: center;
 
   }
 .daily-habits {
@@ -68,4 +76,61 @@
 
 .square{
   color: black;
+}
+
+.past-square{
+  background-color: #d7d7e3;
+
+}
+
+.white{
+  background-color: white;
+
+}
+
+.ticked-square{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.ticked-square::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 50%;
+  width: 5px;
+  background-color: white;
+  content: "";
+  transform: translateX(10px) rotate(-45deg);
+  transform-origin: left bottom;
+}
+
+.ticked-square::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 100%;
+  background-color: white;
+  content: "";
+  transform: translateX(10px) rotate(-45deg);
+  transform-origin: left bottom;
+}
+
+.achieved-text{
+  font-weight: 400;
+  margin-left: 4rem;
+  margin-top: -0.3rem;
+  margin-bottom: -2.2rem;
+
+}
+
+.days-done{
+  font-size: 1.3rem;
+  margin-left: 6rem;
+  margin-right: -8rem;
+  margin-top: 1rem;
+
 }

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import DayHabitSquare from './DayHabitSquare';
 
 export default function DailyHabits({ habits, setHabits, habitId }) {
@@ -7,20 +8,43 @@ export default function DailyHabits({ habits, setHabits, habitId }) {
     return c - d;
   });
 
+  function countHabits() {
+    let number = 0;
+    habits.forEach((element) => {
+      if (element.done === true) {
+        number++;
+      }
+    });
+    console.log('Number', number);
+    return number;
+  }
+
+  let total = countHabits();
+
   return (
-    <div className="row">
-      {habits.map((day, index) => (
-        <div key={index}>
-          <DayHabitSquare
-            className="day-habit-quare"
-            day={day}
-            key={day.id}
-            habits={habits}
-            setHabits={setHabits}
-            habitId={habitId}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="row">
+        {habits.map((day, index) => (
+          <div key={index}>
+            <DayHabitSquare
+              className="day-habit-quare"
+              day={day}
+              key={day.id}
+              habits={habits}
+              setHabits={setHabits}
+              habitId={habitId}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div>
+        {
+          <h4 className="days-done">
+            {total} / {habits.length}{' '}
+          </h4>
+        }
+      </div>
+    </>
   );
 }
