@@ -53,7 +53,6 @@ const NewHabitForm = (props) => {
 
   function handleFavorite() {
     const toggle = !favourite;
-    console.log(toggle);
     setFavourite(toggle);
     setNewHabit({ ...newHabit, starred: toggle });
   }

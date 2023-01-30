@@ -19,7 +19,6 @@ const NewEventForm = (props) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   useEffect(() => {
-    console.log(newEvent)
     const validateForm = !Object.values(newEvent).some(
       (item) => item === null || item.length === 0,
     );
@@ -32,7 +31,7 @@ const NewEventForm = (props) => {
 
   const createEvent = (event) => {
     event.preventDefault();
-    
+
     apiFetch(
       'http://localhost:8080/api/events/newEvent',
       'POST',
@@ -41,8 +40,8 @@ const NewEventForm = (props) => {
     props.onClose();
   };
 
-  
-  const handleTitle = (value) => 
+
+  const handleTitle = (value) =>
      setNewEvent({ ...newEvent, title: value });
   const handleDescription = (value) =>
     setNewEvent({ ...newEvent, description: value });

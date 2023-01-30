@@ -2,31 +2,30 @@ import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
 import '../styles/CalendarReact.css';
 import { format } from 'date-fns';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
+import { apiFetch } from '../apiFetch';
 import EventsBoard from '../components/EventRelated/EventsBoard/EventsBoard';
+import MoodSleepCheck from '../components/MoodSleepCheck/MoodSleepCheck';
 import Quote from '../components/Quote/Quote';
 import Weather from '../components/Weather/Weather';
 import ImageLoader from './ImageLoader';
 import Login from './Login';
-import { apiFetch } from '../apiFetch';
-import { useEffect } from 'react';
 
 export default function CalendarPage() {
-
   const initialCredentials = {
-    id : "",
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-    role: ""
-}; 
-
+    id: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    role: '',
+  };
 
   const today = new Date();
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState(initialCredentials);
+  const [showMoodSleepCheck, setShowMoodSleepCheck] = useState(true);
 
   let greeting = '';
   if (today.getHours() < 12) {
@@ -37,26 +36,21 @@ export default function CalendarPage() {
     greeting = 'Good evening';
   }
 
-  
-
   useEffect(() => {
-    apiFetch(`http://localhost:8080/user/${localStorage.getItem("username")}`, "GET", null)
-      .then((data) => {
-        setUser(data)
-      },
-      );
-  },[])
+    apiFetch(
+      `http://localhost:8080/user/${localStorage.getItem('username')}`,
+      'GET',
+      null,
+    ).then((data) => {
+      setUser(data);
+    });
+  }, []);
 
-  console.log(user.firstname)
-  localStorage.setItem("user_id", user.id)
+  localStorage.setItem('user_id', user.id);
 
-
-
-  if (!localStorage.getItem("token")) {
-    return (<Login></Login>)
+  if (!localStorage.getItem('token')) {
+    return <Login></Login>;
   } else {
-    //data url
-    //transition
     return (
       <div
         style={{
@@ -78,7 +72,9 @@ export default function CalendarPage() {
                 <div className="greeting">
                   <h3 className="greeting-date-week">
                     {' '}
-                    {greeting} {', '}{user.firstname}{'!'} <br></br> Is {format(today, 'EEEE')}{' '}
+                    {greeting} {', '}
+                    {user.firstname}
+                    {'!'} <br></br> Is {format(today, 'EEEE')}{' '}
                     {format(today, 'LLLL do')}{' '}
                   </h3>
                 </div>
@@ -91,10 +87,7 @@ export default function CalendarPage() {
 
           <div className="action-area">
             <div className="center-calendar">
-              <h2 className="section-title">
-                {/* <img src="/calendar.png" className="calendar-logo" alt="calendar-title"> </img> */}
-                My Calendar
-              </h2>
+              <h2 className="section-title">My Calendar</h2>
 
               <div className="calendar-event-div">
                 <Calendar
@@ -131,6 +124,12 @@ export default function CalendarPage() {
                     }
                   }}
                 />
+
+                <MoodSleepCheck
+                  onClose={() => setShowMoodSleepCheck(false)}
+                  showMoodSleepCheck={showMoodSleepCheck}
+                />
+
                 <EventsBoard />
               </div>
               <div className="div-date">

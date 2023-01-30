@@ -45,8 +45,6 @@ export default function Login() {
     }
   };
 
-  console.log(localStorage);
-
   const handleUsername = (event) => {
     const name = event.target.name;
     const value = event.target.value;

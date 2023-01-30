@@ -31,7 +31,7 @@ export default function EventsBoard() {
       newArrayOfColors.push(threeColors[i]);
     }
   }
-  console.log("EVENTS ", events)
+
   if (!events) {
     return null;
   } else {

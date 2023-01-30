@@ -8,13 +8,6 @@ export const current = dayInstance;
 export const daysInMonth = dayInstance.daysInMonth();
 export const TIME_FORMAT = 'YYYY-MM-DD';
 
-// console.log(start);
-// console.log(end);
-// Note
-// Open an Issue/Bug day.js repository (dayjs().startOf('month')) is
-// returning 2019-04-30T22:00:00.000Z but dayjs().startOf('month').format('YYYY-MM-DD') returns
-// 2019-05-01
-
 // Memoize
 // Expose a method that will accept an argument (Month)
 // and it will return the list of days as Array[]

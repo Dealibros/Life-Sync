@@ -32,7 +32,6 @@ export default function Register() {
     ) {
       alert('Fields are required');
     } else {
-      console.log('FETCHING');
       fetch(
         'http://localhost:8080/authentication/register',
         requestOptions,
@@ -148,6 +147,7 @@ export default function Register() {
                         <img
                           className="google-icon"
                           src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                          alt="logo"
                         />
                       </div>
                       <p className="btn-text">
