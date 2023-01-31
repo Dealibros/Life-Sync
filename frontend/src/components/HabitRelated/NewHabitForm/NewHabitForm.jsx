@@ -69,7 +69,10 @@ const NewHabitForm = (props) => {
         onClick={props.onClose}
         ref={nodeRef}
       >
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="modal-content-habit-form"
+          onClick={(e) => e.stopPropagation()}
+        >
           <form className="center-form">
             <div className="top">
               <div className="modal-header">

@@ -60,8 +60,16 @@ const MoodSleepCheck = (props) => {
       text: 'Really Well',
     },
     {
-      icon: '🤍',
+      icon: '🧡',
+      text: 'Well',
+    },
+    {
+      icon: '💛',
       text: 'OK',
+    },
+    {
+      icon: '💙',
+      text: 'So-So',
     },
     {
       icon: '🖤',

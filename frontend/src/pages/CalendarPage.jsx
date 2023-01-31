@@ -1,14 +1,13 @@
 import 'react-calendar/dist/Calendar.css';
 import '../styles/CalendarPage.css';
 import '../styles/CalendarReact.css';
-import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import { apiFetch } from '../apiFetch';
 import EventsBoard from '../components/EventRelated/EventsBoard/EventsBoard';
 import MoodSleepCheck from '../components/MoodSleepCheck/MoodSleepCheck';
+import NavBarTop from '../components/NavBarTop/NavBarTop';
 import Quote from '../components/Quote/Quote';
-import Weather from '../components/Weather/Weather';
 import ImageLoader from './ImageLoader';
 import Login from './Login';
 
@@ -22,19 +21,9 @@ export default function CalendarPage() {
     role: '',
   };
 
-  const today = new Date();
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState(initialCredentials);
   const [showMoodSleepCheck, setShowMoodSleepCheck] = useState(true);
-
-  let greeting = '';
-  if (today.getHours() < 12) {
-    greeting = 'Good morning';
-  } else if (today.getHours() < 18) {
-    greeting = 'Good afternoon';
-  } else {
-    greeting = 'Good evening';
-  }
 
   useEffect(() => {
     apiFetch(
@@ -47,7 +36,9 @@ export default function CalendarPage() {
   }, []);
 
   localStorage.setItem('user_id', user.id);
+  localStorage.setItem('user_firstname', user.firstname);
 
+  console.log('usercalendarpage', user);
   if (!localStorage.getItem('token')) {
     return <Login></Login>;
   } else {
@@ -66,24 +57,7 @@ export default function CalendarPage() {
       >
         <ImageLoader />
         <div className="App">
-          <div className="wrapper">
-            <div className="top-banner">
-              <div className="greeting-weather-div">
-                <div className="greeting">
-                  <h3 className="greeting-date-week">
-                    {' '}
-                    {greeting} {', '}
-                    {user.firstname}
-                    {'!'} <br></br> Is {format(today, 'EEEE')}{' '}
-                    {format(today, 'LLLL do')}{' '}
-                  </h3>
-                </div>
-                <div>
-                  <Weather cl />
-                </div>
-              </div>
-            </div>
-          </div>
+          <NavBarTop user={user} />
 
           <div className="action-area">
             <div className="center-calendar">
