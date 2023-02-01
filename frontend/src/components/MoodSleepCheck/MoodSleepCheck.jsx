@@ -1,6 +1,14 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { apiFetch } from '../../apiFetch';
+
+const NEW_DAILY_CHECK = {
+  date: null,
+  mood: null,
+  sleep: null,
+  message: 'No message',
+};
 
 const MoodSleepCheck = (props) => {
   const nodeRef = React.useRef(null);
@@ -8,28 +16,29 @@ const MoodSleepCheck = (props) => {
   const [note, setNote] = useState('');
   const [moodSelected, setMoodSelected] = useState(0);
   const [sleepSelected, setSleepSelected] = useState(null);
+  const [dailyCheck, setDailyCheck] = useState(NEW_DAILY_CHECK);
+  const todayDate = new Date().toISOString().slice(0, 10);
 
-  // useEffect(() => {
-  //   const validateForm = !Object.values(newEvent).some(
-  //     (item) => item === null || item.length === 0,
-  //   );
-  //   if (validateForm) {
-  //     setButtonDisabled(false);
-  //   } else {
-  //     setButtonDisabled(true);
-  //   }
-  // }, [newEvent]);
+  useEffect(() => {
+    const validateForm = !Object.values(dailyCheck).some(
+      (item) => item === null || item.length === 0,
+    );
+    if (validateForm) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [dailyCheck]);
 
-  // const createEvent = (event) => {
-  //   event.preventDefault();
-
-  //   apiFetch(
-  //     'http://localhost:8080/api/events/newEvent',
-  //     'POST',
-  //     JSON.stringify(newEvent),
-  //   );
-  //   props.onClose();
-  // };
+  const saveDailyCheck = (event) => {
+    event.preventDefault();
+    apiFetch(
+      'http://localhost:8080/api/dailyCheck/newDailyCheck',
+      'POST',
+      JSON.stringify(dailyCheck),
+    );
+    props.onClose();
+  };
 
   const moodIcons = [
     {
@@ -102,7 +111,14 @@ const MoodSleepCheck = (props) => {
                   {moodIcons.map((icon, i) => (
                     <div
                       className="position-icons"
-                      onClick={() => setMoodSelected(i)}
+                      onClick={() => {
+                        setMoodSelected(i);
+                        setDailyCheck({
+                          ...dailyCheck,
+                          mood: i,
+                          date: todayDate,
+                        });
+                      }}
                       key={i}
                     >
                       <span
@@ -127,7 +143,10 @@ const MoodSleepCheck = (props) => {
                   {sleepIcons.map((icon, i) => (
                     <div
                       className=""
-                      onClick={() => setSleepSelected(i)}
+                      onClick={() => {
+                        setSleepSelected(i);
+                        setDailyCheck({ ...dailyCheck, sleep: i });
+                      }}
                       key={i}
                     >
                       <span
@@ -158,21 +177,21 @@ const MoodSleepCheck = (props) => {
               cols="35"
               placeholder={`Add about your day`}
               value={note}
-              onChange={(e) => setNote(e.target.value)}
+              onChange={(e) => {
+                setNote(e.target.value);
+                setDailyCheck({ ...dailyCheck, message: e.target.value });
+              }}
             />
           </form>
 
           <div className="modal-footer">
             <button
               className="submit-button"
-              // onClick={(event) => createEvent(event)}
+              onClick={(event) => saveDailyCheck(event)}
               disabled={buttonDisabled}
             >
               Submit
             </button>
-            {/* <button className="close-button" onClick={props.onClose}>
-              Close
-            </button> */}
           </div>
           {}
         </div>

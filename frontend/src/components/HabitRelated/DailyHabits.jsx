@@ -15,7 +15,6 @@ export default function DailyHabits({ habits, setHabits, habitId }) {
         number++;
       }
     });
-    console.log('Number', number);
     return number;
   }
 

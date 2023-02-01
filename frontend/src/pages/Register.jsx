@@ -41,7 +41,6 @@ export default function Register() {
         } else {
           navigate('/login');
         }
-        console.log(response);
       });
     }
   };

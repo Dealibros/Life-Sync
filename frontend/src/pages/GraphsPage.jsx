@@ -1,4 +1,5 @@
 import '../styles/GraphsPage.css';
+import DataForGraph from '../components/Graphs/DataForGraph';
 import ResponsiveBumpGraph from '../components/Graphs/ResponsiveBumpGraph';
 import ResponsiveLineGraph from '../components/Graphs/ResponsiveLineGraph';
 import NavBarTop from '../components/NavBarTop/NavBarTop';

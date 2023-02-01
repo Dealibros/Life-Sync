@@ -15,6 +15,8 @@ export const TIME_FORMAT = 'YYYY-MM-DD';
 // picker on Habit screen but also for the Mood screen
 // because there you can also filter the current month.
 
+const todayDate = new Date().toISOString().slice(0, 10);
+
 export const days = [...Array(daysInMonth).keys()].map((u) => {
   const date = start.add(u, 'day').format('YYYY-MM-DD');
   const newDate = new Date(date);
