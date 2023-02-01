@@ -7,7 +7,7 @@ const NEW_DAILY_CHECK = {
   date: null,
   mood: null,
   sleep: null,
-  message: 'No message',
+  message: 'No message added',
 };
 
 const MoodSleepCheck = (props) => {
