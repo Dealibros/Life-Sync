@@ -1,3 +1,26 @@
-/* body {
-  background-color: rgb(239, 229, 250) !important;
-} */
+body {
+  background-color: #d4f3e4 !important;
+}
+
+.section-title-graph{
+  margin-bottom: 0rem;
+}
+
+.graph-div{
+  height: 88%;
+  width: 88%;
+}
+
+.center-graph{
+    background: rgba(255, 255, 255, 0.7);
+    height: 80vh;
+    min-width: 62vw;
+    max-width: 71vw;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }

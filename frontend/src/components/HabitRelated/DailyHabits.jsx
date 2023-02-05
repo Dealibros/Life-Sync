@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import DayHabitSquare from './DayHabitSquare';
 
 export default function DailyHabits({ habits, setHabits, habitId }) {

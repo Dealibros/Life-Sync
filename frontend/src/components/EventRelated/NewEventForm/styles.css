@@ -12,6 +12,7 @@
     opacity: 0;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
+
 }
 
 .new-event-modal.show {
@@ -67,7 +68,7 @@
 }
 
 .modal-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin: 1rem 0;
 
 }
@@ -87,7 +88,7 @@ input .modeal-title {
 }
 
 
-.modal-body {
+.modal-body-event {
     display: flex;
     flex-direction: column;
     padding: 10px 0;
@@ -100,8 +101,9 @@ input .modeal-title {
 .event-title {
     text-align: center;
     margin: 10px 0;
+    padding-bottom: 0.5rem;
     border: none;
-    border-bottom: 1px solid #b3b3b3;
+    border-bottom: 1px solid #b3b3b3 !important;
     padding-bottom: 9px;
     font-size: 1.3rem;
     font-weight: 500;
@@ -120,9 +122,9 @@ input .modeal-title {
 .event-description {
     text-align: center;
     margin: 10px 0;
+    padding-bottom: 0.5rem;
     border: none;
     border-bottom: 1px solid #b3b3b3;
-    padding: 0 1.5rem 0.5rem 1.5rem;
     font-size: 1.2rem;
     background-color: transparent;
     margin-bottom: 1.5rem;

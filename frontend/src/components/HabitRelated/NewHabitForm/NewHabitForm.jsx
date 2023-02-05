@@ -65,7 +65,7 @@ const NewHabitForm = (props) => {
       nodeRef={nodeRef}
     >
       <div
-        className={`new-event-modal ${props.show ? 'show' : ''}}`}
+        className={`new-habit-modal ${props.show ? 'show' : ''}}`}
         onClick={props.onClose}
         ref={nodeRef}
       >
@@ -76,10 +76,10 @@ const NewHabitForm = (props) => {
           <form className="center-form">
             <div className="top">
               <div className="modal-header">
-                <h4 className="modal-title">Create Habit</h4>
+                <h4 className="modal-title-habit">Create Habit</h4>
               </div>
 
-              <div className="modal-body">
+              <div className="modal-body-habit">
                 <input
                   className="habit-title"
                   type="text"
@@ -88,7 +88,7 @@ const NewHabitForm = (props) => {
                 ></input>
 
                 <input
-                  className="habit-description-form"
+                  className="habit-description"
                   type="text"
                   placeholder="Description"
                   onChange={(ev) => handleDescription(ev.target.value)}

@@ -38,7 +38,6 @@ export default function CalendarPage() {
   localStorage.setItem('user_id', user.id);
   localStorage.setItem('user_firstname', user.firstname);
 
-  console.log('usercalendarpage', user);
   if (!localStorage.getItem('token')) {
     return <Login></Login>;
   } else {

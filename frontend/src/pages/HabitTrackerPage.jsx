@@ -7,7 +7,7 @@ export default function HabitTrackerPage() {
     <>
       <div
         style={{
-          backgroundColor: 'lightblue',
+          backgroundColor: '#d4f3e4 ',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           width: '100vw',

@@ -1,3 +1,123 @@
+.new-habit-modal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  padding-top: 25.9rem;
+  z-index: 1;
+}
+
+.new-habit-modal.show {
+  opacity: 0;
+  pointer-events: visible;
+}
+
+.new-habit-modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.new-event-modal.exit {
+  opacity: 0;
+}
+
+.modal-content-habit-form {
+  width: 470px;
+  height: 22rem;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200px);
+  border-radius: 1rem;
+  margin:0 !important;
+
+}
+
+.new-habit-modal.enter-done .modal-content-habit {
+  transform: translateY(0);
+}
+
+.new-habit-modal.exit .modal-content-habit {
+  transform: translateY(-200px);
+}
+
+.modal-header {
+  padding-top: 1rem;
+}
+
+.modal-footer {
+  padding: 10px;
+  padding-bottom: 1.6rem;
+}
+
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fefffe;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+
+}
+
+.modal-title-habit {
+  font-size: 1.5rem;
+  margin: 0.9rem 0 0.2rem 0;
+
+}
+
+input .modeal-title {
+  text-align: center;
+}
+
+/* Check if this is working  */
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
+}
+
+
+.modal-body-habit {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 15px 0;
+  text-align: center;
+
+}
+
+.event-title-habit {
+  text-align: center;
+  margin: 20px 0 0 0;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.event-title-habit:focus {
+  outline: none;
+}
+
+.event-title-habit::placeholder {
+  opacity: 50%;
+  font-weight: 400;
+}
+
+
 .main {
   text-align: center;
 }
@@ -21,6 +141,7 @@
 
 }
 
+
 .habit-description {
   font-size: 1.1rem;
   opacity: 0.6;
@@ -29,6 +150,14 @@
   margin-top: -0.3rem;
   padding-left: 0;
   padding-left: 1.8rem;
+  text-align: center;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #b3b3b3;
+  padding: 0 1.5rem 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  width: 10rem;
 }
 
 .row{

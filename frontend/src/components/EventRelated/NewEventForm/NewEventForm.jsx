@@ -40,16 +40,13 @@ const NewEventForm = (props) => {
     props.onClose();
   };
 
-
-  const handleTitle = (value) =>
-     setNewEvent({ ...newEvent, title: value });
+  const handleTitle = (value) => setNewEvent({ ...newEvent, title: value });
   const handleDescription = (value) =>
     setNewEvent({ ...newEvent, description: value });
   const handleLocation = (value) =>
     setNewEvent({ ...newEvent, location: value });
   const handleNotification = (value) =>
-    setNewEvent({ ...newEvent, notification: value});
-
+    setNewEvent({ ...newEvent, notification: value });
 
   //Select start & end date input fields
   const [displayStartDate, setDisplayStartDate] = useState('');
@@ -141,7 +138,7 @@ const NewEventForm = (props) => {
                 <h4 className="modal-title">Create Event</h4>
               </div>
 
-              <div className="modal-body">
+              <div className="modal-body-event">
                 <input
                   className="event-title"
                   type="text"

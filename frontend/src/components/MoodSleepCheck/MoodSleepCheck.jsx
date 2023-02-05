@@ -5,8 +5,8 @@ import { apiFetch } from '../../apiFetch';
 
 const NEW_DAILY_CHECK = {
   date: null,
-  mood: null,
-  sleep: null,
+  moodGrade: null,
+  sleepGrade: null,
   message: 'No message added',
 };
 
@@ -94,19 +94,22 @@ const MoodSleepCheck = (props) => {
       nodeRef={nodeRef}
     >
       <div
-        className={`new-event-modal ${props.showMoodSleepCheck ? 'show' : ''}}`}
+        className={`new-mood-modal ${props.showMoodSleepCheck ? 'show' : ''}}`}
         onClick={props.onClose}
         ref={nodeRef}
       >
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="modal-content-mood"
+          onClick={(e) => e.stopPropagation()}
+        >
           <form className="center-form">
             <div className="top">
               <div className="modal-header">
-                <h4 className="modal-title">How are you feeling today?</h4>
+                <h4 className="modal-title-mood">How are you feeling today?</h4>
               </div>
 
-              <div className="modal-body">
-                <h5 className="event-title">How was your day?</h5>
+              <div className="modal-body-mood-sleep">
+                <h5 className="event-title-mood">How was your day?</h5>
                 <div className="position-mood-icons">
                   {moodIcons.map((icon, i) => (
                     <div
@@ -115,7 +118,7 @@ const MoodSleepCheck = (props) => {
                         setMoodSelected(i);
                         setDailyCheck({
                           ...dailyCheck,
-                          mood: i,
+                          moodGrade: i,
                           date: todayDate,
                         });
                       }}
@@ -138,14 +141,14 @@ const MoodSleepCheck = (props) => {
                     </div>
                   ))}
                 </div>
-                <h5 className="event-title">How did you sleep?</h5>
+                <h5 className="event-title-mood">How did you sleep?</h5>
                 <div className="position-sleep-icons">
                   {sleepIcons.map((icon, i) => (
                     <div
                       className=""
                       onClick={() => {
                         setSleepSelected(i);
-                        setDailyCheck({ ...dailyCheck, sleep: i });
+                        setDailyCheck({ ...dailyCheck, sleepGrade: i });
                       }}
                       key={i}
                     >
