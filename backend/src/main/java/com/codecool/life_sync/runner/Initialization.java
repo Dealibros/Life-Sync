@@ -1,7 +1,7 @@
 package com.codecool.life_sync.runner;
 
-import com.codecool.life_sync.entity.Event;
-import com.codecool.life_sync.entity.ToDos;
+import com.codecool.life_sync.entity.*;
+import com.codecool.life_sync.repository.DailyCheckRepository;
 import com.codecool.life_sync.repository.EventRepository;
 import com.codecool.life_sync.repository.ToDosRepository;
 import com.codecool.life_sync.entity.user.Role;
@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 
@@ -24,7 +25,7 @@ public class Initialization {
     }
 
     @Bean
-    ApplicationRunner runner(EventRepository eventRepository, ToDosRepository toDosRepository, PasswordEncoder passwordEncoder) {
+    ApplicationRunner runner(EventRepository eventRepository, ToDosRepository toDosRepository, PasswordEncoder passwordEncoder, DailyCheckRepository dailyCheckRepository) {
         return args -> {
 
             User user = new User(1L,"doriana", "maria", "doriana@gmail.com", passwordEncoder.encode("123456"), Role.USER);
@@ -48,6 +49,21 @@ public class Initialization {
             toDosRepository.save(todo3);
             toDosRepository.save(todo4);
             toDosRepository.save(todo5);
+
+/*            DailyCheck dailyCheck = new DailyCheck(LocalDate.now(), MoodGrade.GOOD, SleepGrade.BAD_SLEEP, "All good" );
+            DailyCheck dailyCheck1 = new DailyCheck(LocalDate.of(2023, Month.FEBRUARY, 2), MoodGrade.GREAT, SleepGrade.WELL, "Relax");
+            DailyCheck dailyCheck2 = new DailyCheck(LocalDate.of(2023, Month.FEBRUARY, 3), MoodGrade.NOT_BAD, SleepGrade.WELL, "Ate to late");
+            DailyCheck dailyCheck3 = new DailyCheck(LocalDate.of(2023, Month.FEBRUARY, 4), MoodGrade.GREAT, SleepGrade.OK, "Stress at school");
+            DailyCheck dailyCheck4 = new DailyCheck(LocalDate.of(2023, Month.FEBRUARY, 5), MoodGrade.GREAT, SleepGrade.WELL, "Ok");
+            DailyCheck dailyCheck5 = new DailyCheck(LocalDate.of(2023, Month.FEBRUARY, 6), MoodGrade.ROUGH_DAY, SleepGrade.SO_SO, "Didn't sleep enough");
+            DailyCheck dailyCheck6 = new DailyCheck(LocalDate.of(2023, Month.FEBRUARY, 7), MoodGrade.NOT_BAD, SleepGrade.REALLY_WELL, "Holidays");
+            dailyCheckRepository.save(dailyCheck);
+            dailyCheckRepository.save(dailyCheck1);
+            dailyCheckRepository.save(dailyCheck2);
+            dailyCheckRepository.save(dailyCheck3);
+            dailyCheckRepository.save(dailyCheck4);
+            dailyCheckRepository.save(dailyCheck5);
+            dailyCheckRepository.save(dailyCheck6);*/
 
 
         };
