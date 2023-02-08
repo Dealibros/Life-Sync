@@ -110,13 +110,13 @@ const NewHabitForm = (props) => {
 
           <div className="modal-footer">
             <button
-              className="submit-button"
+              className="submit-button-habit"
               onClick={(event) => createHabit(event)}
               disabled={buttonDisabled}
             >
               Submit
             </button>
-            <button className="close-button" onClick={props.onClose}>
+            <button className="close-button-habit" onClick={props.onClose}>
               Close
             </button>
           </div>

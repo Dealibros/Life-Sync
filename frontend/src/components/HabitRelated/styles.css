@@ -37,7 +37,7 @@
   transition: all 0.3s ease-in-out;
   transform: translateY(-200px);
   border-radius: 1rem;
-  margin:0 !important;
+  margin: 0 !important;
 
 }
 
@@ -94,7 +94,7 @@ input .modeal-title {
 .modal-body-habit {
   display: flex;
   flex-direction: column;
-  padding: 10px 0 15px 0;
+  padding: 10px 0 0 0;
   text-align: center;
 
 }
@@ -108,7 +108,11 @@ input .modeal-title {
   background-color: transparent;
 }
 
-.event-title-habit:focus {
+.habit-title:focus {
+  outline: none;
+}
+
+.habit-description {
   outline: none;
 }
 
@@ -129,18 +133,33 @@ input .modeal-title {
   margin-right: 2rem;
 }
 
-.habit-name{
+.habit-title-name {
   font-size: 1.4rem;
   color: black;
   font-family: 'Kanit';
-  text-align:left;
+  text-align: left;
   margin-top: -0.6rem;
+  padding-left: 1.8rem;
+  line-height: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.habit-description-name{
+  font-size: 1.2rem;
+  color: rgb(129, 126, 126);
+  font-family: 'Kanit';
+  text-align: left;
+  margin-top: 0.2rem;
   padding-left: 1.8rem;
   line-height: 1.3rem;
   margin-bottom: 0.2rem;
 
 }
 
+
+.habit-title {
+  font-family: 'Kanit';
+}
 
 .habit-description {
   font-size: 1.1rem;
@@ -158,9 +177,10 @@ input .modeal-title {
   font-size: 1.2rem;
   background-color: transparent;
   width: 10rem;
+  outline: none;
 }
 
-.row{
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -169,24 +189,23 @@ input .modeal-title {
   margin-bottom: 1.2rem;
 }
 
-.favourite-habit-text{
+.favourite-habit-text {
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.habit-square{
+.habit-square {
   height: 1.8rem;
   width: 1.8rem;
   margin-right: 0.3rem;
   margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
-  /* background-color: antiquewhite; */
   border-color: white;
   padding: 0.2rem;
 }
 
-.all-habits{
+.all-habits {
   align-items: center;
   justify-content: center;
 
@@ -195,8 +214,10 @@ input .modeal-title {
 .habit-list {
   display: flex;
   justify-content: center;
+  margin-bottom: 0.6rem;
 
-  }
+}
+
 .daily-habits {
   display: flex;
   flex-direction: row;
@@ -205,21 +226,21 @@ input .modeal-title {
 
 }
 
-.square{
+.square {
   color: black;
 }
 
-.past-square{
+.past-square {
   background-color: #d7d7e3;
 
 }
 
-.white{
+.white {
   background-color: white;
 
 }
 
-.ticked-square{
+.ticked-square {
   position: relative;
   display: inline-block;
   width: 30px;
@@ -250,7 +271,7 @@ input .modeal-title {
   transform-origin: left bottom;
 }
 
-.achieved-text{
+.achieved-text {
   font-weight: 400;
   margin-left: 4rem;
   margin-top: -0.3rem;
@@ -258,10 +279,28 @@ input .modeal-title {
 
 }
 
-.days-done{
+.days-done {
   font-size: 1.3rem;
   margin-left: 6rem;
   margin-right: -8rem;
   margin-top: 1rem;
 
+}
+
+.modal-footer-habit{
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.submit-button-habit {
+border-radius: 0.3rem;
+border-color: rgb(197, 196, 196);
+margin-right: 0.4rem;
+padding: 0.2rem;
+}
+
+.close-button-habit {
+  border-radius: 0.3rem;
+  border-color: rgb(197, 196, 196);
+  padding: 0.2rem;
 }

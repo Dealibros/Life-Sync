@@ -216,7 +216,7 @@ input .modeal-title {
 #calendar-form-start {
     box-sizing: border-box;
     position: absolute;
-    top: 0rem;
+    top: 0;
     left: 0;
     background-color: rgba(22, 22, 22, 0.5);
     display: flex;
@@ -224,7 +224,7 @@ input .modeal-title {
     visibility: hidden;
     border-radius: 1rem;
     padding-right: 2.4rem;
-    padding-bottom: 2.9rem;
+    padding-bottom: 7.2rem;
 }
 
 #calendar-form-end {
@@ -238,7 +238,7 @@ input .modeal-title {
     visibility: hidden;
     border-radius: 1rem;
     padding-right: 2.4rem;
-    padding-bottom: 2.9rem;
+    padding-bottom: 7.2rem;
 }
 
 .button-box {

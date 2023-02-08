@@ -23,9 +23,9 @@ export default function Habit() {
           <div className="habit-list" key={index}>
             <>
               <div className="habit-text">
-                <div className="habit-name">{habit.title}</div>
+                <div className="habit-title-name">{habit.title}</div>
 
-                <div className="habit-description">
+                <div className="habit-description-name">
                   {habit.description} {habit.starred && '🌟'}
                 </div>
               </div>
