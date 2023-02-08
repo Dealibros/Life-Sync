@@ -40,6 +40,20 @@ const MoodSleepCheck = (props) => {
     props.onClose();
   };
 
+  useEffect(() => {
+    apiFetch('http://localhost:8080/api/dailyCheck/All', 'GET', null).then(
+      (data) => {
+        data
+          ? data.map((dailyCheckUnit) => {
+              dailyCheckUnit.date == todayDate
+                ? props.setShowMoodSleepCheck(false)
+                : props.setShowMoodSleepCheck(true);
+            })
+          : props.setShowMoodSleepCheck(true);
+      },
+    );
+  }, []);
+
   const moodIcons = [
     {
       icon: '🤗',

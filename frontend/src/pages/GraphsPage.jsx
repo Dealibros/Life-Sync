@@ -10,7 +10,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { apiFetch } from '../apiFetch';
 import NavBarTop from '../components/NavBarTop/NavBarTop';
@@ -142,7 +142,6 @@ export default function GraphsPage() {
       dailyElement.sleepGradeValue;
   });
 
-  console.log(data);
   return (
     <>
       <div className="App">

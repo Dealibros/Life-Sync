@@ -23,7 +23,7 @@ export default function CalendarPage() {
 
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState(initialCredentials);
-  const [showMoodSleepCheck, setShowMoodSleepCheck] = useState(true);
+  const [showMoodSleepCheck, setShowMoodSleepCheck] = useState(false);
 
   useEffect(() => {
     apiFetch(
@@ -101,6 +101,7 @@ export default function CalendarPage() {
                 <MoodSleepCheck
                   onClose={() => setShowMoodSleepCheck(false)}
                   showMoodSleepCheck={showMoodSleepCheck}
+                  setShowMoodSleepCheck={setShowMoodSleepCheck}
                 />
 
                 <EventsBoard />
