@@ -18,6 +18,7 @@ const MoodSleepCheck = (props) => {
   const [sleepSelected, setSleepSelected] = useState(null);
   const [dailyCheck, setDailyCheck] = useState(NEW_DAILY_CHECK);
   const todayDate = new Date().toISOString().slice(0, 10);
+  const [dailyChecksList, setDailyChecksList] = useState();
 
   useEffect(() => {
     const validateForm = !Object.values(dailyCheck).some(
@@ -43,13 +44,19 @@ const MoodSleepCheck = (props) => {
   useEffect(() => {
     apiFetch('http://localhost:8080/api/dailyCheck/All', 'GET', null).then(
       (data) => {
-        data
-          ? data.map((dailyCheckUnit) => {
-              dailyCheckUnit.date == todayDate
-                ? props.setShowMoodSleepCheck(false)
-                : props.setShowMoodSleepCheck(true);
-            })
-          : props.setShowMoodSleepCheck(true);
+        setDailyChecksList(data);
+        if (data == 0) {
+          props.setShowMoodSleepCheck(true);
+        }
+        if (data) {
+          data.map((dailyCheckUnit) => {
+            if (dailyCheckUnit.date == todayDate) {
+              props.setShowMoodSleepCheck(false);
+            } else {
+              props.setShowMoodSleepCheck(true);
+            }
+          });
+        }
       },
     );
   }, []);
