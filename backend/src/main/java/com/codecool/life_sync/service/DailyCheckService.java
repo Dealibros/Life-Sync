@@ -22,6 +22,7 @@ public class DailyCheckService {
         return dailyCheckRepository.findAllByUser(user);
     }
 
+    //pass user form endpoint
     public List<DailyCheck> saveDailyCheck(DailyCheck newDailyCheck){
         User user = userService.getAuthenticatedUser();
         newDailyCheck.setMoodGradeValue(newDailyCheck.getMoodGrade().getValue());

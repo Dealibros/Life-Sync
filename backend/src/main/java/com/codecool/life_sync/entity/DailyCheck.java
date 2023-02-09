@@ -35,13 +35,14 @@ public class DailyCheck {
     private User user;
 
 
-    public DailyCheck(LocalDate date, MoodGrade moodGrade, SleepGrade sleepGrade, String message) {
+    public DailyCheck(LocalDate date, MoodGrade moodGrade, SleepGrade sleepGrade, String message, User user) {
         this.date = date;
         this.moodGrade = moodGrade;
         this.sleepGrade = sleepGrade;
         this.message = message;
         this.moodGradeValue = moodGrade.getValue();
         this.sleepGradeValue = sleepGrade.getValue();
+        this.user = user;
     }
 
 }

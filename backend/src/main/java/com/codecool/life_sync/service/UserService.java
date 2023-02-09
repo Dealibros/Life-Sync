@@ -19,6 +19,7 @@ public class UserService {
         return userRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("This user doesn't exist!"));
     }
 
+    //use getPrincipal and cast it
     public User getAuthenticatedUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByEmail(auth.getName()).orElseThrow(() -> new UsernameNotFoundException("No user is logged in."));
