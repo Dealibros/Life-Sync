@@ -74,3 +74,37 @@ We utilized GitHub's project management features, including their Kanban board a
 
 ### Security
 Security was a top priority during the development of LifeSync. The application implements a user authentication system, allowing users to create an account and securely log in to the application. Each user has their own unique account and is only able to access their own events and data. We also implemented encryption for sensitive user data such as passwords and other personal information. 
+
+
+## How to Try LifeSync
+If you want to try LifeSync on your local machine, follow the instructions below to get the application up and running.
+
+### Prerequisites
+Before you begin, make sure you have the following tools and software installed on your machine:
+
+- **Git**
+- **Node.js**
+- **Java Development Kit (JDK)**
+- **PostgreSQL**
+
+### Installation
+To get started, follow these steps:
+
+- Clone the repository
+
+- Create a PostgreSQL database
+
+- Create a local datbase with the name "life_sync"
+
+- Set up the environment variables (psql username and password, you can even set it up only from Intellij if that is what you use)
+
+- Navigate to the backend directory and start the backend server
+
+- Open a new terminal window and navigate to the frontend directory
+
+- Install the dependencies and start the frontend server (start with the `npm install` command, followed by `npm start`)
+  
+- Open your web browser and navigate to http://localhost:3000 to access the LifeSync application.
+
+### Usage
+Once you've started the backend and frontend servers, you can use the application as you would normally. You can create an account and start adding events, to-do items, and habits to your calendar. You can also use the sleep and mood checker to track your sleep patterns and mood over time.
