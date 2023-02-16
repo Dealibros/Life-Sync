@@ -71,3 +71,6 @@ We used Git for version control, which allowed us to manage and track changes to
 
 ### Project Management
 We utilized GitHub's project management features, including their Kanban board and issue tracker, to organize our development process and implement Scrum methodology. This allowed us to easily manage and prioritize tasks, track progress, and collaborate effectively as a team.
+
+### Security
+Security was a top priority during the development of LifeSync. The application implements a user authentication system, allowing users to create an account and securely log in to the application. Each user has their own unique account and is only able to access their own events and data. We also implemented encryption for sensitive user data such as passwords and other personal information. 
