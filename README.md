@@ -39,3 +39,35 @@ LifeSync's Mood and Sleep Graph feature allows you to visualize your sleep and m
 
 ### Additional Features
 In addition to the core features of the app, LifeSync also offers a small weather update to help you plan your day better. You also get a daily quote to help motivate and inspire you to achieve your goals.
+
+
+## Technical Specifications
+LifeSync is a full-stack web application that was developed using the following technologies:
+
+**Frontend Framework**: React
+
+**Backend Framework**: Spring Boot
+
+**Database Management System**: PostgreSQL
+
+**Integrated Development Environments (IDE)**: Visual Studio Code and IntelliJ
+
+**Version Control**: Git
+
+### Frontend
+The frontend of the application was built using React, a popular and efficient JavaScript library for building user interfaces. The additional libraries used, (for example for the calendar or the charts) can be found in the package.json file in the 'frontend' folder.
+
+### Backend
+The backend of the application was built using Spring Boot, a powerful and flexible Java-based framework that provides a robust platform for building web applications. We used Spring Boot to create a RESTful API to handle data processing and communication between the frontend and backend.
+
+### Database
+The application's data was stored in a PostgreSQL database. PostgreSQL is an open-source relational database management system that is known for its reliability, performance, and scalability.
+
+### IDE
+We used Visual Studio Code for developing the frontend of the application and IntelliJ for the backend. Both IDEs provide a range of powerful features that make coding and debugging easier and more efficient.
+
+### Version Control
+We used Git for version control, which allowed us to manage and track changes to the codebase as we developed the application. We also used GitHub to store and share the codebase with the development team.
+
+### Project Management
+We utilized GitHub's project management features, including their Kanban board and issue tracker, to organize our development process and implement Scrum methodology. This allowed us to easily manage and prioritize tasks, track progress, and collaborate effectively as a team.
